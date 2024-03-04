@@ -1,0 +1,107 @@
+#usda 1.0
+(
+    defaultPrim = "milk_box"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Mujoco "mujoco" (
+    prepend apiSchemas = ["MujocoOptionAPI"]
+)
+{
+    string mujoco:model = "milk_box"
+    float mujoco:option:timestep = 0.002
+
+    def MujocoAsset "asset"
+    {
+        def MujocoMesh "meshes"
+        {
+            def MujocoMesh "milk_box_visual"
+            {
+                asset mujoco:mesh:file = @milk_box/meshes/obj/milk_box_visual.obj@
+            }
+        }
+
+        def MujocoMaterial "materials"
+        {
+            def MujocoMaterial "milk_box_visual"
+            {
+                rel mujoco:material:texture = </mujoco/asset/textures/milk_box_visual>
+            }
+        }
+
+        def MujocoTexture "textures"
+        {
+            def MujocoTexture "milk_box_visual"
+            {
+                asset mujoco:texture:file = @milk_box_visual.png@
+                string mujoco:texture:type = "2d"
+            }
+        }
+    }
+
+    def MujocoEquality "equality"
+    {
+    }
+}
+
+def Xform "milk_box" (
+    prepend apiSchemas = ["PhysicsMassAPI", "MujocoBodyInertialAPI", "MujocoBodyAPI"]
+)
+{
+    float3 mujoco:body:inertial:diaginertia = (0.0011993749, 0.004142, 0.0046573747)
+    float mujoco:body:inertial:mass = 1.14
+    point3f mujoco:body:inertial:pos = (0, 7.4301137e-19, 0)
+    quatf mujoco:body:inertial:quat = (-0.70710677, 1.1119388e-9, 0.70710677, 1.1119388e-9)
+    point3f mujoco:body:pos = (0, 0, 0)
+    quatf mujoco:body:quat = (1, 0, 0, 0)
+    point3f physics:centerOfMass = (0, 7.4301137e-19, 0)
+    float3 physics:diagonalInertia = (0.0011993749, 0.004142, 0.0046573747)
+    float physics:mass = 1.14
+    quatf physics:principalAxes = (-0.70710677, 1.1119388e-9, 0.70710677, 1.1119388e-9)
+
+    def Mesh "milk_box_visual" (
+        prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI"]
+        prepend references = @./milk_box/meshes/usd/milk_box_visual.usda@</milk_box_visual>
+    )
+    {
+        rel material:binding = </milk_box/milk_box_visual/Materials/milk_box_visual>
+        rel mujoco:geom:material = </mujoco/asset/materials/milk_box_visual>
+        rel mujoco:geom:mesh = </mujoco/asset/meshes/milk_box_visual>
+        point3f mujoco:geom:pos = (0, 7.4301137e-19, 0)
+        quatf mujoco:geom:quat = (1, 0, 0, 0)
+        vector3f mujoco:geom:size = (1, 1, 1)
+        uniform token mujoco:geom:type = "mesh"
+        color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+        float[] primvars:displayOpacity = [1]
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 7.430113721000445e-19, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Scope "Materials"
+        {
+            def Material "milk_box_visual" (
+                prepend references = @./milk_box/materials/usd/milk_box_visual.usda@</milk_box_visual>
+            )
+            {
+            }
+        }
+    }
+
+    def Cube "milk_box_collision" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI"]
+    )
+    {
+        float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+        point3f mujoco:geom:pos = (0, 0, 0)
+        quatf mujoco:geom:quat = (1, 0, 0, 0)
+        vector3f mujoco:geom:size = (0.03, 0.0475, 0.1)
+        uniform token mujoco:geom:type = "box"
+        bool physics:collisionEnabled = 1
+        color3f[] primvars:displayColor = [(1, 0, 0)]
+        float[] primvars:displayOpacity = [0]
+        token visibility = "invisible"
+        matrix4d xformOp:transform = ( (0.03, 0, 0, 0), (0, 0.0475, 0, 0), (0, 0, 0.1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+

@@ -1,0 +1,36 @@
+#usda 1.0
+(
+    defaultPrim = "milk_box_visual"
+    upAxis = "Z"
+)
+
+def Material "milk_box_visual"
+{
+    token inputs:frame:stPrimvarName = "st"
+    token outputs:surface.connect = </milk_box_visual/PBRShader.outputs:surface>
+
+    def Shader "PBRShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor.connect = </milk_box_visual/DiffuseTexture.outputs:rgb>
+        float inputs:opacity = 1
+        int inputs:useSpecularWorkflow = 1
+        token outputs:surface
+    }
+
+    def Shader "PrimvarReader"
+    {
+        uniform token info:id = "UsdPrimvarReader_float2"
+        token inputs:varname.connect = </milk_box_visual.inputs:frame:stPrimvarName>
+        float2 outputs:result
+    }
+
+    def Shader "DiffuseTexture"
+    {
+        uniform token info:id = "UsdUVTexture"
+        asset inputs:file = @../../textures/milk_box_visual.png@
+        float2 inputs:st.connect = </milk_box_visual/PrimvarReader.outputs:result>
+        float3 outputs:rgb
+    }
+}
+
