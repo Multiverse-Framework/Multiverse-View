@@ -33,6 +33,16 @@ scene.add(gridHelper);
 const axesHelper = new THREE.AxesHelper(5);
 scene.add(axesHelper);
 
+// Create a ambient light
+const ambientLight = new THREE.AmbientLight(0xffffff);
+scene.add(ambientLight);
+
+// Create a plane
+const planeGeometry = new THREE.PlaneGeometry(10, 10);
+const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+scene.add(plane);
+
 ////////////////
 // USD loader //
 ////////////////
@@ -47,7 +57,7 @@ function getParentDirectory(filePath) {
     return segments.join('/') + '/';
 }
 
-function createGeom(vertices, uvs) {
+function createGeom(transform, vertices, uvs) {
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
     for (let i = 0; i < vertices.length; i += 3) {
@@ -57,6 +67,9 @@ function createGeom(vertices, uvs) {
         }
     }
     geometry.setAttribute('uv', new THREE.BufferAttribute(new Float32Array(uvs), 2));
+
+    geometry.applyMatrix4(transform);
+
     return geometry;
 }
 
@@ -64,7 +77,7 @@ function createMesh(geometry, material) {
     return new THREE.Mesh(geometry, material)
 }
 
-function getMeshData(usdContent, primName) {
+function getMeshProperties(usdContent, primName) {
     // Function to parse the USD content and find the relevant data based on primName
     let lines = usdContent.split('\n');
     let insidePrim = false;
@@ -72,6 +85,8 @@ function getMeshData(usdContent, primName) {
     let verticesData = [];
     let faceVertexIndices = [];
     let primvarsStData = [];
+
+    let xformOpTransformData = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
 
     lines.forEach(line => {
         if (line.includes(`def Mesh "${primName}"`)) {
@@ -81,6 +96,10 @@ function getMeshData(usdContent, primName) {
         }
 
         if (insidePrim) {
+            if (line.trim().startsWith("matrix4d xformOp:transform = (")) {
+                let xformOpTransformString = line.slice(line.indexOf('(') + 1, line.lastIndexOf(')'));
+                xformOpTransformData = xformOpTransformString.match(/-?\d*\.?\d+(e-?\d+)?/g).map(parseFloat);
+            }
             if (line.trim().startsWith("point3f[] points = [")) {
                 let pointsString = line.slice(line.indexOf('[') + 1, line.lastIndexOf(']'));
                 pointsData = pointsString.match(/-?\d*\.?\d+(e-?\d+)?/g).map(parseFloat);
@@ -102,6 +121,9 @@ function getMeshData(usdContent, primName) {
         verticesData.push(pointsData[3 * faceVertexIndex], pointsData[3 * faceVertexIndex + 1], pointsData[3 * faceVertexIndex + 2]);
     }
 
+    // Convert the vertices data to Matrix4d
+    const xformOpTransform = new THREE.Matrix4().fromArray(xformOpTransformData);
+
     // Convert the vertices data to Float32Array
     const verticesFloat32Array = new Float32Array(verticesData);
 
@@ -110,6 +132,7 @@ function getMeshData(usdContent, primName) {
 
     // Return the vertices and primvarsSt
     return {
+        xformOpTransform: xformOpTransform,
         vertices: verticesFloat32Array,
         primvarsSt: primvarsStFloat32Array
     };
@@ -204,12 +227,14 @@ function getMaterialData(usdContent, primName, primSdfPath) {
     if (typeof (diffuseColor) === 'string') {
         return {
             diffuseColor: diffuseTextureShaderData.file,
+            emissiveColor: pbrShaderData.emissiveColor,
             opacity: pbrShaderData.opacity,
         };
     }
     else {
         return {
             diffuseColor: diffuseColor,
+            emissiveColor: pbrShaderData.emissiveColor,
             opacity: pbrShaderData.opacity,
         };
     }
@@ -239,11 +264,14 @@ function getDefaultPrimName(usdContent) {
     }
 }
 
-function extractPrimContentFromStartPattern(usdContent, primStartPattern) {
+function extractPrimContentFromStartPattern(usdContent, primStartPattern, startIndexMustEqualZero = false) {
     const startIndex = usdContent.search(primStartPattern);
 
     if (startIndex === -1) {
         return null; // Prim block not found
+    }
+    if (startIndexMustEqualZero && startIndex !== 0) {
+        return null;
     }
 
     let openBraces = 0;
@@ -269,8 +297,8 @@ function extractPrimContentFromStartPattern(usdContent, primStartPattern) {
     return usdContent.substring(startIndex, endIndex + 1);
 }
 
-function extractPrimDataFromStartPattern(usdContent, primStartPattern, parentSdfPath = '') {
-    const primContent = extractPrimContentFromStartPattern(usdContent, primStartPattern);
+function extractPrimDataFromStartPattern(usdContent, primStartPattern, parentSdfPath = '', startIndexMustEqualZero = false) {
+    const primContent = extractPrimContentFromStartPattern(usdContent, primStartPattern, startIndexMustEqualZero);
     if (primContent === null) {
         return null; // Proper content block not found
     }
@@ -361,7 +389,6 @@ function extractPrimData(primContent, parentSdfPath) {
     // Further processing to exclude child definitions like 'def Mesh', if necessary
     let childDefIndex = primBlock.search(/def\s+/);
 
-    // TODO: Remove the child prim from the xformBlock
     if (childDefIndex !== -1) {
         let childPrimsContent = primBlock.substring(childDefIndex).trim();
 
@@ -399,29 +426,22 @@ function getXformProperties(xformContent) {
         }
     });
 
-    // Convert the vertices data to Float32Array
-    const xformOpTransformArray = new Float32Array(xformOpTransformData);
+    // Convert the vertices data to Matrix4
+    const xformOpTransform = new THREE.Matrix4().fromArray(xformOpTransformData);
 
     return {
-        xformOpTransform: xformOpTransformArray,
+        xformOpTransform: xformOpTransform,
     };
 }
 
-const meshes = {};
-const geometries = {};
-const materials = {};
-const defaultDiffuseColor = [0.9, 0.9, 0.9];
-const xform = {};
+function transformMesh(mesh, xformOpTransform) {
+    mesh.applyMatrix4(xformOpTransform);
+}
 
-// const usdFilePath = '/assets/milk_box/milk_box.usda';
-const usdFilePath = '/assets/cold_cutting_2/cold_cutting_2.usda';
-const usdDirPath = getParentDirectory(usdFilePath);
-const fileLoader = new THREE.FileLoader();
-fileLoader.load(usdFilePath, function (usdContent) {
-    const primName = getDefaultPrimName(usdContent);
-    console.log('Load the prim:', primName);
+function loadXform(usdContent, xformName, parentXformName = null) {
+    console.log('Load the prim:', xformName);
 
-    const primStartPattern = new RegExp(`def Xform "${primName}"`);
+    const primStartPattern = new RegExp(`def Xform "${xformName}"`);
     const xformData = extractPrimDataFromStartPattern(usdContent, primStartPattern);
 
     const xformHeader = xformData.primHeader;
@@ -430,7 +450,12 @@ fileLoader.load(usdFilePath, function (usdContent) {
 
     const xformProperties = getXformProperties(xformBlock);
 
-    xform[primName] = {
+    if (parentXformName !== null) {
+        const parentXform = xform[parentXformName];
+        xformProperties.xformOpTransform = new THREE.Matrix4().multiplyMatrices(parentXform.xformProperties.xformOpTransform, xformProperties.xformOpTransform);
+    }
+
+    xform[xformName] = {
         xformHeader: xformHeader,
         xformProperties: xformProperties,
         childXforms: [],
@@ -439,8 +464,8 @@ fileLoader.load(usdFilePath, function (usdContent) {
 
     for (let xformChildContent of xformChildContents) {
         const meshStartPattern = new RegExp(`def Mesh`);
-        const meshData = extractPrimDataFromStartPattern(xformChildContent, meshStartPattern, xformData.primSdfPath);
-        
+        const meshData = extractPrimDataFromStartPattern(xformChildContent, meshStartPattern, xformData.primSdfPath, true);
+
         if (meshData === null) {
             continue;
         }
@@ -448,6 +473,8 @@ fileLoader.load(usdFilePath, function (usdContent) {
         const meshHeader = meshData.primHeader;
         const meshBlock = meshData.primBlock;
         const meshChildContents = meshData.childPrimContents;
+
+        const meshTransform = getMeshProperties(xformChildContent, meshData.primName).xformOpTransform;
 
         let meshName;
         let meshPath;
@@ -467,10 +494,11 @@ fileLoader.load(usdFilePath, function (usdContent) {
             meshSdfPath = '';
         }
 
-        xform[primName].childMeshes.push(
+        xform[xformName].childMeshes.push(
             {
                 name: meshName,
                 path: meshPath,
+                transform: meshTransform,
                 sdfPath: meshSdfPath,
                 materials: [],
             }
@@ -505,7 +533,7 @@ fileLoader.load(usdFilePath, function (usdContent) {
                     materialSdfPath = '';
                 }
 
-                xform[primName].childMeshes[xform[primName].childMeshes.length - 1].materials.push(
+                xform[xformName].childMeshes[xform[xformName].childMeshes.length - 1].materials.push(
                     {
                         name: materialName,
                         path: materialPath,
@@ -516,7 +544,7 @@ fileLoader.load(usdFilePath, function (usdContent) {
         }
     }
 
-    for (let mesh of xform[primName].childMeshes) {
+    for (let mesh of xform[xformName].childMeshes) {
         fileLoader.load(
             mesh.path,
             function (data) {
@@ -525,19 +553,31 @@ fileLoader.load(usdFilePath, function (usdContent) {
                 }
                 if (geometries[mesh.name] === undefined) {
                     console.log('Load the mesh:', mesh.path);
-                    const meshData = getMeshData(data, mesh.name);
-                    geometries[mesh.name] = createGeom(meshData.vertices, meshData.primvarsSt);
+                    const meshProperties = getMeshProperties(data, mesh.name);
+                    geometries[mesh.name] = createGeom(mesh.transform, meshProperties.vertices, meshProperties.primvarsSt);
                 }
                 const geometry = geometries[mesh.name];
-                for (let material of mesh.materials) {
+                let meshMaterialJS;
+                if (mesh.materials.length === 0) {
+                    meshMaterialJS = defaultMaterialJS;
+
+                    const meshMeshJS = createMesh(geometry, meshMaterialJS);
+                    meshMeshJS.name = mesh.name
+                    transformMesh(meshMeshJS, xformProperties.xformOpTransform);
+                    scene.add(meshMeshJS);
+                }
+                else if (mesh.materials.length === 1) {
+                    let material = mesh.materials[0];
                     fileLoader.load(material.path, function (data) {
                         if (material.name === null) {
                             material.name = getDefaultPrimName(data);
                         }
                         if (materials[material.name] === undefined) {
                             console.log('Load the material:', material.path);
+                            
                             const materialData = getMaterialData(data, material.name, material.sdfPath);
                             const diffuseColor = materialData.diffuseColor;
+                            const emissiveColor = materialData.emissiveColor;
                             const opacity = materialData.opacity;
                             if (typeof (diffuseColor) === "string") {
                                 let texturePath = diffuseColor;
@@ -545,20 +585,24 @@ fileLoader.load(usdFilePath, function (usdContent) {
                                     texturePath = getParentDirectory(mesh.path) + texturePath;
                                 }
                                 const texture = new THREE.TextureLoader().load(texturePath);
-                                materials[material.name] = new THREE.MeshBasicMaterial({ map: texture });
+                                materials[material.name] = new THREE.MeshStandardMaterial({ map: texture });
                             }
                             else {
-                                materials[material.name] = new THREE.MeshBasicMaterial({ color: new THREE.Color(diffuseColor[0], diffuseColor[1], diffuseColor[2]), opacity: opacity });
+                                materials[material.name] = new THREE.MeshStandardMaterial({ color: new THREE.Color(diffuseColor[0], diffuseColor[1], diffuseColor[2]), opacity: opacity });
                             }
                         }
-                        
-                        const meshMaterialJS = materials[material.name];
+
+                        meshMaterialJS = materials[material.name];
+
                         const meshMeshJS = createMesh(geometry, meshMaterialJS);
-                        meshMeshJS.position.set(0, 0, 0);
-                        meshMeshJS.rotation.set(0, 0, 0);
-                        meshMeshJS.scale.set(1, 1, 1);
+                        meshMeshJS.name = mesh.name
+                        transformMesh(meshMeshJS, xformProperties.xformOpTransform);
                         scene.add(meshMeshJS);
                     });
+                }
+                else {
+                    console.log('Multiple materials are not supported yet');
+                    return;
                 }
             },
             function (xhr) {
@@ -569,6 +613,36 @@ fileLoader.load(usdFilePath, function (usdContent) {
             }
         );
     }
+
+    for (let xformChildContent of xformChildContents) {
+        const xformStartPattern = new RegExp(`def Xform`);
+        const childXformData = extractPrimDataFromStartPattern(xformChildContent, xformStartPattern, xformData.primSdfPath);
+
+        if (childXformData !== null) {
+            loadXform(usdContent, childXformData.primName, xformName);
+        }
+    }
+}
+
+const meshes = {};
+const geometries = {};
+const materials = {};
+const defaultDiffuseColor = [0.9, 0.9, 0.9];
+const defaultMaterialJS = new THREE.MeshStandardMaterial({ color: new THREE.Color(defaultDiffuseColor[0], defaultDiffuseColor[1], defaultDiffuseColor[2]), 
+    opacity: 1.0, 
+    wireframe: false,
+    visible: false});
+const xform = {};
+
+// const usdFilePath = '/assets/milk_box/milk_box.usda';
+// const usdFilePath = '/assets/cold_cutting_2/cold_cutting_2.usda';
+const usdFilePath = '/assets/panda/panda.usda';
+const usdDirPath = getParentDirectory(usdFilePath);
+const fileLoader = new THREE.FileLoader();
+fileLoader.load(usdFilePath, function (usdContent) {
+    const primName = getDefaultPrimName(usdContent);
+
+    loadXform(usdContent, primName);
 });
 
 ///////////////
@@ -593,3 +667,9 @@ else {
     const warning = WebGL.getWebGLErrorMessage();
     document.getElementById('container').appendChild(warning);
 }
+
+window.addEventListener('resize', function () {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});

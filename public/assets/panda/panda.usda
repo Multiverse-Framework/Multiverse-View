@@ -1,0 +1,3245 @@
+#usda 1.0
+(
+    defaultPrim = "panda"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Mujoco "mujoco" (
+    prepend apiSchemas = ["MujocoOptionAPI"]
+)
+{
+    string mujoco:model = "panda"
+    float mujoco:option:timestep = 0.002
+
+    def MujocoAsset "asset"
+    {
+        def MujocoMesh "meshes"
+        {
+            def MujocoMesh "link0_0"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_0.stl@
+            }
+
+            def MujocoMesh "link0_1"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_1.stl@
+            }
+
+            def MujocoMesh "link0_2"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_2.stl@
+            }
+
+            def MujocoMesh "link0_3"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_3.stl@
+            }
+
+            def MujocoMesh "link0_4"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_4.stl@
+            }
+
+            def MujocoMesh "link0_5"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_5.stl@
+            }
+
+            def MujocoMesh "link0_7"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_7.stl@
+            }
+
+            def MujocoMesh "link0_8"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_8.stl@
+            }
+
+            def MujocoMesh "link0_9"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_9.stl@
+            }
+
+            def MujocoMesh "link0_10"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_10.stl@
+            }
+
+            def MujocoMesh "link0_11"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_11.stl@
+            }
+
+            def MujocoMesh "link0_c"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link0_c.stl@
+            }
+
+            def MujocoMesh "link1"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link1.stl@
+            }
+
+            def MujocoMesh "link1_c"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link1_c.stl@
+            }
+
+            def MujocoMesh "link2"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link2.stl@
+            }
+
+            def MujocoMesh "link2_c"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link2_c.stl@
+            }
+
+            def MujocoMesh "link3_0"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link3_0.stl@
+            }
+
+            def MujocoMesh "link3_1"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link3_1.stl@
+            }
+
+            def MujocoMesh "link3_2"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link3_2.stl@
+            }
+
+            def MujocoMesh "link3_3"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link3_3.stl@
+            }
+
+            def MujocoMesh "link3_c"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link3_c.stl@
+            }
+
+            def MujocoMesh "link4_0"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link4_0.stl@
+            }
+
+            def MujocoMesh "link4_1"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link4_1.stl@
+            }
+
+            def MujocoMesh "link4_2"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link4_2.stl@
+            }
+
+            def MujocoMesh "link4_3"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link4_3.stl@
+            }
+
+            def MujocoMesh "link4_c"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link4_c.stl@
+            }
+
+            def MujocoMesh "link5_0"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link5_0.stl@
+            }
+
+            def MujocoMesh "link5_1"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link5_1.stl@
+            }
+
+            def MujocoMesh "link5_2"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link5_2.stl@
+            }
+
+            def MujocoMesh "link5_c0"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link5_c0.stl@
+            }
+
+            def MujocoMesh "link5_c1"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link5_c1.stl@
+            }
+
+            def MujocoMesh "link5_c2"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link5_c2.stl@
+            }
+
+            def MujocoMesh "link6_0"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_0.stl@
+            }
+
+            def MujocoMesh "link6_1"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_1.stl@
+            }
+
+            def MujocoMesh "link6_2"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_2.stl@
+            }
+
+            def MujocoMesh "link6_3"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_3.stl@
+            }
+
+            def MujocoMesh "link6_4"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_4.stl@
+            }
+
+            def MujocoMesh "link6_5"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_5.stl@
+            }
+
+            def MujocoMesh "link6_6"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_6.stl@
+            }
+
+            def MujocoMesh "link6_7"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_7.stl@
+            }
+
+            def MujocoMesh "link6_8"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_8.stl@
+            }
+
+            def MujocoMesh "link6_9"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_9.stl@
+            }
+
+            def MujocoMesh "link6_10"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_10.stl@
+            }
+
+            def MujocoMesh "link6_11"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_11.stl@
+            }
+
+            def MujocoMesh "link6_12"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_12.stl@
+            }
+
+            def MujocoMesh "link6_13"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_13.stl@
+            }
+
+            def MujocoMesh "link6_14"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_14.stl@
+            }
+
+            def MujocoMesh "link6_15"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_15.stl@
+            }
+
+            def MujocoMesh "link6_16"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_16.stl@
+            }
+
+            def MujocoMesh "link6_c"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link6_c.stl@
+            }
+
+            def MujocoMesh "link7_0"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link7_0.stl@
+            }
+
+            def MujocoMesh "link7_1"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link7_1.stl@
+            }
+
+            def MujocoMesh "link7_2"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link7_2.stl@
+            }
+
+            def MujocoMesh "link7_3"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link7_3.stl@
+            }
+
+            def MujocoMesh "link7_4"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link7_4.stl@
+            }
+
+            def MujocoMesh "link7_5"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link7_5.stl@
+            }
+
+            def MujocoMesh "link7_6"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link7_6.stl@
+            }
+
+            def MujocoMesh "link7_7"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link7_7.stl@
+            }
+
+            def MujocoMesh "link7_c"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/link7_c.stl@
+            }
+
+            def MujocoMesh "hand_0"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/hand_0.stl@
+            }
+
+            def MujocoMesh "hand_1"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/hand_1.stl@
+            }
+
+            def MujocoMesh "hand_2"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/hand_2.stl@
+            }
+
+            def MujocoMesh "hand_3"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/hand_3.stl@
+            }
+
+            def MujocoMesh "hand_4"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/hand_4.stl@
+            }
+
+            def MujocoMesh "hand_c"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/hand_c.stl@
+            }
+
+            def MujocoMesh "finger_0"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/finger_0.stl@
+            }
+
+            def MujocoMesh "finger_1"
+            {
+                asset mujoco:mesh:file = @panda/meshes/stl/finger_1.stl@
+            }
+        }
+
+        def MujocoMaterial "materials"
+        {
+            def MujocoMaterial "off_white"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (0.901961, 0.921569, 0.929412, 1)
+                float mujoco:material:specular = 0.5
+            }
+
+            def MujocoMaterial "black"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (0.25, 0.25, 0.25, 1)
+                float mujoco:material:specular = 0.5
+            }
+
+            def MujocoMaterial "white"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (1, 1, 1, 1)
+                float mujoco:material:specular = 0.5
+            }
+
+            def MujocoMaterial "light_blue"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (0.039216, 0.541176, 0.780392, 1)
+                float mujoco:material:specular = 0.5
+            }
+
+            def MujocoMaterial "green"
+            {
+                float mujoco:material:emission = 0
+                color4f mujoco:material:rgba = (0, 1, 0, 1)
+                float mujoco:material:specular = 0.5
+            }
+        }
+
+        def MujocoTexture "textures"
+        {
+        }
+    }
+
+    def MujocoEquality "equality"
+    {
+        def MujocoEqualityJoint "Equality_0"
+        {
+            rel mujoco:equality:joint:joint1 = </panda/link7/hand/finger_joint1>
+            rel mujoco:equality:joint:joint2 = </panda/link7/hand/finger_joint2>
+            float[] mujoco:equality:joint:polycoef = [0, 1, 0, 0, 0]
+        }
+    }
+}
+
+def Xform "panda" (
+    prepend apiSchemas = ["MujocoBodyAPI"]
+)
+{
+    point3f mujoco:body:pos = (0, 0, 0)
+    quatf mujoco:body:quat = (1, 0, 0, 0)
+
+    def Xform "link0" (
+        prepend apiSchemas = ["MujocoBodyAPI"]
+    )
+    {
+        point3f mujoco:body:pos = (0, 0, 0)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+
+        def Mesh "Geom_0" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_0.usda@</link0_0>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_0/Materials/off_white>
+            rel mujoco:geom:material = </mujoco/asset/materials/off_white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_0>
+            point3f mujoco:geom:pos = (-0.024341708, 0.06898584, 0.037001297)
+            quatf mujoco:geom:quat = (0.58621246, 0.27670532, 0.32439786, 0.68887967)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_0.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.88097334, -0.0009012198, 1.7310598)
+            point3f urdf:visual:origin:xyz = (-0.024341708, 0.06898584, 0.037001297)
+            matrix4d xformOp:transform = ( (-0.15957825598531117, 0.9871848702344572, 0.0009012196540483797, 0), (-0.6281343986169037, -0.10224199968166925, 0.771358380245703, 0), (0.7615654650066976, 0.12252593799384626, 0.6364003747860781, 0), (-0.02434170827864863, 0.06898584107657625, 0.037001297313774606, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "off_white" (
+                    prepend references = @./panda/materials/usd/off_white.usda@</off_white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_1" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_1.usda@</link0_1>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_1/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_1>
+            point3f mujoco:geom:pos = (-0.025005138, 0.07288968, 0.03697875)
+            quatf mujoco:geom:quat = (0.23692513, 0.6339873, 0.670926, 0.30296034)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_1.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (2.3542244, -0.066276096, 1.6549332)
+            point3f urdf:visual:origin:xyz = (-0.025005138, 0.07288968, 0.03697875)
+            matrix4d xformOp:transform = ( (-0.0838531946455976, 0.9942748857782464, 0.06622758683798535, 0), (0.7071592194063621, 0.012550286154453638, 0.7069429458775485, 0), (0.7020644415980007, 0.10611287305551886, -0.7041630336900622, 0), (-0.025005136793976982, 0.07288967710097176, 0.03697875321042992, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_2" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_2.usda@</link0_2>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_2/Materials/off_white>
+            rel mujoco:geom:material = </mujoco/asset/materials/off_white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_2>
+            point3f mujoco:geom:pos = (-0.023746833, -0.06535296, 0.06299932)
+            quatf mujoco:geom:quat = (0.7049802, 0.7043649, -0.060598925, -0.056575153)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_2.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.5704006, -0.005743013, -0.1658989)
+            point3f urdf:visual:origin:xyz = (-0.023746833, -0.06535296, 0.06299932)
+            matrix4d xformOp:transform = ( (0.9862540441073845, -0.1651362426740257, 0.005742981571849035, 0), (-0.005598786122049726, 0.0013386580430452266, 0.9999834306570302, 0), (-0.1651411943634563, -0.986269856251396, 0.0003956944048993938, 0), (-0.02374683403129674, -0.06535296272360118, 0.06299932311266318, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "off_white" (
+                    prepend references = @./panda/materials/usd/off_white.usda@</off_white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_3" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_3.usda@</link0_3>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_3/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_3>
+            point3f mujoco:geom:pos = (-0.024884207, -0.07268134, 0.062931284)
+            quatf mujoco:geom:quat = (0.7368693, 0.31095487, 0.28147492, 0.5301911)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_3.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.86253124, 0.085192405, 1.2866322)
+            point3f urdf:visual:origin:xyz = (-0.024884207, -0.07268134, 0.062931284)
+            matrix4d xformOp:transform = ( (0.2793384835057837, 0.956415081170763, -0.0850893891258599, 0), (-0.6063111023358398, 0.24440886851247468, 0.7567371750989578, 0), (0.7445514480658726, -0.15979517358661027, 0.6481578848409061, 0), (-0.02488420743263477, -0.07268133745438186, 0.06293128746546782, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_4" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_4.usda@</link0_4>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_4/Materials/off_white>
+            rel mujoco:geom:material = </mujoco/asset/materials/off_white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_4>
+            point3f mujoco:geom:pos = (-0.064821176, -0.06560425, 0.04800138)
+            quatf mujoco:geom:quat = (0.76110536, 0.0076581403, 0.014428624, 0.64842254)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_4.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.030375862, 0.012032273, 1.4114312)
+            point3f urdf:visual:origin:xyz = (-0.064821176, -0.06560425, 0.04800138)
+            matrix4d xformOp:transform = ( (0.15867997408892986, 0.9872567534375977, -0.012031983003280698, 0), (-0.9868147677319675, 0.15897905022504555, 0.030368993655462938, 0), (0.031894827311644794, 0.007054387386381686, 0.999466335405732, 0), (-0.06482117710661212, -0.06560424884993189, 0.04800137992090077, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "off_white" (
+                    prepend references = @./panda/materials/usd/off_white.usda@</off_white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_5" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_5.usda@</link0_5>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_5/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_5>
+            point3f mujoco:geom:pos = (-0.059638854, 0.05788507, 0.036908485)
+            quatf mujoco:geom:quat = (0.41498426, 0.49763623, 0.5849675, 0.48781073)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_5.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.7514347, 0, 1.7317833)
+            point3f urdf:visual:origin:xyz = (-0.059638854, 0.05788507, 0.036908485)
+            matrix4d xformOp:transform = ( (-0.16029250740966172, 0.9870695578672883, -5.551115123125783e-17, 0), (0.17733450723362232, 0.02879776059161543, 0.9837292114851103, 0), (0.9710091578417437, 0.15768442192107746, -0.1796575589027185, 0), (-0.05963885265197145, 0.05788506811766412, 0.03690848430709659, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_6" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_7.usda@</link0_7>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_6/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_7>
+            point3f mujoco:geom:pos = (0.011052804, -0.072000034, 0.0460627)
+            quatf mujoco:geom:quat = (0.75945693, -0.048285335, -0.039446767, 0.64756286)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_7.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-0.124753565, 0.0026193385, 1.4119155)
+            point3f urdf:visual:origin:xyz = (0.011052804, -0.072000034, 0.0460627)
+            matrix4d xformOp:transform = ( (0.1582126057598443, 0.9874015953302534, -0.002619335402534992, 0), (-0.9797827933919147, 0.15666175363482004, -0.12442979032852267, 0), (-0.12245182379947327, 0.022252741119552756, 0.9922249575377798, 0), (0.011052803835438744, -0.07200003137004433, 0.046062701971281546, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_7" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_8.usda@</link0_8>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_7/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_8>
+            point3f mujoco:geom:pos = (-0.029952925, -0.00003448017, 0.053494547)
+            quatf mujoco:geom:quat = (-0.0011472596, 0.5378004, 0.00039544312, 0.84307134)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_8.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-0.0013455851, -1.1356517, -3.1380126)
+            point3f urdf:visual:origin:xyz = (-0.029952925, -0.00003448017, 0.053494547)
+            matrix4d xformOp:transform = ( (-0.4215388326145848, -0.0015091044106501725, 0.9068090952354916, 0), (0.0023597822976141676, -0.9999970548402553, -0.0005672198192963615, 0), (0.9068072805317792, 0.0019007668697901886, 0.4215411522732577, 0), (-0.029952925627160853, -0.00003448017186102211, 0.05349454489239895, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_8" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_9.usda@</link0_9>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_8/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_9>
+            point3f mujoco:geom:pos = (-0.024999274, -0.07303207, 0.032895043)
+            quatf mujoco:geom:quat = (0.5362739, 0.46851373, -0.53173953, 0.4584302)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_9.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.8630089, -1.5551604, -0.43340367)
+            point3f urdf:visual:origin:xyz = (-0.024999274, -0.07303207, 0.032895043)
+            matrix4d xformOp:transform = ( (0.014189660715703045, -0.006566223894106438, 0.9998777616451653, 0), (-0.9899428501215136, 0.14067330401306233, 0.014972475792042583, 0), (-0.14075442096811036, -0.9900342954876973, -0.004504079940565564, 0), (-0.024999274401298205, -0.07303207273073183, 0.032895042414244305, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_9" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_10.usda@</link0_10>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_9/Materials/off_white>
+            rel mujoco:geom:material = </mujoco/asset/materials/off_white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_10>
+            point3f mujoco:geom:pos = (-0.0237872, -0.065486304, 0.032974105)
+            quatf mujoco:geom:quat = (0.71413904, 0.6957042, -0.05813405, -0.05120029)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_10.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.5455598, -0.011791349, -0.15464279)
+            point3f urdf:visual:origin:xyz = (-0.0237872, -0.065486304, 0.032974105)
+            matrix4d xformOp:transform = ( (0.9879979256813798, -0.154016458088088, 0.011791076595927472, 0), (-0.0077599519053840466, 0.02674835051620872, 0.9996120792042724, 0), (-0.1542721037508626, -0.9877061589271694, 0.02523215451801153, 0), (-0.023787200255619093, -0.06548630800088073, 0.03297410449192426, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "off_white" (
+                    prepend references = @./panda/materials/usd/off_white.usda@</off_white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_10" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_11.usda@</link0_11>
+        )
+        {
+            rel material:binding = </panda/link0/Geom_10/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_11>
+            point3f mujoco:geom:pos = (0.011042833, 0.07199696, 0.04608744)
+            quatf mujoco:geom:quat = (0.6468715, -0.039445262, -0.04829625, 0.7600453)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link0_11.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-0.12477058, -0.00252257, 1.7314903)
+            point3f urdf:visual:origin:xyz = (0.011042833, 0.07199696, 0.04608744)
+            matrix4d xformOp:transform = ( (-0.16000272602862542, 0.9871133492750099, 0.0025225674383256777, 0), (-0.9794931162737495, -0.15844952723822847, -0.12444670542172279, 0), (-0.12244330457704805, -0.022382649553933265, 0.992223086892861, 0), (0.011042833195986071, 0.07199695886119808, 0.046087441451277696, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_11" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link0_c.usda@</link0_c>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link0_c>
+            point3f mujoco:geom:pos = (-0.029189765, -0.00087946496, 0.056603193)
+            quatf mujoco:geom:quat = (0.004117441, 0.5649163, 0.013287545, 0.8250309)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.0734105, -1.1999954, 3.0813768)
+            point3f urdf:collision:origin:xyz = (-0.029189765, -0.00087946496, 0.056603193)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/link0_c.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.3617052372107352, 0.02180673425231963, 0.9320374390096, 0), (0.008218669181057145, -0.9996129756471737, 0.026577290958527764, 0), (0.9322562817440372, 0.01727325270615265, 0.3613860261406514, 0), (-0.029189765433072147, -0.0008794649788944781, 0.0566031915141631, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "joint1" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-2.8973, 2.8973)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </panda/link0>
+            rel physics:body1 = </panda/link1>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0, 0, 0.333)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -166.00307
+            float physics:upperLimit = 166.00307
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </panda/link1>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -2.8973
+            float urdf:joint:limit:upper = 2.8973
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (0, 0, 0)
+            point3f urdf:joint:origin:xyz = (0, 0, 0.333)
+            prepend rel urdf:joint:parent = </panda/link0>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "link1" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.707137, 0.7034354, 0.008524557)
+        float mujoco:body:inertial:mass = 4.970684
+        point3f mujoco:body:inertial:pos = (0.003875, 0.002081, -0.04762)
+        quatf mujoco:body:inertial:quat = (0.71154916, 0.0063437712, -0.01311239, 0.7024853)
+        point3f mujoco:body:pos = (0, 0, 0.333)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0.003875, 0.002081, -0.04762)
+        float3 physics:diagonalInertia = (0.707137, 0.7034354, 0.008524557)
+        float physics:mass = 4.970684
+        quatf physics:principalAxes = (0.71154916, 0.0063437712, -0.01311239, 0.7024853)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.707137
+        float urdf:link:inertial:inertia:iyy = 0.7034354
+        float urdf:link:inertial:inertia:izz = 0.008524557
+        float urdf:link:inertial:mass = 4.970684
+        float3 urdf:link:inertial:origin:rpy = (-0.009398425, -0.027576528, 1.5581063)
+        point3f urdf:link:inertial:origin:xyz = (0.003875, 0.002081, -0.04762)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0.333, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_12" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link1.usda@</link1>
+        )
+        {
+            rel material:binding = </panda/link1/Geom_12/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link1>
+            point3f mujoco:geom:pos = (0.0000022415552, -0.032479387, -0.067575864)
+            quatf mujoco:geom:quat = (0.98168457, 0.19051352, 0.000032940454, -0.00019934204)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link1.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.38337043, 0.00014062898, -0.00037883082)
+            point3f urdf:visual:origin:xyz = (0.0000022415552, -0.032479387, -0.067575864)
+            matrix4d xformOp:transform = ( (0.9999999183553492, -0.000378830813127672, -0.0001406289798884589, 0), (0.0004039332203786088, 0.9274091141738672, 0.37404835487567173, 0), (-0.0000112804447610885, -0.37404838114134115, 0.9274091914782242, 0), (0.0000022415553023489027, -0.0324793865141835, -0.06757586693056468, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_13" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link1_c.usda@</link1_c>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link1_c>
+            point3f mujoco:geom:pos = (0.000011398982, -0.031265527, -0.06937331)
+            quatf mujoco:geom:quat = (0.98466045, 0.17448115, -0.000101815014, 0.00034766187)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.35075757, -0.00032182733, 0.0006491283)
+            point3f urdf:collision:origin:xyz = (0.000011398982, -0.031265527, -0.06937331)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/link1_c.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.9999997375298358, 0.0006491282030284778, 0.0003218273378499434, 0), (-0.0007201874123471696, 0.9391124081299671, 0.3436093220889463, 0), (-0.0000791855444588857, -0.34360946367774875, 0.93911262913494, 0), (0.00001139898131675401, -0.03126552803743275, -0.06937330598619522, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "joint2" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-1.7628, 1.7628)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </panda/link1>
+            rel physics:body1 = </panda/link2>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, -0.70710677, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -101.001
+            float physics:upperLimit = 101.001
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </panda/link2>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -1.7628
+            float urdf:joint:limit:upper = 1.7628
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (-1.5707964, 0, 0)
+            point3f urdf:joint:origin:xyz = (0, 0, 0)
+            prepend rel urdf:joint:parent = </panda/link1>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "link2" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.031032642, 0.028300107, 0.0027342504)
+        float mujoco:body:inertial:mass = 0.646926
+        point3f mujoco:body:inertial:pos = (-0.003141, -0.02872, 0.003495)
+        quatf mujoco:body:inertial:quat = (-0.1681748, 0.82836586, -0.12287755, 0.5200272)
+        point3f mujoco:body:pos = (0, 0, 0)
+        quatf mujoco:body:quat = (0.70710677, -0.70710677, 0, 0)
+        point3f physics:centerOfMass = (-0.003141, -0.02872, 0.003495)
+        float3 physics:diagonalInertia = (0.031032642, 0.028300107, 0.0027342504)
+        float physics:mass = 0.646926
+        quatf physics:principalAxes = (-0.1681748, 0.82836586, -0.12287755, 0.5200272)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.031032642
+        float urdf:link:inertial:inertia:iyy = 0.028300107
+        float urdf:link:inertial:inertia:izz = 0.0027342504
+        float urdf:link:inertial:mass = 0.646926
+        float3 urdf:link:inertial:origin:rpy = (-2.3514454, -0.9617882, -0.7229855)
+        point3f urdf:link:inertial:origin:xyz = (-0.003141, -0.02872, 0.003495)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 2.220446049250313e-16, -0.9999999999999998, 0), (0, 0.9999999999999998, 2.220446049250313e-16, 0), (0, 0, 0.333, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_14" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link2.usda@</link2>
+        )
+        {
+            rel material:binding = </panda/link2/Geom_14/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link2>
+            point3f mujoco:geom:pos = (0.000003082553, -0.068602756, 0.03220973)
+            quatf mujoco:geom:quat = (0.5607229, 0.8280035, -0.00016461815, 0.00012466953)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link2.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.9510754, -0.00039106395, -0.0001327987)
+            point3f urdf:visual:origin:xyz = (0.000003082553, -0.068602756, 0.03220973)
+            matrix4d xformOp:transform = ( (0.9999999147167494, -0.00013279868768872205, 0.00039106393643453455, 0), (-0.00041241891909635236, -0.3711796220484729, 0.9285609931967787, 0), (0.000021843282787090037, -0.9285610752882447, -0.3711796451617595, 0), (0.000003082552814544877, -0.0686027528932163, 0.03220972991497953, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_15" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link2_c.usda@</link2_c>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link2_c>
+            point3f mujoco:geom:pos = (-0.000013176554, -0.07032155, 0.03117824)
+            quatf mujoco:geom:quat = (0.57483953, 0.81826615, -0.000060576378, -0.00006616262)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (1.9167767, 0.000038633865, -0.00017520097)
+            point3f urdf:collision:origin:xyz = (-0.000013176554, -0.07032155, 0.03117824)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/link2_c.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.9999999839060212, -0.00017520097549797063, -0.00003863386532203284, 0), (-0.000023069432429351217, -0.33911905035914147, 0.9407434661751926, 0), (-0.00017792065268694657, -0.9407434501436258, -0.3391190489431539, 0), (-0.000013176553398219796, -0.07032155252075616, 0.031178239145109848, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "joint3" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-2.8973, 2.8973)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </panda/link2>
+            rel physics:body1 = </panda/link3>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0, -0.316, 2.4651903e-32)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0.70710677, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -166.00307
+            float physics:upperLimit = 166.00307
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </panda/link3>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -2.8973
+            float urdf:joint:limit:upper = 2.8973
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (1.5707964, 0, 0)
+            point3f urdf:joint:origin:xyz = (0, -0.316, 2.4651903e-32)
+            prepend rel urdf:joint:parent = </panda/link2>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "link3" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.041501388, 0.041479256, 0.0012463544)
+        float mujoco:body:inertial:mass = 3.228604
+        point3f mujoco:body:inertial:pos = (0.027518, 0.039252, -0.066502)
+        quatf mujoco:body:inertial:quat = (0.6627688, -0.0067833145, 0.25205317, 0.70509624)
+        point3f mujoco:body:pos = (0, -0.316, 0)
+        quatf mujoco:body:quat = (0.70710677, 0.70710677, 0, 0)
+        point3f physics:centerOfMass = (0.027518, 0.039252, -0.066502)
+        float3 physics:diagonalInertia = (0.041501388, 0.041479256, 0.0012463544)
+        float physics:mass = 3.228604
+        quatf physics:principalAxes = (0.6627688, -0.0067833145, 0.25205317, 0.70509624)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.041501388
+        float urdf:link:inertial:inertia:iyy = 0.041479256
+        float urdf:link:inertial:inertia:izz = 0.0012463544
+        float urdf:link:inertial:mass = 3.228604
+        float3 urdf:link:inertial:origin:rpy = (0.37785015, 0.350824, 1.700415)
+        point3f urdf:link:inertial:origin:xyz = (0.027518, 0.039252, -0.066502)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0.9999999999999996, 0, 0), (0, 0, 0.9999999999999996, 0), (0, -7.01660951563099e-17, 0.649, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_16" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link3_0.usda@</link3_0>
+        )
+        {
+            rel material:binding = </panda/link3/Geom_16/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link3_0>
+            point3f mujoco:geom:pos = (0.04164007, 0.02444145, -0.03727493)
+            quatf mujoco:geom:quat = (0.007287576, 0.36871916, 0.22109787, 0.90283376)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link3_0.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.57065827, -0.7242337, 2.9041154)
+            point3f urdf:visual:origin:xyz = (0.04164007, 0.02444145, -0.03727493)
+            matrix4d xformOp:transform = ( (-0.7279861489660917, 0.17620498046904298, 0.6625616739379242, 0), (0.149887103104833, -0.9021252446944947, 0.4046033850670798, 0), (0.6690067437898971, 0.3938551100884724, 0.6303238286950893, 0), (0.041640068238247625, 0.02444145064489676, -0.03727492899749336, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_17" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link3_1.usda@</link3_1>
+        )
+        {
+            rel material:binding = </panda/link3/Geom_17/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link3_1>
+            point3f mujoco:geom:pos = (0.02155348, -0.011223171, -0.011548319)
+            quatf mujoco:geom:quat = (0.3360086, 0.63769215, -0.58123577, 0.3776399)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link3_1.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-3.1202133, -1.0597566, -1.4907529)
+            point3f urdf:visual:origin:xyz = (0.02155348, -0.011223171, -0.011548319)
+            matrix4d xformOp:transform = ( (0.03910619652890068, -0.4875184810403556, 0.8722364564939646, 0), (-0.9950795116120055, -0.09852638394650959, -0.010455488340485763, 0), (0.09103554779895595, -0.8675357527563519, -0.48897264414935826, 0), (0.021553479391113937, -0.011223170495539583, -0.011548319295510683, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_18" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link3_2.usda@</link3_2>
+        )
+        {
+            rel material:binding = </panda/link3/Geom_18/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link3_2>
+            point3f mujoco:geom:pos = (0.05687671, -0.011394921, -0.061174463)
+            quatf mujoco:geom:quat = (0.38545135, 0.003904988, -0.0008534768, 0.9227195)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link3_2.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.0014353713, -0.007864445, 2.3501866)
+            point3f urdf:visual:origin:xyz = (0.05687671, -0.011394921, -0.061174463)
+            matrix4d xformOp:transform = ( (-0.7028240072823715, 0.7113202981459605, 0.007864364760783825, 0), (-0.7113336294128434, -0.7028530482998054, 0.0014353264516609853, 0), (0.006548469584590757, -0.004585405239800066, 0.9999680452918915, 0), (0.05687671258214232, -0.011394921134909891, -0.061174465035796516, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_19" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link3_3.usda@</link3_3>
+        )
+        {
+            rel material:binding = </panda/link3/Geom_19/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link3_3>
+            point3f mujoco:geom:pos = (0.07749117, 0.07963347, -0.004022889)
+            quatf mujoco:geom:quat = (0.62232363, 0.28301573, 0.33706495, 0.6473041)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link3_3.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.9103807, 0.0531575, 1.636166)
+            point3f urdf:visual:origin:xyz = (0.07749117, 0.07963347, -0.004022889)
+            matrix4d xformOp:transform = ( (-0.06523081356644278, 0.9964546561034343, -0.05313246927488541, 0), (-0.6148759140264605, 0.0017989463615717405, 0.7886218194686938, 0), (0.7859214663766252, 0.08411231849006928, 0.6125786207227937, 0), (0.0774911722691585, 0.07963346976350043, -0.004022888793941207, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_20" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link3_c.usda@</link3_c>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link3_c>
+            point3f mujoco:geom:pos = (0.044348307, 0.024928326, -0.038129985)
+            quatf mujoco:geom:quat = (0.06152634, 0.3498239, 0.23429142, 0.904956)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.6264281, -0.64891243, 2.788815)
+            point3f urdf:collision:origin:xyz = (0.044348307, 0.024928326, -0.038129985)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/link3_c.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.747675523199866, 0.2752787172652833, 0.6043202295377729, 0), (0.052564209770412984, -0.8826440862479197, 0.4670935889763277, 0), (0.6619806008177417, 0.3810000588351067, 0.6454615707450189, 0), (0.04434830616977217, 0.02492832585533832, -0.038129984535498415, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "joint4" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-3.0718, -0.0698)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </panda/link3>
+            rel physics:body1 = </panda/link4>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.0825, -1.2325952e-32, 1.110223e-16)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0.70710677, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -176.00117
+            float physics:upperLimit = -3.9992454
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </panda/link4>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -3.0718
+            float urdf:joint:limit:upper = -0.0698
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (1.5707964, 0, 0)
+            point3f urdf:joint:origin:xyz = (0.0825, -1.2325952e-32, 1.110223e-16)
+            prepend rel urdf:joint:parent = </panda/link3>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "link4" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.03495964, 0.028148277, 0.010620084)
+        float mujoco:body:inertial:mass = 3.587895
+        point3f mujoco:body:inertial:pos = (-0.05317, 0.104419, 0.027454)
+        quatf mujoco:body:inertial:quat = (0.6505804, 0.52982163, -0.096203424, 0.5355176)
+        point3f mujoco:body:pos = (0.0825, 0, 0)
+        quatf mujoco:body:quat = (0.70710677, 0.70710677, 0, 0)
+        point3f physics:centerOfMass = (-0.05317, 0.104419, 0.027454)
+        float3 physics:diagonalInertia = (0.03495964, 0.028148277, 0.010620084)
+        float physics:mass = 3.587895
+        quatf physics:principalAxes = (0.6505804, 0.52982163, -0.096203424, 0.5355176)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.03495964
+        float urdf:link:inertial:inertia:iyy = 0.028148277
+        float urdf:link:inertial:inertia:izz = 0.010620084
+        float urdf:link:inertial:mass = 3.587895
+        float3 urdf:link:inertial:origin:rpy = (0.94913733, -0.7651341, 0.9696856)
+        point3f urdf:link:inertial:origin:xyz = (-0.05317, 0.104419, 0.027454)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 2.220446049250312e-16, 0.9999999999999993, 0), (0, -0.9999999999999993, 2.220446049250312e-16, 0), (0.0825, -7.01660951563099e-17, 0.649, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_21" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link4_0.usda@</link4_0>
+        )
+        {
+            rel material:binding = </panda/link4/Geom_21/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link4_0>
+            point3f mujoco:geom:pos = (-0.025622489, 0.06118522, -0.011393831)
+            quatf mujoco:geom:quat = (0.26960915, 0.275432, -0.6532396, 0.6517102)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link4_0.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.5781504, -0.79126406, -3.129597)
+            point3f urdf:visual:origin:xyz = (-0.025622489, 0.06118522, -0.011393831)
+            matrix4d xformOp:transform = ( (-0.7028962580026943, -0.008432076188128357, 0.7112423993105079, 0), (-0.7112602101306351, -0.0011778914321458611, -0.7029278242157577, 0), (0.006764907296869127, -0.9999637556746406, -0.005169464801417334, 0), (-0.025622488327255118, 0.06118521662292073, -0.011393831419087433, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_22" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link4_1.usda@</link4_1>
+        )
+        {
+            rel material:binding = </panda/link4/Geom_22/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link4_1>
+            point3f mujoco:geom:pos = (-0.041551944, 0.038693804, 0.024040185)
+            quatf mujoco:geom:quat = (0.8129422, 0.46243232, 0.30235314, 0.18402153)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link4_1.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.1469171, 0.3272036, 0.657657)
+            point3f urdf:visual:origin:xyz = (-0.041551944, 0.038693804, 0.024040185)
+            matrix4d xformOp:transform = ( (0.7494372886227049, 0.5788334758430995, -0.3213962626808912, 0), (-0.019561997892167393, 0.5045848588410384, 0.8631404569748982, 0), (0.6617862786884565, -0.640582490762716, 0.38947784772425664, 0), (-0.041551945541200064, 0.0386938054188419, 0.0240401850668444, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_23" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link4_2.usda@</link4_2>
+        )
+        {
+            rel material:binding = </panda/link4/Geom_23/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link4_2>
+            point3f mujoco:geom:pos = (-0.005009009, 0.0040102834, 0.07963447)
+            quatf mujoco:geom:quat = (0.23971927, 0.64019877, -0.2194309, 0.6960821)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link4_2.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.01728705, -1.4866934, 2.4623764)
+            point3f urdf:visual:origin:xyz = (-0.005009009, 0.0040102834, 0.07963447)
+            matrix4d xformOp:transform = ( (-0.06536048844235287, 0.05276983958162529, 0.9964654286933927, 0), (-0.6146873641773881, -0.788769507338571, 0.0014521065814143141, 0), (0.7860581727017615, -0.6124197974620009, 0.08399131386857561, 0), (-0.005009009022661778, 0.004010283391626417, 0.07963447115932043, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_24" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link4_3.usda@</link4_3>
+        )
+        {
+            rel material:binding = </panda/link4/Geom_24/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link4_3>
+            point3f mujoco:geom:pos = (-0.060935695, 0.011544521, -0.011228485)
+            quatf mujoco:geom:quat = (0.6782032, 0.14406271, -0.21313193, 0.6883757)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link4_3.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-0.112498365, -0.5091464, 1.6149867)
+            point3f urdf:visual:origin:xyz = (-0.060935695, 0.011544521, -0.011228485)
+            matrix4d xformOp:transform = ( (-0.03857271509542959, 0.8723084964627302, 0.48743208003689964, 0), (-0.9951259628672685, 0.010769596083684219, -0.09802210887185905, 0), (-0.09075496503034497, -0.4888372968576825, 0.8676414198983442, 0), (-0.060935694895702566, 0.011544521319742486, -0.011228485394216723, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_25" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link4_c.usda@</link4_c>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link4_c>
+            point3f mujoco:geom:pos = (-0.038550295, 0.03952561, 0.024716241)
+            quatf mujoco:geom:quat = (0.8135664, 0.4650415, 0.30979162, 0.16085804)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (1.1575253, 0.36233735, 0.6286469)
+            point3f urdf:collision:origin:xyz = (-0.038550295, 0.03952561, 0.024716241)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/link4_c.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.7563077022058458, 0.5498692717011595, -0.35446077868073067, 0), (0.02639452559194594, 0.5157222373156991, 0.8563491711660995, 0), (0.6536834008928861, -0.6570192980247429, 0.3755311617165533, 0), (-0.038550294327056006, 0.03952560974766748, 0.024716241456280232, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "joint5" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-2.8973, 2.8973)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </panda/link4>
+            rel physics:body1 = </panda/link5>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (-0.0825, 0.384, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, -0.70710677, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -166.00307
+            float physics:upperLimit = 166.00307
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </panda/link5>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -2.8973
+            float urdf:joint:limit:upper = 2.8973
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (-1.5707964, 0, 0)
+            point3f urdf:joint:origin:xyz = (-0.0825, 0.384, 0)
+            prepend rel urdf:joint:parent = </panda/link4>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "link5" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.03676254, 0.02885309, 0.008034371)
+        float mujoco:body:inertial:mass = 1.225946
+        point3f mujoco:body:inertial:pos = (-0.011953, 0.041065, -0.038437)
+        quatf mujoco:body:inertial:quat = (0.9873133, -0.0121953515, 0.07191867, -0.14103724)
+        point3f mujoco:body:pos = (-0.0825, 0.384, 0)
+        quatf mujoco:body:quat = (0.70710677, -0.70710677, 0, 0)
+        point3f physics:centerOfMass = (-0.011953, 0.041065, -0.038437)
+        float3 physics:diagonalInertia = (0.03676254, 0.02885309, 0.008034371)
+        float physics:mass = 1.225946
+        quatf physics:principalAxes = (0.9873133, -0.0121953515, 0.07191867, -0.14103724)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.03676254
+        float urdf:link:inertial:inertia:iyy = 0.02885309
+        float urdf:link:inertial:inertia:izz = 0.008034371
+        float urdf:link:inertial:mass = 1.225946
+        float3 urdf:link:inertial:origin:rpy = (-0.0448149, 0.13901988, -0.28689983)
+        point3f urdf:link:inertial:origin:xyz = (-0.011953, 0.041065, -0.038437)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0.9999999999999991, 0, 0), (0, 0, 0.9999999999999991, 0), (0, 1.5099033134902093e-17, 1.0329999999999997, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_26" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link5_0.usda@</link5_0>
+        )
+        {
+            rel material:binding = </panda/link5/Geom_26/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link5_0>
+            point3f mujoco:geom:pos = (-0.00012909493, 0.095753886, -0.032729626)
+            quatf mujoco:geom:quat = (0.7082092, -0.01685782, 0.018453218, 0.7055601)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link5_0.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.0021646835, 0.04994665, 1.5671028)
+            point3f urdf:visual:origin:xyz = (-0.00012909493, 0.095753886, -0.032729626)
+            matrix4d xformOp:transform = ( (0.0036889275883270622, 0.9987461126903381, -0.049925887064596844, 0), (-0.9999904367968748, 0.003801597972137527, 0.0021619823435670774, 0), (0.0023490696123647133, 0.04991743421688497, 0.9987505852980308, 0), (-0.00012909492629801462, 0.09575388251980099, -0.032729627427273554, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_27" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link5_1.usda@</link5_1>
+        )
+        {
+            rel material:binding = </panda/link5/Geom_27/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link5_1>
+            point3f mujoco:geom:pos = (-0.010146973, 0.10322721, -0.11142129)
+            quatf mujoco:geom:quat = (0.66324526, -0.023437481, 0.10436553, 0.7407187)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link5_1.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.12574713, 0.1740383, 1.6920329)
+            point3f urdf:visual:origin:xyz = (-0.010146973, 0.10322721, -0.11142129)
+            matrix4d xformOp:transform = ( (-0.11911281307618093, 0.9776642522288134, -0.17316104548931932, 0), (-0.9874485126801585, -0.0984271179243632, 0.12352140406766063, 0), (0.10371871849777926, 0.1857005987361883, 0.9771170426628529, 0), (-0.010146972443801154, 0.10322721118137058, -0.11142128916989294, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_28" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link5_2.usda@</link5_2>
+        )
+        {
+            rel material:binding = </panda/link5/Geom_28/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link5_2>
+            point3f mujoco:geom:pos = (-1.46867e-7, 0.044252697, -0.11129854)
+            quatf mujoco:geom:quat = (0.99042416, -0.1380578, 0.000007806335, 0.00003417803)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link5_2.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-0.27700034, 0.000024900251, 0.00006554604)
+            point3f urdf:visual:origin:xyz = (-1.46867e-7, 0.044252697, -0.11129854)
+            matrix4d xformOp:transform = ( (0.9999999975418472, 0.0000655460376698031, -0.000024900251495001225, 0), (-0.00006985693923975798, 0.9618800839912458, -0.27347156916396625, 0), (0.000006026078225373432, 0.2734715702311867, 0.9618800862056431, 0), (-1.4686699630523936e-7, 0.04425269920212681, -0.1112985359040258, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_29" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link5_c0.usda@</link5_c0>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link5_c0>
+            point3f mujoco:geom:pos = (0.0009732588, 0.019922221, -0.20910695)
+            quatf mujoco:geom:quat = (0.30464473, 0.5617454, -0.6986592, 0.32172823)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-2.966746, -0.90616524, -1.8724935)
+            point3f urdf:collision:origin:xyz = (0.0009732588, 0.019922221, -0.20910695)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/link5_c0.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.1832674006353916, -0.5889115463399264, 0.7871443644287011, 0), (-0.9809627702800623, 0.16186611468639045, -0.10729121231861571, 0), (-0.06422696621212076, -0.79182229793297, -0.6073650840370544, 0), (0.0009732588248875004, 0.01992222155582667, -0.2091069569367147, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_30" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link5_c1.usda@</link5_c1>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link5_c1>
+            point3f mujoco:geom:pos = (-0.00023507017, 0.08005925, -0.12115345)
+            quatf mujoco:geom:quat = (0.7034275, -0.085525915, 0.08856389, 0.7000225)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.0037856137, 0.24683557, 1.5664136)
+            point3f urdf:collision:origin:xyz = (-0.00023507017, 0.08005925, -0.12115345)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/link5_c1.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.0042498918449677126, 0.9696811460874235, -0.24433668030381228, 0), (-0.9999791765731727, 0.005307652193357271, 0.003670864780175337, 0), (0.004856422484304609, 0.24431599159853545, 0.9696835109508042, 0), (-0.00023507017418093157, 0.08005924943045238, -0.1211534524078704, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Geom_31" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link5_c2.usda@</link5_c2>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link5_c2>
+            point3f mujoco:geom:pos = (0.00015025343, 0.06918297, -0.004538831)
+            quatf mujoco:geom:quat = (0.8314618, 0.5555698, -0.00070803287, 0.003604668)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (1.1780918, -0.0051827175, 0.0052076573)
+            point3f urdf:collision:origin:xyz = (0.00015025343, 0.06918297, -0.004538831)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/link5_c2.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.9999730101160833, 0.00520756383629721, 0.00518269411314992, 0), (-0.006781010663270557, 0.38265834187339864, 0.9238650395426193, 0), (0.002827885033766466, -0.9238752484364932, 0.3826833265150753, 0), (0.00015025343019191157, 0.06918297231373394, -0.0045388308900191476, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "joint6" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-0.0175, 3.7525)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </panda/link5>
+            rel physics:body1 = </panda/link6>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0, -3.081488e-33, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0.70710677, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -1.0026761
+            float physics:upperLimit = 215.00241
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </panda/link6>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -0.0175
+            float urdf:joint:limit:upper = 3.7525
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (1.5707964, 0, 0)
+            point3f urdf:joint:origin:xyz = (0, -3.081488e-33, 0)
+            prepend rel urdf:joint:parent = </panda/link5>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "link6" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.005842761, 0.0043103737, 0.001597865)
+        float mujoco:body:inertial:mass = 1.666555
+        point3f mujoco:body:inertial:pos = (0.060149, -0.014117, -0.010517)
+        quatf mujoco:body:inertial:quat = (0.10107538, 0.5933199, 0.028722698, 0.79807913)
+        point3f mujoco:body:pos = (0, 0, 0)
+        quatf mujoco:body:quat = (0.70710677, 0.70710677, 0, 0)
+        point3f physics:centerOfMass = (0.060149, -0.014117, -0.010517)
+        float3 physics:diagonalInertia = (0.005842761, 0.0043103737, 0.001597865)
+        float physics:mass = 1.666555
+        quatf physics:principalAxes = (0.10107538, 0.5933199, 0.028722698, 0.79807913)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.005842761
+        float urdf:link:inertial:inertia:iyy = 0.0043103737
+        float urdf:link:inertial:inertia:izz = 0.001597865
+        float urdf:link:inertial:mass = 1.666555
+        float3 urdf:link:inertial:origin:rpy = (0.51302475, -1.2262421, 2.5246615)
+        point3f urdf:link:inertial:origin:xyz = (0.060149, -0.014117, -0.010517)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 2.220446049250311e-16, 0.9999999999999989, 0), (0, -0.9999999999999989, 2.220446049250311e-16, 0), (0, 1.5099033134902093e-17, 1.0329999999999997, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_32" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_0.usda@</link6_0>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_32/Materials/off_white>
+            rel mujoco:geom:material = </mujoco/asset/materials/off_white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_0>
+            point3f mujoco:geom:pos = (0.025386864, -0.015517999, -0.0051399674)
+            quatf mujoco:geom:quat = (0.18717086, 0.6665334, -0.17157751, 0.70090044)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_0.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.16938183, -1.5174187, 2.4590719)
+            point3f urdf:visual:origin:xyz = (0.025386864, -0.015517999, -0.0051399674)
+            matrix4d xformOp:transform = ( (-0.041400594187707807, 0.033652015698748955, 0.9985757520790877, 0), (-0.49110057138308116, -0.8710564511452521, 0.008993759250167349, 0), (0.8701185089331887, -0.49002877543839196, 0.05258877878629786, 0), (0.02538686447802162, -0.015517999517566645, -0.005139967609184323, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "off_white" (
+                    prepend references = @./panda/materials/usd/off_white.usda@</off_white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_33" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_1.usda@</link6_1>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_33/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_1>
+            point3f mujoco:geom:pos = (0.00009689129, 0.0014892222, 0.052967306)
+            quatf mujoco:geom:quat = (0.5202948, 0.42258665, -0.5762303, 0.46762434)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_1.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.7817827, -1.469193, -3.1375558)
+            point3f urdf:visual:origin:xyz = (0.00009689129, 0.0014892222, 0.052967306)
+            matrix4d xformOp:transform = ( (-0.10142775882474808, -0.00040943801115039813, 0.9948428228118773, 0), (-0.9736194538717653, 0.20549600542726087, -0.09917938695054007, 0), (-0.204395618304881, -0.9786578687743509, -0.021241636090735927, 0), (0.00009689128832379959, 0.0014892221633303964, 0.052967305243251064, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_34" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_2.usda@</link6_2>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_34/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_2>
+            point3f mujoco:geom:pos = (0.10335279, 0.068194136, -0.000582074)
+            quatf mujoco:geom:quat = (0.5916392, 0.51259077, 0.40266034, 0.4744243)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_2.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.4199872, -0.009911899, 1.3432543)
+            point3f urdf:visual:origin:xyz = (0.10335279, 0.068194136, -0.000582074)
+            matrix4d xformOp:transform = ( (0.22557242751697637, 0.9741759786632672, 0.009911737464436632, 0), (-0.14857610945204291, 0.024344592667932763, 0.988601274785708, 0), (0.9628303171609175, -0.2244738367901657, 0.15023074569644224, 0), (0.10335279374141482, 0.06819413403472291, -0.0005820739711053017, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_35" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_3.usda@</link6_3>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_35/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_3>
+            point3f mujoco:geom:pos = (0.08820548, 0.07772553, -0.010604832)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_3.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0, 0, 0)
+            point3f urdf:visual:origin:xyz = (0.08820548, 0.07772553, -0.010604832)
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.08820547902869498, 0.07772552742710913, -0.010604832221086087, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_36" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_4.usda@</link6_4>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_36/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_4>
+            point3f mujoco:geom:pos = (0.09866821, 0.07588488, -0.0000038183816)
+            quatf mujoco:geom:quat = (0.5, 0.5, 0.5, 0.5)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_4.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.5707964, 0, 1.5707964)
+            point3f urdf:visual:origin:xyz = (0.09866821, 0.07588488, -0.0000038183816)
+            matrix4d xformOp:transform = ( (0, 1, 0, 0), (0, 0, 1, 0), (1, 0, 0, 0), (0.09866820805357215, 0.07588488001934049, -0.00000381838160576121, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_37" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_5.usda@</link6_5>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_37/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_5>
+            point3f mujoco:geom:pos = (0.08820307, 0.07772792, 0.010619456)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_5.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0, 0, 0)
+            point3f urdf:visual:origin:xyz = (0.08820307, 0.07772792, 0.010619456)
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.08820306922578453, 0.07772792027195963, 0.010619455932352537, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_38" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_6.usda@</link6_6>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_38/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_6>
+            point3f mujoco:geom:pos = (0.07775599, 0.07956951, -0.0000024452554)
+            quatf mujoco:geom:quat = (0.5, 0.5, 0.5, 0.5)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_6.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.5707964, 0, 1.5707964)
+            point3f urdf:visual:origin:xyz = (0.07775599, 0.07956951, -0.0000024452554)
+            matrix4d xformOp:transform = ( (0, 1, 0, 0), (0, 0, 1, 0), (1, 0, 0, 0), (0.07775599126433871, 0.07956951222410712, -0.0000024452554468482235, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_39" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_7.usda@</link6_7>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_39/Materials/light_blue>
+            rel mujoco:geom:material = </mujoco/asset/materials/light_blue>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_7>
+            point3f mujoco:geom:pos = (0.06338933, 0.08160701, -1.393756e-7)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_7.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0, 0, 0)
+            point3f urdf:visual:origin:xyz = (0.06338933, 0.08160701, -1.393756e-7)
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.06338933259232485, 0.08160700790590893, -1.3937560629892504e-7, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "light_blue" (
+                    prepend references = @./panda/materials/usd/light_blue.usda@</light_blue>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_40" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_8.usda@</link6_8>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_40/Materials/light_blue>
+            rel mujoco:geom:material = </mujoco/asset/materials/light_blue>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_8>
+            point3f mujoco:geom:pos = (0.11443525, 0.07093672, -0.0000012390758)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_8.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0, 0, 0)
+            point3f urdf:visual:origin:xyz = (0.11443525, 0.07093672, -0.0000012390758)
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.11443524703111396, 0.07093671511705132, -0.0000012390757832945407, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "light_blue" (
+                    prepend references = @./panda/materials/usd/light_blue.usda@</light_blue>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_41" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_9.usda@</link6_9>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_41/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_9>
+            point3f mujoco:geom:pos = (-0.000729392, -0.00010126878, 0.052537378)
+            quatf mujoco:geom:quat = (0.004171826, 0.6701817, -0.004619953, 0.74217093)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_9.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-0.012449674, -1.4689422, 3.1415927)
+            point3f urdf:visual:origin:xyz = (-0.000729392, -0.00010126878, 0.052537378)
+            matrix4d xformOp:transform = ( (-0.10167813179575913, 1.5092094240998222e-16, 0.9948173488206387, 0), (-0.012384832457094005, -0.99992250380072, -0.0012658269664612464, 0), (0.9947402542571271, -0.012449353111680526, 0.1016702521269951, 0), (-0.0007293920031106048, -0.00010126877906188475, 0.05253737664613466, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_42" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_10.usda@</link6_10>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_42/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_10>
+            point3f mujoco:geom:pos = (0.09152592, 0.075753056, -0.000062959705)
+            quatf mujoco:geom:quat = (0.5432094, 0.56005317, 0.44874004, 0.43577105)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_10.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.6008551, -0.0005903013, 1.3515726)
+            point3f urdf:visual:origin:xyz = (0.09152592, 0.075753056, -0.000062959705)
+            matrix4d xformOp:transform = ( (0.21747192071985, 0.9760663989928431, 0.0005903012480790171, 0), (0.029206695689890816, -0.007111883682793252, 0.9995480929086709, 0), (0.9756295058193442, -0.2173564028677939, -0.030054309292944836, 0), (0.09152592175245416, 0.0757530570043529, -0.00006295970548351355, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_43" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_11.usda@</link6_11>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_43/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_11>
+            point3f mujoco:geom:pos = (0.088052385, 0.07680707, -0.0000122212605)
+            quatf mujoco:geom:quat = (0.7661264, 0, 0, 0.64268994)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_11.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0, 0, 1.3960085)
+            point3f urdf:visual:origin:xyz = (0.088052385, 0.07680707, -0.0000122212605)
+            matrix4d xformOp:transform = ( (0.1738992550874644, 0.9847634482859449, 0, 0), (-0.9847634482859449, 0.1738992550874644, 0, 0), (0, 0, 1, 0), (0.08805238798691446, 0.07680706807855985, -0.000012221260829161016, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_44" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_12.usda@</link6_12>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_44/Materials/green>
+            rel mujoco:geom:material = </mujoco/asset/materials/green>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_12>
+            point3f mujoco:geom:pos = (0.08830263, 0.07748927, -0.024865583)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_12.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0, 0, 0)
+            point3f urdf:visual:origin:xyz = (0.08830263, 0.07748927, -0.024865583)
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.08830262427138909, 0.07748927077959734, -0.024865583303171047, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "green" (
+                    prepend references = @./panda/materials/usd/green.usda@</green>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_45" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_13.usda@</link6_13>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_45/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_13>
+            point3f mujoco:geom:pos = (0.088170305, 0.07745553, 0.025032425)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_13.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0, 0, 0)
+            point3f urdf:visual:origin:xyz = (0.088170305, 0.07745553, 0.025032425)
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.08817030186691406, 0.07745552562261102, 0.025032424929417766, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_46" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_14.usda@</link6_14>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_46/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_14>
+            point3f mujoco:geom:pos = (0.0074149948, 0.00012494443, 0.04372136)
+            quatf mujoco:geom:quat = (-0.0031616848, 0.67097765, 0.0047840746, 0.7414554)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_14.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.028641362, -1.4710581, 3.1242023)
+            point3f urdf:visual:origin:xyz = (0.0074149948, 0.00012494443, 0.04372136)
+            matrix4d xformOp:transform = ( (-0.09955791339476039, 0.0017315180695089572, 0.9950302627185046, 0), (0.011108510808174528, -0.999934232760445, 0.002851515632879777, 0), (0.9949697597756959, 0.011337195374291299, 0.09953213115843107, 0), (0.007414994534614738, 0.00012494443217778557, 0.04372135866398126, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_47" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_15.usda@</link6_15>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_47/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_15>
+            point3f mujoco:geom:pos = (0.089545324, 0.07420171, -0.000025736657)
+            quatf mujoco:geom:quat = (0.5590039, 0.5447534, 0.4362997, 0.4476617)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_15.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.5450208, 0.000056026027, 1.3505365)
+            point3f urdf:visual:origin:xyz = (0.089545324, 0.07420171, -0.000025736657)
+            matrix4d xformOp:transform = ( (0.21848317315188392, 0.9758407144153026, -0.000056026027648592436, 0), (-0.025137778367887775, 0.005685547773551125, 0.9996678281535532, 0), (0.975516886142014, -0.21840919082297466, 0.025772664120005118, 0), (0.08954532269660534, 0.07420171067115874, -0.000025736658022989506, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_48" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_16.usda@</link6_16>
+        )
+        {
+            rel material:binding = </panda/link6/Geom_48/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_16>
+            point3f mujoco:geom:pos = (0.0584005, 0.0035178915, 0.008369867)
+            quatf mujoco:geom:quat = (0.022166286, 0.79143584, 0.012110562, 0.6107301)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link6_16.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (2.946965, -1.309944, 0.18028474)
+            point3f urdf:visual:origin:xyz = (0.0584005, 0.0035178915, 0.008369867)
+            matrix4d xformOp:transform = ( (0.2537241354948706, 0.04624470157586952, 0.9661705287595662, 0), (-0.007905770124670291, -0.9987239801696655, 0.049878955811025916, 0), (0.9672443134317806, -0.020293817044143684, -0.2530347784864022, 0), (0.058400500168428585, 0.0035178914667928943, 0.008369866685103824, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_49" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link6_c.usda@</link6_c>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link6_c>
+            point3f mujoco:geom:pos = (0.051002294, 0.006932673, 0.006168993)
+            quatf mujoco:geom:quat = (-0.046084087, 0.7543623, 0.044494037, 0.6533254)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (-3.0616, -1.427769, 0.048520707)
+            point3f urdf:collision:origin:xyz = (0.051002294, 0.006932673, 0.006168993)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/link6_c.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.14237245080984973, 0.006913438079106653, 0.9897890126811488, 0), (0.1273450553301014, -0.9917930752304458, -0.011390031075846789, 0), (0.9815871444417814, 0.12766636322407598, -0.14208440297150138, 0), (0.05100229436563991, 0.00693267296652053, 0.006168993350723507, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PhysicsRevoluteJoint "joint7" (
+            prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+        )
+        {
+            vector3f mujoco:joint:axis = (0, 0, 1)
+            point3f mujoco:joint:pos = (0, 0, 0)
+            float2 mujoco:joint:range = (-2.8973, 2.8973)
+            uniform token mujoco:joint:type = "hinge"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </panda/link6>
+            rel physics:body1 = </panda/link7>
+            bool physics:collisionEnabled = 0
+            point3f physics:localPos0 = (0.088, 0, -2.4651903e-32)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0.70710677, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -166.00307
+            float physics:upperLimit = 166.00307
+            vector3f urdf:joint:axis = (0, 0, 1)
+            prepend rel urdf:joint:child = </panda/link7>
+            float urdf:joint:limit:effort = 1000
+            float urdf:joint:limit:lower = -2.8973
+            float urdf:joint:limit:upper = 2.8973
+            float urdf:joint:limit:velocity = 1000
+            float3 urdf:joint:origin:rpy = (1.5707964, 0, 0)
+            point3f urdf:joint:origin:xyz = (0.088, 0, -2.4651903e-32)
+            prepend rel urdf:joint:parent = </panda/link6>
+            uniform token urdf:joint:type = "revolute"
+        }
+    }
+
+    def Xform "link7" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.012734493, 0.010105477, 0.00451803)
+        float mujoco:body:inertial:mass = 0.735522
+        point3f mujoco:body:inertial:pos = (0.010517, -0.004252, 0.061597)
+        quatf mujoco:body:inertial:quat = (0.9929385, -0.07620412, 0.07335952, -0.053706653)
+        point3f mujoco:body:pos = (0.088, 0, 0)
+        quatf mujoco:body:quat = (0.70710677, 0.70710677, 0, 0)
+        point3f physics:centerOfMass = (0.010517, -0.004252, 0.061597)
+        float3 physics:diagonalInertia = (0.012734493, 0.010105477, 0.00451803)
+        float physics:mass = 0.735522
+        quatf physics:principalAxes = (0.9929385, -0.07620412, 0.07335952, -0.053706653)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.012734493
+        float urdf:link:inertial:inertia:iyy = 0.010105477
+        float urdf:link:inertial:inertia:izz = 0.00451803
+        float urdf:link:inertial:mass = 0.735522
+        float3 urdf:link:inertial:origin:rpy = (-0.16143882, 0.13793463, -0.11924774)
+        point3f urdf:link:inertial:origin:xyz = (0.010517, -0.004252, 0.061597)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, -0.9999999999999987, 4.440892098500621e-16, 0), (0, -4.440892098500621e-16, -0.9999999999999987, 0), (0.088, 1.5099033134902093e-17, 1.0329999999999997, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_50" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link7_0.usda@</link7_0>
+        )
+        {
+            rel material:binding = </panda/link7/Geom_50/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link7_0>
+            point3f mujoco:geom:pos = (0.041777942, 0.04183594, 0.08217258)
+            quatf mujoco:geom:quat = (0.20301974, 0.6187941, -0.3443678, 0.67623055)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link7_0.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.584738, -1.3546062, -2.356671)
+            point3f urdf:visual:origin:xyz = (0.041777942, 0.04183594, 0.08217258)
+            matrix4d xformOp:transform = ( (-0.1517537921123986, -0.151609218823138, 0.9767217778606889, 0), (-0.700761774553585, -0.6803876174845029, -0.21448921953858835, 0), (0.6970679464040919, -0.7169988387309982, -0.002990544161591835, 0), (0.0417779426692942, 0.04183594153686578, 0.08217258109746292, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_51" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link7_1.usda@</link7_1>
+        )
+        {
+            rel material:binding = </panda/link7/Geom_51/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link7_1>
+            point3f mujoco:geom:pos = (0.063813895, 0.01770389, 0.08298638)
+            quatf mujoco:geom:quat = (0.58245146, 0.73670727, -0.26880565, -0.21390703)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link7_1.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.8028623, 0.0020412426, -0.7013432)
+            point3f urdf:visual:origin:xyz = (0.063813895, 0.01770389, 0.08298638)
+            matrix4d xformOp:transform = ( (0.7639746107704004, -0.6452430762380763, -0.0020412410537468118, 0), (-0.14688121323253522, -0.17698761898253768, 0.9731912925659741, 0), (-0.6283062177772507, -0.7431936189807585, -0.229988133191106, 0), (0.06381389846298816, 0.017703890911316744, 0.08298637529119146, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_52" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link7_2.usda@</link7_2>
+        )
+        {
+            rel material:binding = </panda/link7/Geom_52/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link7_2>
+            point3f mujoco:geom:pos = (-0.031759035, -0.03176075, 0.08578121)
+            quatf mujoco:geom:quat = (0.63173527, 0.23409069, -0.6726766, 0.3059711)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link7_2.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.6960049, -1.4537425, 2.4810846)
+            point3f urdf:visual:origin:xyz = (-0.031759035, -0.03176075, 0.08578121)
+            matrix4d xformOp:transform = ( (-0.09222423401822155, 0.07165079039132105, 0.993157014220839, 0), (-0.7015201066497024, 0.7031664831967016, -0.1158725026698445, 0), (-0.7066570813527189, -0.7074058673386036, -0.014584520183247518, 0), (-0.03175903413233844, -0.03176074799868773, 0.08578121033420426, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_53" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link7_3.usda@</link7_3>
+        )
+        {
+            rel material:binding = </panda/link7/Geom_53/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link7_3>
+            point3f mujoco:geom:pos = (-0.03695031, -0.03694227, 0.08580172)
+            quatf mujoco:geom:quat = (0.9239348, 0, 0, 0.38254997)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link7_3.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0, 0, 0.7851092)
+            point3f urdf:visual:origin:xyz = (-0.03695031, -0.03694227, 0.08580172)
+            matrix4d xformOp:transform = ( (0.7073110450156762, 0.706902458334127, 0, 0), (-0.706902458334127, 0.7073110450156762, 0, 0), (0, 0, 1, 0), (-0.03695030723409938, -0.03694226974833503, 0.08580172086500923, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_54" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link7_4.usda@</link7_4>
+        )
+        {
+            rel material:binding = </panda/link7/Geom_54/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link7_4>
+            point3f mujoco:geom:pos = (-0.037706733, -0.037708987, 0.08578036)
+            quatf mujoco:geom:quat = (0.9239266, 0, 0, 0.38256982)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link7_4.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0, 0, 0.78515226)
+            point3f urdf:visual:origin:xyz = (-0.037706733, -0.037708987, 0.08578036)
+            matrix4d xformOp:transform = ( (0.7072806451152424, 0.7069328744975485, 0, 0), (-0.7069328744975485, 0.7072806451152424, 0, 0), (0, 0, 1, 0), (-0.03770673339557498, -0.0377089860787648, 0.08578035625964707, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_55" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link7_5.usda@</link7_5>
+        )
+        {
+            rel material:binding = </panda/link7/Geom_55/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link7_5>
+            point3f mujoco:geom:pos = (0.01769849, 0.0638385, 0.082955755)
+            quatf mujoco:geom:quat = (0.33135864, 0.26043406, 0.56264806, 0.7111981)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link7_5.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.3374821, 0.002436216, 2.2714965)
+            point3f urdf:visual:origin:xyz = (0.01769849, 0.0638385, 0.082955755)
+            matrix4d xformOp:transform = ( (-0.644751099621576, 0.7643886998121594, -0.0024362135059017853, 0), (-0.1782578330125163, -0.14725719445014995, 0.9729025972071168, 0), (0.74331700135706, 0.627714293514293, 0.231202511256692, 0), (0.017698489516545266, 0.0638384990368043, 0.08295575737681099, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_56" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link7_6.usda@</link7_6>
+        )
+        {
+            rel material:binding = </panda/link7/Geom_56/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link7_6>
+            point3f mujoco:geom:pos = (0.041159656, 0.04120413, 0.06775824)
+            quatf mujoco:geom:quat = (0.17679782, 0.6093708, -0.35951507, 0.68422115)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link7_6.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.57502, -1.2906386, -2.3526168)
+            point3f urdf:visual:origin:xyz = (0.041159656, 0.04120413, 0.06775824)
+            matrix4d xformOp:transform = ( (-0.19481939415303717, -0.19621839425596602, 0.9610118341713871, 0), (-0.6800936569252524, -0.678982862165064, -0.27650477517788885, 0), (0.7067658887296986, -0.707446545430641, -0.001167855458247935, 0), (0.041159655074071815, 0.04120412941972867, 0.06775823859611065, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_57" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link7_7.usda@</link7_7>
+        )
+        {
+            rel material:binding = </panda/link7/Geom_57/Materials/white>
+            rel mujoco:geom:material = </mujoco/asset/materials/white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link7_7>
+            point3f mujoco:geom:pos = (0.0000012167508, 0.00004293976, 0.07774802)
+            quatf mujoco:geom:quat = (-0.00027278223, 0.7071907, -0.001962232, 0.7070201)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/link7_7.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (-1.6481696, -1.5676264, -1.4958123)
+            point3f urdf:visual:origin:xyz = (0.0000012167508, 0.00004293976, 0.07774802)
+            matrix4d xformOp:transform = ( (0.00023747490293002382, -0.0031610694613802277, 0.9999949756101433, 0), (-0.002389619398692286, -0.9999921504705869, -0.003160493053387009, 0), (0.9999971166582432, -0.002388856854531753, -0.0002450267917692983, 0), (0.000001216750754237956, 0.000042939759647026276, 0.07774802576613041, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "white" (
+                    prepend references = @./panda/materials/usd/white.usda@</white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_58" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/link7_c.usda@</link7_c>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/link7_c>
+            point3f mujoco:geom:pos = (0.0103613725, 0.010359604, 0.07910778)
+            quatf mujoco:geom:quat = (0.6354699, 0.2780214, -0.6704618, 0.26336887)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (3.1380322, -1.5171405, -2.3520386)
+            point3f urdf:collision:origin:xyz = (0.0103613725, 0.010359604, 0.07910778)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/link7_c.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.037764239294595825, -0.038079442792823937, 0.9985608735911339, 0), (-0.707531395756763, 0.7066818856879864, 0.0001909422910765235, 0), (-0.7056721520996753, -0.706505957849656, -0.053629705145123774, 0), (0.010361372115882629, 0.010359603871236887, 0.07910777287138845, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "hand" (
+            prepend apiSchemas = ["PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+        )
+        {
+            float3 mujoco:body:inertial:diaginertia = (0.001, 0.0025, 0.0017)
+            float mujoco:body:inertial:mass = 0.73
+            point3f mujoco:body:inertial:pos = (-0.01, 0, 0.03)
+            quatf mujoco:body:inertial:quat = (1, 0, 0, 0)
+            point3f mujoco:body:pos = (0, 0, 0.107)
+            quatf mujoco:body:quat = (0.92387956, 0, 0, -0.38268343)
+            point3f physics:centerOfMass = (-0.01, 0, 0.03)
+            float3 physics:diagonalInertia = (0.001, 0.0025, 0.0017)
+            float physics:mass = 0.73
+            quatf physics:principalAxes = (1, 0, 0, 0)
+            float urdf:link:inertial:inertia:ixx = 0.001
+            float urdf:link:inertial:inertia:iyy = 0.0025
+            float urdf:link:inertial:inertia:izz = 0.0017
+            float urdf:link:inertial:mass = 0.73
+            float3 urdf:link:inertial:origin:rpy = (0, 0, 0)
+            point3f urdf:link:inertial:origin:xyz = (-0.01, 0, 0.03)
+            matrix4d xformOp:transform = ( (0.7071068058785941, -0.7071067564945002, 0, 0), (0.7071067564945002, 0.7071068058785941, 0, 0), (0, 0, 1, 0), (0, 0, 0.107, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Geom_59" (
+                prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+                prepend references = @./panda/meshes/usd/hand_0.usda@</hand_0>
+            )
+            {
+                rel material:binding = </panda/link7/hand/Geom_59/Materials/off_white>
+                rel mujoco:geom:material = </mujoco/asset/materials/off_white>
+                rel mujoco:geom:mesh = </mujoco/asset/meshes/hand_0>
+                point3f mujoco:geom:pos = (-2.5689936e-10, 0.0000105790905, 0.018807987)
+                quatf mujoco:geom:quat = (0.5000037, 0.49999627, -0.49999627, 0.5000037)
+                vector3f mujoco:geom:size = (1, 1, 1)
+                uniform token mujoco:geom:type = "mesh"
+                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+                float[] primvars:displayOpacity = [1]
+                asset urdf:geometry:mesh:filename = @./panda/meshes/obj/hand_0.obj@
+                float3 urdf:geometry:mesh:scale = (1, 1, 1)
+                float3 urdf:visual:origin:rpy = (-7.4627995e-12, -1.5707815, 1.5707964)
+                point3f urdf:visual:origin:xyz = (-2.5689936e-10, 0.0000105790905, 0.018807987)
+                matrix4d xformOp:transform = ( (-2.220446049250313e-16, 0.000014876762919557862, 0.9999999998893412, 0), (-1.0000000000000002, -2.220446049250313e-16, 0, 0), (0, -0.9999999998893412, 0.000014876762919335818, 0), (-2.5689937505195684e-10, 0.000010579090220230758, 0.01880798633893994, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Scope "Materials"
+                {
+                    def Material "off_white" (
+                        prepend references = @./panda/materials/usd/off_white.usda@</off_white>
+                    )
+                    {
+                    }
+                }
+            }
+
+            def Mesh "Geom_60" (
+                prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+                prepend references = @./panda/meshes/usd/hand_1.usda@</hand_1>
+            )
+            {
+                rel material:binding = </panda/link7/hand/Geom_60/Materials/black>
+                rel mujoco:geom:material = </mujoco/asset/materials/black>
+                rel mujoco:geom:mesh = </mujoco/asset/meshes/hand_1>
+                point3f mujoco:geom:pos = (0.0000068412032, -0.09552085, -0.006474995)
+                quatf mujoco:geom:quat = (0.98368573, 0.17989123, 0.000026762089, -0.0012326548)
+                vector3f mujoco:geom:size = (1, 1, 1)
+                uniform token mujoco:geom:type = "mesh"
+                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+                float[] primvars:displayOpacity = [1]
+                asset urdf:geometry:mesh:filename = @./panda/meshes/obj/hand_1.obj@
+                float3 urdf:geometry:mesh:scale = (1, 1, 1)
+                float3 urdf:visual:origin:rpy = (0.36175144, 0.0004961386, -0.002415464)
+                point3f urdf:visual:origin:xyz = (0.0000068412032, -0.09552085, -0.006474995)
+                matrix4d xformOp:transform = ( (0.9999969596917906, -0.002415461389451059, -0.0004961385405510866, 0), (0.0024347184488433676, 0.9352752548593137, 0.3539127997034306, 0), (-0.0003908366029567172, -0.35391293165709814, 0.9352782923026857, 0), (0.000006841203182179383, -0.09552084653947497, -0.00647499489433406, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Scope "Materials"
+                {
+                    def Material "black" (
+                        prepend references = @./panda/materials/usd/black.usda@</black>
+                    )
+                    {
+                    }
+                }
+            }
+
+            def Mesh "Geom_61" (
+                prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+                prepend references = @./panda/meshes/usd/hand_2.usda@</hand_2>
+            )
+            {
+                rel material:binding = </panda/link7/hand/Geom_61/Materials/black>
+                rel mujoco:geom:material = </mujoco/asset/materials/black>
+                rel mujoco:geom:mesh = </mujoco/asset/meshes/hand_2>
+                point3f mujoco:geom:pos = (6.3504774e-7, -0.0660933, -0.020179778)
+                quatf mujoco:geom:quat = (0.6986113, 0.69804734, 0.110990606, -0.11114532)
+                vector3f mujoco:geom:size = (1, 1, 1)
+                uniform token mujoco:geom:type = "mesh"
+                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+                float[] primvars:displayOpacity = [1]
+                asset urdf:geometry:mesh:filename = @./panda/meshes/obj/hand_2.obj@
+                float3 urdf:geometry:mesh:scale = (1, 1, 1)
+                float3 urdf:visual:origin:rpy = (1.5699316, 0.31545386, -0.00035907252)
+                point3f urdf:visual:origin:xyz = (6.3504774e-7, -0.0660933, -0.020179778)
+                matrix4d xformOp:transform = ( (0.9506556061717236, -0.0003413543331802771, -0.3102479684566718, 0), (0.3102481429613616, 0.0007533254575902149, 0.9506553120294348, 0), (-0.00009079261731795296, -0.9999996579889288, 0.0008220576174909899, 0), (6.350477506285051e-7, -0.06609330323015881, -0.020179779157687844, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Scope "Materials"
+                {
+                    def Material "black" (
+                        prepend references = @./panda/materials/usd/black.usda@</black>
+                    )
+                    {
+                    }
+                }
+            }
+
+            def Mesh "Geom_62" (
+                prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+                prepend references = @./panda/meshes/usd/hand_3.usda@</hand_3>
+            )
+            {
+                rel material:binding = </panda/link7/hand/Geom_62/Materials/white>
+                rel mujoco:geom:material = </mujoco/asset/materials/white>
+                rel mujoco:geom:mesh = </mujoco/asset/meshes/hand_3>
+                point3f mujoco:geom:pos = (3.5900632e-7, 0.003152385, 0.029725011)
+                quatf mujoco:geom:quat = (0.7109847, 0.70320743, -0.000007840935, 0.000006771763)
+                vector3f mujoco:geom:size = (1, 1, 1)
+                uniform token mujoco:geom:type = "mesh"
+                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+                float[] primvars:displayOpacity = [1]
+                asset urdf:geometry:mesh:filename = @./panda/meshes/obj/hand_3.obj@
+                float3 urdf:geometry:mesh:scale = (1, 1, 1)
+                float3 urdf:visual:origin:rpy = (1.5597975, -0.000020673479, -0.0000013983675)
+                point3f urdf:visual:origin:xyz = (3.5900632e-7, 0.003152385, 0.029725011)
+                matrix4d xformOp:transform = ( (0.9999999997853259, -0.000001398367578662533, 0.000020673477711468775, 0), (-0.00002065684723487499, 0.010998554543273698, 0.9999395138563397, 0), (-0.0000016256613690090212, -0.9999395140687276, 0.010998554512026693, 0), (3.5900633091964586e-7, 0.00315238499265596, 0.02972501158379507, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Scope "Materials"
+                {
+                    def Material "white" (
+                        prepend references = @./panda/materials/usd/white.usda@</white>
+                    )
+                    {
+                    }
+                }
+            }
+
+            def Mesh "Geom_63" (
+                prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+                prepend references = @./panda/meshes/usd/hand_4.usda@</hand_4>
+            )
+            {
+                rel material:binding = </panda/link7/hand/Geom_63/Materials/off_white>
+                rel mujoco:geom:material = </mujoco/asset/materials/off_white>
+                rel mujoco:geom:mesh = </mujoco/asset/meshes/hand_4>
+                point3f mujoco:geom:pos = (0.00033547622, 0.00039802774, 0.0031797967)
+                quatf mujoco:geom:quat = (-0.02441961, 0.70671, 0.0240351, 0.7066732)
+                vector3f mujoco:geom:size = (1, 1, 1)
+                uniform token mujoco:geom:type = "mesh"
+                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+                float[] primvars:displayOpacity = [1]
+                asset urdf:geometry:mesh:filename = @./panda/meshes/obj/hand_4.obj@
+                float3 urdf:geometry:mesh:scale = (1, 1, 1)
+                float3 urdf:visual:origin:rpy = (-1.6317698, -1.57025, -1.4412841)
+                point3f urdf:visual:origin:xyz = (0.00033547622, 0.00039802774, 0.0031797967)
+                matrix4d xformOp:transform = ( (0.00007054899384395519, -0.0005416793950063503, 0.9999998508031254, 0), (0.06848505550452194, -0.9976519933758468, -0.0005452391613058882, 0), (0.9976521398741058, 0.06848508375283992, -0.00003328640090694002, 0), (0.0003354762065896528, 0.0003980277422166626, 0.0031797966297715773, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Scope "Materials"
+                {
+                    def Material "off_white" (
+                        prepend references = @./panda/materials/usd/off_white.usda@</off_white>
+                    )
+                    {
+                    }
+                }
+            }
+
+            def Mesh "Geom_64" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+                prepend references = @./panda/meshes/usd/hand_c.usda@</hand_c>
+            )
+            {
+                rel mujoco:geom:mesh = </mujoco/asset/meshes/hand_c>
+                point3f mujoco:geom:pos = (-0.000002766179, -0.00061546953, 0.023929521)
+                quatf mujoco:geom:quat = (0.6979451, 0.71615124, -0.00024248462, 0.00008475625)
+                vector3f mujoco:geom:size = (1, 1, 1)
+                uniform token mujoco:geom:type = "mesh"
+                uniform token physics:approximation = "convexHull"
+                bool physics:collisionEnabled = 1
+                color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+                float[] primvars:displayOpacity = [0]
+                float3 urdf:collision:origin:rpy = (1.5965445, -0.0004598785, -0.00022900091)
+                point3f urdf:collision:origin:xyz = (-0.000002766179, -0.00061546953, 0.023929521)
+                asset urdf:geometry:mesh:filename = @./panda/meshes/stl/hand_c.stl@
+                float3 urdf:geometry:mesh:scale = (1, 1, 1)
+                token visibility = "invisible"
+                matrix4d xformOp:transform = ( (0.9999998680351814, -0.00022900088954653716, 0.00045987847571621673, 0), (-0.00046562172508617095, -0.025745184361371187, 0.9996684293697629, 0), (-0.00021708530343612502, -0.999668511578109, -0.025745287591701693, 0), (-0.0000027661789921839865, -0.0006154695074904285, 0.023929521450491726, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def PhysicsPrismaticJoint "finger_joint1" (
+                prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+            )
+            {
+                vector3f mujoco:joint:axis = (0, 1, 0)
+                point3f mujoco:joint:pos = (0, 0, 0)
+                float2 mujoco:joint:range = (0, 0.04)
+                uniform token mujoco:joint:type = "slide"
+                uniform token physics:axis = "Z"
+                rel physics:body0 = </panda/link7/hand>
+                rel physics:body1 = </panda/left_finger>
+                bool physics:collisionEnabled = 0
+                point3f physics:localPos0 = (1.3877788e-17, 6.938894e-18, 0.0584)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.7071068, -0.7071068, 8.7157646e-33, 8.7157646e-33)
+                quatf physics:localRot1 = (0.7071068, -0.7071068, 0, 0)
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 0.04
+                vector3f urdf:joint:axis = (0, 1, 0)
+                prepend rel urdf:joint:child = </panda/left_finger>
+                float urdf:joint:limit:effort = 1000
+                float urdf:joint:limit:lower = 0
+                float urdf:joint:limit:upper = 0.04
+                float urdf:joint:limit:velocity = 1000
+                float3 urdf:joint:origin:rpy = (0, 0, 0)
+                point3f urdf:joint:origin:xyz = (1.3877788e-17, 6.938894e-18, 0.0584)
+                prepend rel urdf:joint:parent = </panda/link7/hand>
+                uniform token urdf:joint:type = "prismatic"
+            }
+
+            def PhysicsPrismaticJoint "finger_joint2" (
+                prepend apiSchemas = ["MujocoJointAPI", "UrdfJointAPI"]
+            )
+            {
+                vector3f mujoco:joint:axis = (0, 1, 0)
+                point3f mujoco:joint:pos = (0, 0, 0)
+                float2 mujoco:joint:range = (0, 0.04)
+                uniform token mujoco:joint:type = "slide"
+                uniform token physics:axis = "Z"
+                rel physics:body0 = </panda/link7/hand>
+                rel physics:body1 = </panda/right_finger>
+                bool physics:collisionEnabled = 0
+                point3f physics:localPos0 = (1.3877788e-17, 6.938894e-18, 0.0584)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (8.7157646e-33, 8.7157646e-33, -0.7071068, 0.7071068)
+                quatf physics:localRot1 = (0.7071068, -0.7071068, 0, 0)
+                float physics:lowerLimit = 0
+                float physics:upperLimit = 0.04
+                vector3f urdf:joint:axis = (0, 1, 0)
+                prepend rel urdf:joint:child = </panda/right_finger>
+                float urdf:joint:limit:effort = 1000
+                float urdf:joint:limit:lower = 0
+                float urdf:joint:limit:upper = 0.04
+                float urdf:joint:limit:velocity = 1000
+                float3 urdf:joint:origin:rpy = (0, 0, 3.1415927)
+                point3f urdf:joint:origin:xyz = (1.3877788e-17, 6.938894e-18, 0.0584)
+                prepend rel urdf:joint:parent = </panda/link7/hand>
+                uniform token urdf:joint:type = "prismatic"
+            }
+        }
+    }
+
+    def Xform "left_finger" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.000002375, 0.000002375, 7.5e-7)
+        float mujoco:body:inertial:mass = 0.015
+        point3f mujoco:body:inertial:pos = (0, 0, 0)
+        quatf mujoco:body:inertial:quat = (1, 0, 0, 0)
+        point3f mujoco:body:pos = (0, 0, 0.0584)
+        quatf mujoco:body:quat = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0)
+        float3 physics:diagonalInertia = (0.000002375, 0.000002375, 7.5e-7)
+        float physics:mass = 0.015
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.000002375
+        float urdf:link:inertial:inertia:iyy = 0.000002375
+        float urdf:link:inertial:inertia:izz = 7.5e-7
+        float urdf:link:inertial:mass = 0.015
+        float3 urdf:link:inertial:origin:rpy = (0, 0, 0)
+        point3f urdf:link:inertial:origin:xyz = (0, 0, 0)
+        matrix4d xformOp:transform = ( (0.7071068058785941, 0.7071067564944993, -3.1401848077128287e-16, 0), (0.7071067564945002, -0.7071068058785932, 3.140185027022261e-16, 0), (0, -4.440892098500621e-16, -0.9999999999999987, 0), (0.088, -5.835332217429819e-17, 0.8675999999999999, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_65" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/finger_0.usda@</finger_0>
+        )
+        {
+            rel material:binding = </panda/left_finger/Geom_65/Materials/off_white>
+            rel mujoco:geom:material = </mujoco/asset/materials/off_white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/finger_0>
+            point3f mujoco:geom:pos = (4.8740554e-7, 0.015695412, 0.016874408)
+            quatf mujoco:geom:quat = (0.70641357, 0.027190471, -0.026982825, 0.70676196)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/finger_0.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.00027537547, -0.07663143, 1.5712788)
+            point3f urdf:visual:origin:xyz = (4.8740554e-7, 0.015695412, 0.016874408)
+            matrix4d xformOp:transform = ( (-0.0004810625921147782, 0.9970651327845443, 0.07655644691416849, 0), (-0.9999998355199022, -0.0005035602923031401, 0.0002745672973062732, 0), (0.0003123122655327576, -0.07655630223810087, 0.9970652110311929, 0), (4.87405543979634e-7, 0.01569541148855972, 0.016874409201316713, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "off_white" (
+                    prepend references = @./panda/materials/usd/off_white.usda@</off_white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_66" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/finger_1.usda@</finger_1>
+        )
+        {
+            rel material:binding = </panda/left_finger/Geom_66/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/finger_1>
+            point3f mujoco:geom:pos = (-0.0000011254475, 0.0047386475, 0.04476996)
+            quatf mujoco:geom:quat = (0.5618213, 0.42975017, 0.43108982, 0.5602082)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/finger_1.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.3088574, 0.0028917738, 1.5701396)
+            point3f urdf:visual:origin:xyz = (-0.0000011254475, 0.0047386475, 0.04476996)
+            matrix4d xformOp:transform = ( (0.0006567323575819017, 0.9999956031756883, -0.002891769683528167, 0), (-0.2589519055930825, 0.0029631940261956036, 0.9658856713249633, 0), (0.9658899933700122, 0.00011450089600201219, 0.25895271305244694, 0), (-0.0000011254475596124346, 0.004738647277278446, 0.04476995985350133, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_67" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/finger_0.usda@</finger_0>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/finger_0>
+            point3f mujoco:geom:pos = (4.8740554e-7, 0.015695412, 0.016874408)
+            quatf mujoco:geom:quat = (0.70641357, 0.027190471, -0.026982825, 0.70676196)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.00027537547, -0.07663143, 1.5712788)
+            point3f urdf:collision:origin:xyz = (4.8740554e-7, 0.015695412, 0.016874408)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/finger_0.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.0004810625921147782, 0.9970651327845443, 0.07655644691416849, 0), (-0.9999998355199022, -0.0005035602923031401, 0.0002745672973062732, 0), (0.0003123122655327576, -0.07655630223810087, 0.9970652110311929, 0), (4.87405543979634e-7, 0.01569541148855972, 0.016874409201316713, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_68" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryBoxAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            point3f mujoco:geom:pos = (0, 0.0055, 0.0445)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.0085, 0.004, 0.0085)
+            uniform token mujoco:geom:type = "box"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (0, 0.0055, 0.0445)
+            float3 urdf:geometry:box:size = (0.017, 0.008, 0.017)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.0085, 0, 0, 0), (0, 0.004, 0, 0), (0, 0, 0.0085, 0), (0, 0.0055, 0.0445, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_69" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryBoxAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            point3f mujoco:geom:pos = (0.0055, 0.002, 0.05)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.003, 0.002, 0.003)
+            uniform token mujoco:geom:type = "box"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (0.0055, 0.002, 0.05)
+            float3 urdf:geometry:box:size = (0.006, 0.004, 0.006)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.003, 0, 0, 0), (0, 0.002, 0, 0), (0, 0, 0.003, 0), (0.0055, 0.002, 0.05, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_70" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryBoxAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            point3f mujoco:geom:pos = (-0.0055, 0.002, 0.05)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.003, 0.002, 0.003)
+            uniform token mujoco:geom:type = "box"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (-0.0055, 0.002, 0.05)
+            float3 urdf:geometry:box:size = (0.006, 0.004, 0.006)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.003, 0, 0, 0), (0, 0.002, 0, 0), (0, 0, 0.003, 0), (-0.0055, 0.002, 0.05, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_71" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryBoxAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            point3f mujoco:geom:pos = (0.0055, 0.002, 0.0395)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.003, 0.002, 0.0035)
+            uniform token mujoco:geom:type = "box"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (0.0055, 0.002, 0.0395)
+            float3 urdf:geometry:box:size = (0.006, 0.004, 0.007)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.003, 0, 0, 0), (0, 0.002, 0, 0), (0, 0, 0.0035, 0), (0.0055, 0.002, 0.0395, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_72" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryBoxAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            point3f mujoco:geom:pos = (-0.0055, 0.002, 0.0395)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.003, 0.002, 0.0035)
+            uniform token mujoco:geom:type = "box"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (-0.0055, 0.002, 0.0395)
+            float3 urdf:geometry:box:size = (0.006, 0.004, 0.007)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.003, 0, 0, 0), (0, 0.002, 0, 0), (0, 0, 0.0035, 0), (-0.0055, 0.002, 0.0395, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+
+    def Xform "right_finger" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "MujocoBodyAPI", "MujocoBodyInertialAPI", "UrdfLinkInertialAPI"]
+    )
+    {
+        float3 mujoco:body:inertial:diaginertia = (0.000002375, 0.000002375, 7.5e-7)
+        float mujoco:body:inertial:mass = 0.015
+        point3f mujoco:body:inertial:pos = (0, 0, 0)
+        quatf mujoco:body:inertial:quat = (1, 0, 0, 0)
+        point3f mujoco:body:pos = (0, 0, 0.0584)
+        quatf mujoco:body:quat = (0, 0, 0, 1)
+        point3f physics:centerOfMass = (0, 0, 0)
+        float3 physics:diagonalInertia = (0.000002375, 0.000002375, 7.5e-7)
+        float physics:mass = 0.015
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        bool physics:rigidBodyEnabled = 1
+        float urdf:link:inertial:inertia:ixx = 0.000002375
+        float urdf:link:inertial:inertia:iyy = 0.000002375
+        float urdf:link:inertial:inertia:izz = 7.5e-7
+        float urdf:link:inertial:mass = 0.015
+        float3 urdf:link:inertial:origin:rpy = (0, 0, 0)
+        point3f urdf:link:inertial:origin:xyz = (0, 0, 0)
+        matrix4d xformOp:transform = ( (-0.7071068058785941, -0.7071067564944993, 3.1401848077128287e-16, 0), (-0.7071067564945002, 0.7071068058785932, -3.140185027022261e-16, 0), (0, -4.440892098500621e-16, -0.9999999999999987, 0), (0.088, -5.835332217429819e-17, 0.8675999999999999, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Geom_73" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/finger_0.usda@</finger_0>
+        )
+        {
+            rel material:binding = </panda/right_finger/Geom_73/Materials/off_white>
+            rel mujoco:geom:material = </mujoco/asset/materials/off_white>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/finger_0>
+            point3f mujoco:geom:pos = (4.8740554e-7, 0.015695412, 0.016874408)
+            quatf mujoco:geom:quat = (0.70641357, 0.027190471, -0.026982825, 0.70676196)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/finger_0.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (0.00027537547, -0.07663143, 1.5712788)
+            point3f urdf:visual:origin:xyz = (4.8740554e-7, 0.015695412, 0.016874408)
+            matrix4d xformOp:transform = ( (-0.0004810625921147782, 0.9970651327845443, 0.07655644691416849, 0), (-0.9999998355199022, -0.0005035602923031401, 0.0002745672973062732, 0), (0.0003123122655327576, -0.07655630223810087, 0.9970652110311929, 0), (4.87405543979634e-7, 0.01569541148855972, 0.016874409201316713, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "off_white" (
+                    prepend references = @./panda/materials/usd/off_white.usda@</off_white>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_74" (
+            prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI", "UrdfLinkVisualAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/finger_1.usda@</finger_1>
+        )
+        {
+            rel material:binding = </panda/right_finger/Geom_74/Materials/black>
+            rel mujoco:geom:material = </mujoco/asset/materials/black>
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/finger_1>
+            point3f mujoco:geom:pos = (-0.0000011254475, 0.0047386475, 0.04476996)
+            quatf mujoco:geom:quat = (0.5618213, 0.42975017, 0.43108982, 0.5602082)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [1]
+            asset urdf:geometry:mesh:filename = @./panda/meshes/obj/finger_1.obj@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            float3 urdf:visual:origin:rpy = (1.3088574, 0.0028917738, 1.5701396)
+            point3f urdf:visual:origin:xyz = (-0.0000011254475, 0.0047386475, 0.04476996)
+            matrix4d xformOp:transform = ( (0.0006567323575819017, 0.9999956031756883, -0.002891769683528167, 0), (-0.2589519055930825, 0.0029631940261956036, 0.9658856713249633, 0), (0.9658899933700122, 0.00011450089600201219, 0.25895271305244694, 0), (-0.0000011254475596124346, 0.004738647277278446, 0.04476995985350133, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Scope "Materials"
+            {
+                def Material "black" (
+                    prepend references = @./panda/materials/usd/black.usda@</black>
+                )
+                {
+                }
+            }
+        }
+
+        def Mesh "Geom_75" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryMeshAPI"]
+            prepend references = @./panda/meshes/usd/finger_0.usda@</finger_0>
+        )
+        {
+            rel mujoco:geom:mesh = </mujoco/asset/meshes/finger_0>
+            point3f mujoco:geom:pos = (4.8740554e-7, 0.015695412, 0.016874408)
+            quatf mujoco:geom:quat = (0.70641357, 0.027190471, -0.026982825, 0.70676196)
+            vector3f mujoco:geom:size = (1, 1, 1)
+            uniform token mujoco:geom:type = "mesh"
+            uniform token physics:approximation = "convexHull"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0.00027537547, -0.07663143, 1.5712788)
+            point3f urdf:collision:origin:xyz = (4.8740554e-7, 0.015695412, 0.016874408)
+            asset urdf:geometry:mesh:filename = @./panda/meshes/stl/finger_0.stl@
+            float3 urdf:geometry:mesh:scale = (1, 1, 1)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (-0.0004810625921147782, 0.9970651327845443, 0.07655644691416849, 0), (-0.9999998355199022, -0.0005035602923031401, 0.0002745672973062732, 0), (0.0003123122655327576, -0.07655630223810087, 0.9970652110311929, 0), (4.87405543979634e-7, 0.01569541148855972, 0.016874409201316713, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_76" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryBoxAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            point3f mujoco:geom:pos = (0, 0.0055, 0.0445)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.0085, 0.004, 0.0085)
+            uniform token mujoco:geom:type = "box"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (0, 0.0055, 0.0445)
+            float3 urdf:geometry:box:size = (0.017, 0.008, 0.017)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.0085, 0, 0, 0), (0, 0.004, 0, 0), (0, 0, 0.0085, 0), (0, 0.0055, 0.0445, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_77" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryBoxAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            point3f mujoco:geom:pos = (0.0055, 0.002, 0.05)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.003, 0.002, 0.003)
+            uniform token mujoco:geom:type = "box"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (0.0055, 0.002, 0.05)
+            float3 urdf:geometry:box:size = (0.006, 0.004, 0.006)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.003, 0, 0, 0), (0, 0.002, 0, 0), (0, 0, 0.003, 0), (0.0055, 0.002, 0.05, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_78" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryBoxAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            point3f mujoco:geom:pos = (-0.0055, 0.002, 0.05)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.003, 0.002, 0.003)
+            uniform token mujoco:geom:type = "box"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (-0.0055, 0.002, 0.05)
+            float3 urdf:geometry:box:size = (0.006, 0.004, 0.006)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.003, 0, 0, 0), (0, 0.002, 0, 0), (0, 0, 0.003, 0), (-0.0055, 0.002, 0.05, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_79" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryBoxAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            point3f mujoco:geom:pos = (0.0055, 0.002, 0.0395)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.003, 0.002, 0.0035)
+            uniform token mujoco:geom:type = "box"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (0.0055, 0.002, 0.0395)
+            float3 urdf:geometry:box:size = (0.006, 0.004, 0.007)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.003, 0, 0, 0), (0, 0.002, 0, 0), (0, 0, 0.0035, 0), (0.0055, 0.002, 0.0395, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_80" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MujocoGeomAPI", "UrdfLinkCollisionAPI", "UrdfGeometryBoxAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            point3f mujoco:geom:pos = (-0.0055, 0.002, 0.0395)
+            quatf mujoco:geom:quat = (1, 0, 0, 0)
+            vector3f mujoco:geom:size = (0.003, 0.002, 0.0035)
+            uniform token mujoco:geom:type = "box"
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            float[] primvars:displayOpacity = [0]
+            float3 urdf:collision:origin:rpy = (0, 0, 0)
+            point3f urdf:collision:origin:xyz = (-0.0055, 0.002, 0.0395)
+            float3 urdf:geometry:box:size = (0.006, 0.004, 0.007)
+            token visibility = "invisible"
+            matrix4d xformOp:transform = ( (0.003, 0, 0, 0), (0, 0.002, 0, 0), (0, 0, 0.0035, 0), (-0.0055, 0.002, 0.0395, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+}
+
+def Urdf "urdf"
+{
+    string urdf:name = "panda"
+}
+
