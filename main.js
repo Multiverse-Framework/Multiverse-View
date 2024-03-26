@@ -60,21 +60,28 @@ var params = {};
 
 
 function createGuiFromStage(stage) {
+    const hightlightColor = new THREE.Color(0xffff00);
+
     for (let prim of stage.Traverse()) {
         const primPath = prim.GetPath().pathString;
         params[primPath] = {};
 
         if (['Cube', 'Mesh'].includes(prim.GetTypeName())) {
-            const primMesh = prim.object3D.children[0];
-            params[primPath]["color"] = primMesh.material[0].color.getHex();
-            const childPrims = prim.GetChildren();
-            for (let i = 0; i < childPrims.length; i++) {
-                const childPrim = childPrims[i];
-                if (childPrim.GetTypeName() === 'GeomSubset') {
-                    const childPrimPath = childPrim.GetPath().pathString;
-                    params[childPrimPath] = {};
-                    params[childPrimPath]["color"] = primMesh.material[i].color.getHex();
+            if (prim.object3D === undefined) {
+                console.log(`object3D of ${prim.GetName()} is undefined`);
+                continue;
+            }
+
+            params[primPath]["color"] = {};
+
+            for (let childPrimObject3D of prim.object3D.children) {
+                const childPrimObject3DName = childPrimObject3D.name;
+                if (childPrimObject3D.material === undefined) {
+                    console.log(`Material of ${childPrimObject3DName} is undefined`);
+                    continue;
                 }
+
+                params[primPath]["color"][childPrimObject3DName] = childPrimObject3D.material.color;
             }
         }
 
@@ -91,24 +98,23 @@ function createGuiFromStage(stage) {
             params[primPath]["children"] = [];
             for (let childPrim of prim.GetAllChildren()) {
                 const childPrimPath = childPrim.GetPath().pathString;
-                params[primPath]["children"].push(childPrimPath);
+                if (['Cube', 'Mesh'].includes(childPrim.GetTypeName())) {
+                    if (childPrim.object3D === undefined || 
+                        childPrim.object3D.children.length === 0 || 
+                        childPrim.object3D.children[0].material === undefined) {
+                        continue;
+                    }
+                    params[primPath]["children"].push(childPrimPath);
+                }
             }
 
             params[primPath]["highlight"] = false;
             primFolder.add(params[primPath], "highlight").name("highlight").onChange(function (value) {
                 for (let childPrimPath of params[primPath]["children"]) {
                     const childPrim = stage.GetPrimAtPath(childPrimPath);
-                    if (childPrim.GetTypeName() === 'Mesh') {
-                        const childPrimMesh = childPrim.object3D.children[0];
-                        childPrimMesh.material.color.set(value ? 0xffff00 : params[childPrimPath]["color"]);
-                        const grandChildPrims = childPrim.GetChildren();
-                        for (let i = 0; i < grandChildPrims.length; i++) {
-                            const grandChildPrim = grandChildPrims[i];
-                            if (grandChildPrim.GetTypeName() === 'GeomSubset') {
-                                const grandChildPrimPath = grandChildPrim.GetPath().pathString;
-                                childPrimMesh.material[i].color.set(value ? 0xffff00 : params[grandChildPrimPath]["color"]);
-                            }
-                        }
+                    for (let childPrimObject3D of childPrim.object3D.children) {
+                        const childPrimObject3DName = childPrimObject3D.name;
+                        childPrimObject3D.material.color = value ? hightlightColor : params[childPrimPath]["color"][childPrimObject3DName];
                     }
                 }
             });
@@ -123,17 +129,18 @@ async function usdView(path) {
         object3D = getObject3DFromXform(defaultPrim);
         scene.add(object3D);
 
-        // createGuiFromStage(stage);
+        createGuiFromStage(stage);
         
     } catch (error) {
         console.error('Failed to load file:', error);
     }
 }
 
-// usdView('/assets/milk_box/milk_box_flatten.usda');
+// const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
 // usdView('/assets/panda/panda_flatten.usda');
-usdView('/assets/apartment/Apartment_flatten.usda');
+const usdFilePath = '/assets/apartment/Apartment_flatten.usda';
 
+usdView(usdFilePath);
 
 ///////////////
 // Main loop //

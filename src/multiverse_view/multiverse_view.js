@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
-const currentPath = '/media/giangnguyen/Storage/Multiverse-View';
-const usdPath = '/assets/apartment'
+const CURRENTPATH = '/media/giangnguyen/Storage/Multiverse-View';
+const USDPATH = '/assets/apartment';
 
 function createCube(transform) {
     const geometry = new THREE.BoxGeometry(2, 2, 2);
@@ -19,25 +19,27 @@ function createGeom(transform, vertices, uvs) {
     return geometry;
 }
 
-function createTexture(textureFile, wrapS = THREE.ClampToEdgeWrapping, wrapT = THREE.ClampToEdgeWrapping) {
-    if (textureFile.startsWith(`${currentPath}/public`)) {
-        textureFile = textureFile.slice(`${currentPath}/public`.length);
+function createTexture(textureFile, anisotropy = 1, colorSpace = THREE.SRGBColorSpace, wrapS = THREE.ClampToEdgeWrapping, wrapT = THREE.ClampToEdgeWrapping) {
+    if (textureFile.startsWith(`${CURRENTPATH}/public`)) {
+        textureFile = textureFile.slice(`${CURRENTPATH}/public`.length);
     }
     if (!textureFile.startsWith('/')) {
         if (textureFile.startsWith('.'))
         {
             textureFile = textureFile.slice(1);
         }
-        textureFile = `${usdPath}/${textureFile}`;
+        textureFile = `${USDPATH}/${textureFile}`;
     }
     console.log(`Load texture from ${textureFile}`)
-    // let texture = new THREE.TextureLoader().load(textureFile);
-    // texture.anisotropy = 0;
-    // texture.colorSpace = THREE.SRGBColorSpace;
-    // texture.magFilter = THREE.NearestFilter;
-    // texture.minFilter = THREE.NearestFilter;
-    // texture.mapping = THREE.UVMapping;
-    return new THREE.TextureLoader().load(textureFile);
+    let texture = new THREE.TextureLoader().load(textureFile);
+    texture.anisotropy = anisotropy;
+    texture.wrapS = wrapS;
+    texture.wrapT = wrapT;
+    texture.colorSpace = colorSpace;
+    texture.magFilter = THREE.NearestFilter;
+    texture.minFilter = THREE.NearestFilter;
+    texture.mapping = THREE.UVMapping;
+    return texture;
 }
 
 function createColor(r, g, b) {
@@ -65,8 +67,10 @@ function createMaterial(color, opacity, texture = null, visible = true) {
     }
 }
 
-function createMesh(geometry, material) {
-    return new THREE.Mesh(geometry, material)
+function createMesh(name, geometry, material) {
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.name = name;
+    return mesh;
 }
 
 function createMaterialAndUvsFromPrim(prim) {
@@ -94,11 +98,16 @@ function createMaterialAndUvsFromPrim(prim) {
         const materialPrim = prim.GetStage().GetPrimAtPath(materialPath);
 
         if (materialPrim.HasProperty('outputs:surface')) {
+            let anisotropy = 1;
+
             const surface = materialPrim.GetProperty('outputs:surface');
             const surfacePath = surface.GetConnections()[0];
             const surfacePrim = prim.GetStage().GetPrimAtPath(surfacePath.GetParentPath());
             
             if (surfacePrim.HasProperty('inputs:diffuseColor')) {
+                if (surfacePrim.HasProperty('inputs:anisotropy')) {
+                    anisotropy = surfacePrim.GetProperty('inputs:anisotropy').Get();
+                }
                 let diffuseColor = surfacePrim.GetProperty('inputs:diffuseColor');
                 if (diffuseColor.Get()) {
                     diffuseColor = diffuseColor.Get();
@@ -108,15 +117,34 @@ function createMaterialAndUvsFromPrim(prim) {
                     const diffuseColorPrim = prim.GetStage().GetPrimAtPath(diffuseColorPath.GetParentPath());
                     if (diffuseColorPrim.HasProperty('inputs:file')) {
                         const inputsFile = diffuseColorPrim.GetProperty('inputs:file').Get();
+                        
+                        let colorSpace = THREE.SRGBColorSpace;
                         let wrapS = THREE.ClampToEdgeWrapping;
                         let wrapT = THREE.ClampToEdgeWrapping;
+                        
+                        if (diffuseColorPrim.HasProperty('inputs:sourceColorSpace')) {
+                            const sourceColorSpace = diffuseColorPrim.GetProperty('inputs:sourceColorSpace').Get();
+                            switch (sourceColorSpace) {
+                                case 'sRGB':
+                                    colorSpace = THREE.SRGBColorSpace;
+                                    break;
+                                
+                                case 'raw':
+                                    colorSpace = THREE.NoColorSpace;
+                                    break;
+                                
+                                default:
+                                    console.error('Unsupported color space:', sourceColorSpace);
+                                    break;
+                            }
+                        }
                         if (diffuseColorPrim.HasProperty('inputs:wrapS')) {
                             wrapS = diffuseColorPrim.GetProperty('inputs:wrapS').Get() === 'repeat' ? THREE.RepeatWrapping : THREE.ClampToEdgeWrapping;
                         }
                         if (diffuseColorPrim.HasProperty('inputs:wrapT')) {
                             wrapT = diffuseColorPrim.GetProperty('inputs:wrapT').Get() === 'repeat' ? THREE.RepeatWrapping : THREE.ClampToEdgeWrapping;
                         }
-                        texture = createTexture(inputsFile, wrapS, wrapT);
+                        texture = createTexture(inputsFile, anisotropy, colorSpace, wrapS, wrapT);
                     }
 
                     if (diffuseColorPrim.HasProperty('inputs:st')) {
@@ -162,15 +190,36 @@ function createMaterialAndUvsFromPrim(prim) {
                     const opacityPrim = prim.GetStage().GetPrimAtPath(opacityPath.GetParentPath());
                     if (opacityPrim.HasProperty('inputs:file')) {
                         const inputsFile = opacityPrim.GetProperty('inputs:file').Get();
+
+                        let colorSpace = THREE.SRGBColorSpace;
                         let wrapS = THREE.ClampToEdgeWrapping;
                         let wrapT = THREE.ClampToEdgeWrapping;
+                        
+                        if (opacityPrim.HasProperty('inputs:sourceColorSpace')) {
+                            const sourceColorSpace = opacityPrim.GetProperty('inputs:sourceColorSpace').Get();
+                            switch (sourceColorSpace) {
+                                case 'sRGB':
+                                    colorSpace = THREE.SRGBColorSpace;
+                                    break;
+                                
+                                case 'raw':
+                                    colorSpace = THREE.NoColorSpace;
+                                    break;
+                                
+                                default:
+                                    console.error('Unsupported color space:', sourceColorSpace);
+                                    break;
+                            }
+                        }
                         if (opacityPrim.HasProperty('inputs:wrapS')) {
                             wrapS = opacityPrim.GetProperty('inputs:wrapS').Get() === 'repeat' ? THREE.RepeatWrapping : THREE.ClampToEdgeWrapping;
                         }
                         if (opacityPrim.HasProperty('inputs:wrapT')) {
                             wrapT = opacityPrim.GetProperty('inputs:wrapT').Get() === 'repeat' ? THREE.RepeatWrapping : THREE.ClampToEdgeWrapping;
                         }
-                        texture = createTexture(inputsFile, wrapS, wrapT);
+
+                        opacity = createTexture(inputsFile, anisotropy, colorSpace, wrapS, wrapT);
+                        opacity.format = THREE.AlphaFormat;
                     }
                 }
             }
@@ -264,7 +313,7 @@ export function getObject3DFromXform(prim, parentTransform = new THREE.Matrix4()
                             }
                         }
                         geometry = createGeom(primTransform, vertices, childUvs);
-                        object3D.add(createMesh(geometry, material));
+                        object3D.add(createMesh(childPrim.GetName(), geometry, material));
                     }
                 }
             } else {
@@ -286,12 +335,12 @@ export function getObject3DFromXform(prim, parentTransform = new THREE.Matrix4()
                     uvs = uvsNew;
                 }
                 geometry = createGeom(primTransform, vertices, uvs);
-                object3D.add(createMesh(geometry, material));
+                object3D.add(createMesh(prim.GetName(), geometry, material));
             }
         } else if (prim.GetTypeName() === 'Cube') {
             geometry = createCube(primTransform);
             const material = createMaterialAndUvsFromPrim(prim).material;
-            object3D.add(createMesh(geometry, material));
+            object3D.add(createMesh(prim.GetName(), geometry, material));
         } else if (prim.GetTypeName() === 'Xform') {
             for (let childPrim of prim.GetChildren()) {
                 object3D.add(getObject3DFromXform(childPrim, primTransform));
