@@ -169,7 +169,7 @@ export function getValueFromTypeName(value, cppTypeName) {
     } else if (['std::string', 'TfToken'].includes(cppTypeName)) {
         return value.slice(1, value.length - 1);
     } else if (cppTypeName === 'SdfAssetPath') {
-        return value.slice(1, value.length - 1);
+        return value.slice(value.indexOf('@') + 1, value.lastIndexOf('@'));
     } else if (cppTypeName === 'SdfOpaqueValue') {
         console.error('SdfOpaqueValue not implemented');
         return null;

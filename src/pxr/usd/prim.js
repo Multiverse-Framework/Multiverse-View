@@ -27,13 +27,21 @@ function extractPrimContentFromStartPattern(primContent, primStartPattern, start
     let openBraces = 0;
     let endIndex = startIndex;
 
+    let openParentheses = 0;
+
     // Start searching from the point where the prim block starts
     for (let i = startIndex; i < primContent.length; i++) {
+        if (primContent[i] === '(') {
+            openParentheses++;
+        } else if (primContent[i] === ')') {
+            openParentheses--;
+        }
+
         if (primContent[i] === '{') {
             openBraces++;
         } else if (primContent[i] === '}') {
             openBraces--;
-            if (openBraces === 0) { // Found the matching closing brace
+            if (openBraces === 0 && openParentheses === 0) { // Found the matching closing brace
                 endIndex = i;
                 break;
             }
@@ -108,12 +116,23 @@ function extractPrimHeader(primHeader) {
 function extractPrimData(primContent) {
     const primType = primContent.match(/def\s+(.+?)\s+"/)[1];
 
-    let primHeader = extractPrimDataFromBrace(primContent, "(", ")");
-    if (primHeader !== null) {
-        primHeader = extractPrimHeader(primHeader);
+    let primHeader = null;
+    if (primContent.indexOf('(') < primContent.indexOf('{')) {
+        const primHeaderString = extractPrimDataFromBrace(primContent, "(", ")");
+        primHeader = extractPrimHeader(primHeaderString);
+        primContent = primContent.replace(primHeaderString, '');
     }
 
     let primBlock = extractPrimDataFromBrace(primContent, "{", "}");
+
+    if (primBlock === null) {
+        return {
+            primType: primType,
+            primHeader: primHeader,
+            primProperties: {},
+            childPrimContents: []
+        };
+    }
 
     // Further processing to exclude child definitions like 'def Mesh', if necessary
     let childPrimContents = [];
@@ -174,7 +193,10 @@ function getPrimProperties(primBlock) {
                 return;
             }
 
-            if (type === 'rel') {
+            if (type == 'custom')
+            {
+                result[name] = trimmedValueString;
+            } else if (type === 'rel') {
                 result[name] = new Relationship(trimmedValueString);
             }
             else {
@@ -196,7 +218,7 @@ function getPrimData(primStage, primPath, primContent) {
         const tmpPrimContent = extractPrimContentFromName(primName, primContent, false);
         if (tmpPrimContent === null) {
             continue;
-        } 
+        }
         primContent = tmpPrimContent;
         primData = extractPrimData(primContent);
         for (let childPrimContent of primData.childPrimContents) {

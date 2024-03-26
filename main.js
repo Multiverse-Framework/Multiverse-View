@@ -10,9 +10,10 @@ document.body.appendChild(renderer.domElement);
 
 // Create a scene
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x87CEEB);
 
 // Create a camera
-const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 10000);
 camera.up.set(0, 0, 1);
 camera.position.set(1.0, 1.0, 1.0);
 camera.lookAt(0, 0, 0);
@@ -63,9 +64,18 @@ function createGuiFromStage(stage) {
         const primPath = prim.GetPath().pathString;
         params[primPath] = {};
 
-        if (prim.GetTypeName() === 'Mesh') {
+        if (['Cube', 'Mesh'].includes(prim.GetTypeName())) {
             const primMesh = prim.object3D.children[0];
-            params[primPath]["color"] = primMesh.material.color.getHex();
+            params[primPath]["color"] = primMesh.material[0].color.getHex();
+            const childPrims = prim.GetChildren();
+            for (let i = 0; i < childPrims.length; i++) {
+                const childPrim = childPrims[i];
+                if (childPrim.GetTypeName() === 'GeomSubset') {
+                    const childPrimPath = childPrim.GetPath().pathString;
+                    params[childPrimPath] = {};
+                    params[childPrimPath]["color"] = primMesh.material[i].color.getHex();
+                }
+            }
         }
 
         if (prim.GetTypeName() === 'Xform') {
@@ -91,6 +101,14 @@ function createGuiFromStage(stage) {
                     if (childPrim.GetTypeName() === 'Mesh') {
                         const childPrimMesh = childPrim.object3D.children[0];
                         childPrimMesh.material.color.set(value ? 0xffff00 : params[childPrimPath]["color"]);
+                        const grandChildPrims = childPrim.GetChildren();
+                        for (let i = 0; i < grandChildPrims.length; i++) {
+                            const grandChildPrim = grandChildPrims[i];
+                            if (grandChildPrim.GetTypeName() === 'GeomSubset') {
+                                const grandChildPrimPath = grandChildPrim.GetPath().pathString;
+                                childPrimMesh.material[i].color.set(value ? 0xffff00 : params[grandChildPrimPath]["color"]);
+                            }
+                        }
                     }
                 }
             });
@@ -105,7 +123,7 @@ async function usdView(path) {
         object3D = getObject3DFromXform(defaultPrim);
         scene.add(object3D);
 
-        createGuiFromStage(stage);
+        // createGuiFromStage(stage);
         
     } catch (error) {
         console.error('Failed to load file:', error);
@@ -113,7 +131,9 @@ async function usdView(path) {
 }
 
 // usdView('/assets/milk_box/milk_box_flatten.usda');
-usdView('/assets/panda/panda_flatten.usda');
+// usdView('/assets/panda/panda_flatten.usda');
+usdView('/assets/apartment/Apartment_Floor.usda');
+
 
 ///////////////
 // Main loop //

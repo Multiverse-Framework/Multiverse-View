@@ -23,8 +23,7 @@ function getDefaultPrimName(stageContent) {
     if (headerMatch && headerMatch[0]) {
         headerSection = headerMatch[0];
     } else {
-        console.error('No header found in the stage');
-        return null;
+        throw new Error('No header found in the stage');
     }
 
     const defaultPrimRegex = /defaultPrim\s*=\s*"([^"]+)"/;
