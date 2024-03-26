@@ -132,7 +132,7 @@ async function usdView(path) {
 
 // usdView('/assets/milk_box/milk_box_flatten.usda');
 // usdView('/assets/panda/panda_flatten.usda');
-usdView('/assets/apartment/Apartment_Floor.usda');
+usdView('/assets/apartment/Apartment_flatten.usda');
 
 
 ///////////////

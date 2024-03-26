@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-const currentPath = '/home/giang/Multiverse-View';
+const currentPath = '/media/giangnguyen/Storage/Multiverse-View';
 const usdPath = '/assets/apartment'
 
 function createCube(transform) {
@@ -19,7 +19,7 @@ function createGeom(transform, vertices, uvs) {
     return geometry;
 }
 
-function createTexture(textureFile) {
+function createTexture(textureFile, wrapS = THREE.ClampToEdgeWrapping, wrapT = THREE.ClampToEdgeWrapping) {
     if (textureFile.startsWith(`${currentPath}/public`)) {
         textureFile = textureFile.slice(`${currentPath}/public`.length);
     }
@@ -31,6 +31,12 @@ function createTexture(textureFile) {
         textureFile = `${usdPath}/${textureFile}`;
     }
     console.log(`Load texture from ${textureFile}`)
+    // let texture = new THREE.TextureLoader().load(textureFile);
+    // texture.anisotropy = 0;
+    // texture.colorSpace = THREE.SRGBColorSpace;
+    // texture.magFilter = THREE.NearestFilter;
+    // texture.minFilter = THREE.NearestFilter;
+    // texture.mapping = THREE.UVMapping;
     return new THREE.TextureLoader().load(textureFile);
 }
 
@@ -102,7 +108,15 @@ function createMaterialAndUvsFromPrim(prim) {
                     const diffuseColorPrim = prim.GetStage().GetPrimAtPath(diffuseColorPath.GetParentPath());
                     if (diffuseColorPrim.HasProperty('inputs:file')) {
                         const inputsFile = diffuseColorPrim.GetProperty('inputs:file').Get();
-                        texture = createTexture(inputsFile);
+                        let wrapS = THREE.ClampToEdgeWrapping;
+                        let wrapT = THREE.ClampToEdgeWrapping;
+                        if (diffuseColorPrim.HasProperty('inputs:wrapS')) {
+                            wrapS = diffuseColorPrim.GetProperty('inputs:wrapS').Get() === 'repeat' ? THREE.RepeatWrapping : THREE.ClampToEdgeWrapping;
+                        }
+                        if (diffuseColorPrim.HasProperty('inputs:wrapT')) {
+                            wrapT = diffuseColorPrim.GetProperty('inputs:wrapT').Get() === 'repeat' ? THREE.RepeatWrapping : THREE.ClampToEdgeWrapping;
+                        }
+                        texture = createTexture(inputsFile, wrapS, wrapT);
                     }
 
                     if (diffuseColorPrim.HasProperty('inputs:st')) {
@@ -148,7 +162,15 @@ function createMaterialAndUvsFromPrim(prim) {
                     const opacityPrim = prim.GetStage().GetPrimAtPath(opacityPath.GetParentPath());
                     if (opacityPrim.HasProperty('inputs:file')) {
                         const inputsFile = opacityPrim.GetProperty('inputs:file').Get();
-                        opacity = createTexture(inputsFile);
+                        let wrapS = THREE.ClampToEdgeWrapping;
+                        let wrapT = THREE.ClampToEdgeWrapping;
+                        if (opacityPrim.HasProperty('inputs:wrapS')) {
+                            wrapS = opacityPrim.GetProperty('inputs:wrapS').Get() === 'repeat' ? THREE.RepeatWrapping : THREE.ClampToEdgeWrapping;
+                        }
+                        if (opacityPrim.HasProperty('inputs:wrapT')) {
+                            wrapT = opacityPrim.GetProperty('inputs:wrapT').Get() === 'repeat' ? THREE.RepeatWrapping : THREE.ClampToEdgeWrapping;
+                        }
+                        texture = createTexture(inputsFile, wrapS, wrapT);
                     }
                 }
             }
@@ -264,7 +286,6 @@ export function getObject3DFromXform(prim, parentTransform = new THREE.Matrix4()
                     uvs = uvsNew;
                 }
                 geometry = createGeom(primTransform, vertices, uvs);
-                console.log(vertices, uvs);
                 object3D.add(createMesh(geometry, material));
             }
         } else if (prim.GetTypeName() === 'Cube') {
