@@ -138,7 +138,7 @@ async function usdView(path) {
 
 // const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
 // usdView('/assets/panda/panda_flatten.usda');
-const usdFilePath = '/assets/apartment/Apartment_flatten.usda';
+const usdFilePath = '/assets/ApartmentECAI/ApartmentECAI_flatten.usda';
 
 usdView(usdFilePath);
 

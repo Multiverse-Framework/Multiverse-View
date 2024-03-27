@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 const CURRENTPATH = '/media/giangnguyen/Storage/Multiverse-View';
-const USDPATH = '/assets/apartment';
+const USDPATH = '/assets/ApartmentECAI';
 
 function createCube(transform) {
     const geometry = new THREE.BoxGeometry(2, 2, 2);

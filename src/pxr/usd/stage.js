@@ -46,12 +46,11 @@ export class Stage {
     }
 
     static async Open(path) {
-        try {
-            const content = await Open(path);
-            return new Stage(content);
-        } catch (error) {
-            console.error('Failed to load file:', error);
+        const content = await Open(path);
+        if (content.length === 0) {
+            throw new Error('Failed to open stage');
         }
+        return new Stage(content);
     }
 
     ExportToString() {
