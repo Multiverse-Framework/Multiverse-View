@@ -2,10 +2,13 @@ import { Path } from './../sdf/path.js';
 
 export class Relationship {
     constructor(paths) {
+        this._paths = [];
         if (paths.startsWith('[') && paths.endsWith(']')) {
             for (let path of paths.slice(1, paths.length - 1).split(',')) {
                 path = path.slice(1, path.length - 1);
-                this._paths.push(new Path(path));
+                if (path !== '') {
+                    this._paths.push(new Path(path));
+                }
             }
         }
         else {
@@ -16,5 +19,24 @@ export class Relationship {
 
     GetTargets() {
         return this._paths;
+    }
+
+    AddTarget(path) {
+        for (let p of this._paths) {
+            if (p.pathString === path) {
+                return;
+            }
+        }
+        this._paths.push(new Path(path));
+    }
+
+    RemoveTarget(path) {
+        for (let i = 0; i < this._paths.length; i++) {
+            if (this._paths[i].pathString === path) {
+                this._paths.splice(i, 1);
+                return true;
+            }
+        }
+        return false;
     }
 }

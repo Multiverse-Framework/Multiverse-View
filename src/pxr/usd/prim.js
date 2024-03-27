@@ -8,14 +8,21 @@ function splitPath(path) {
 }
 
 function extractPrimContentFromName(primName, primContent, startIndexMustEqualZero = false) {
-    const regexPattern = `def\\s+.+?\\s+"${primName}"`;
-    const primStartPattern = new RegExp(regexPattern);
+    const regexPattern1 = `(def|class)\\s+\\w+\\s+"${primName}"`;
+    const regexPattern2 = `(def|class)\\s+"${primName}"`;
+    const primStartPatterns = [new RegExp(regexPattern1), new RegExp(regexPattern2)];
 
-    return extractPrimContentFromStartPattern(primContent, primStartPattern, startIndexMustEqualZero);
+    return extractPrimContentFromStartPattern(primContent, primStartPatterns, startIndexMustEqualZero);
 }
 
-function extractPrimContentFromStartPattern(primContent, primStartPattern, startIndexMustEqualZero = false) {
-    const startIndex = primContent.search(primStartPattern);
+function extractPrimContentFromStartPattern(primContent, primStartPatterns, startIndexMustEqualZero = false) {
+    let startIndex = -1;
+    for (let primStartPattern of primStartPatterns) {
+        startIndex = primContent.search(primStartPattern);
+        if (startIndex !== -1) {
+            break;
+        }
+    }
 
     if (startIndex === -1) {
         return null; // Prim block not found
@@ -114,7 +121,14 @@ function extractPrimHeader(primHeader) {
 }
 
 function extractPrimData(primContent) {
-    const primType = primContent.match(/def\s+(.+?)\s+"/)[1];
+    let primType = null;
+    const defPrimType = primContent.match(/def\s+(.+?)\s+"/);
+    const classPrimType = primContent.match(/class\s+(.+?)\s+"/);
+    if (defPrimType !== null) {
+        primType = defPrimType[1];
+    } else if (classPrimType !== null) {
+        primType = classPrimType[1];
+    }
 
     let primHeader = null;
     if (primContent.indexOf('(') < primContent.indexOf('{')) {
@@ -137,7 +151,7 @@ function extractPrimData(primContent) {
     // Further processing to exclude child definitions like 'def Mesh', if necessary
     let childPrimContents = [];
 
-    let childDefIndex = primBlock.search(/def\s+/);
+    let childDefIndex = primBlock.search(/(def|class)\s+/);
 
     if (childDefIndex !== -1) {
         let childPrimsContent = primBlock.substring(childDefIndex).trim();
@@ -145,13 +159,13 @@ function extractPrimData(primContent) {
         primBlock = primBlock.substring(0, childDefIndex).trim();
 
         while (childDefIndex !== -1) {
-            const childPrimContent = extractPrimContentFromStartPattern(childPrimsContent, /def\s+/);
+            const childPrimContent = extractPrimContentFromStartPattern(childPrimsContent, [/(def|class)\s+/]);
 
             childPrimContents.push(childPrimContent);
 
             childPrimsContent = childPrimsContent.substring(childPrimContent.length).trim();
 
-            childDefIndex = childPrimsContent.search(/def\s+/);
+            childDefIndex = childPrimsContent.search(/(def|class)\s+/);
         }
     }
 
@@ -222,9 +236,12 @@ function getPrimData(primStage, primPath, primContent) {
         primContent = tmpPrimContent;
         primData = extractPrimData(primContent);
         for (let childPrimContent of primData.childPrimContents) {
-            const childPrimName = childPrimContent.match(/def\s+.+?\s+"([^"]+)"/)[1];
-            if (childPrimName) {
-                childPrims.push(new Prim(primStage, `${parentPrimPath}/${childPrimName}`, childPrimContent));
+            const childDefPrimName = childPrimContent.match(/def\s+.+?\s+"([^"]+)"/);
+            const childClassPrimName = childPrimContent.match(/class(\s+.+?|)\s+"([^"]+)"/);
+            if (childDefPrimName) {
+                childPrims.push(new Prim(primStage, `${parentPrimPath}/${childDefPrimName[1]}`, childPrimContent));
+            } else if (childClassPrimName) {
+                childPrims.push(new Prim(primStage, `${parentPrimPath}/${childClassPrimName[2]}`, childPrimContent));
             }
         }
     }
@@ -292,5 +309,14 @@ export class Prim {
 
     HasProperty(propertyName) {
         return propertyName in this.GetProperties();
+    }
+
+    CreateRelationship(relationshipName) {
+        if (this.HasProperty(relationshipName)) {
+            return this.GetProperty(relationshipName);
+        } else {
+            this.GetProperties()[relationshipName] = new Relationship('[]');
+            return this.GetProperties()[relationshipName];
+        }
     }
 }

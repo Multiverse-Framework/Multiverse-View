@@ -51,7 +51,7 @@ import { getObject3DFromXform } from './src/multiverse_view/multiverse_view.js';
 let object3D = null;
 
 // Create a GUI
-const gui = new dat.GUI();
+const gui = new dat.GUI({ 'width': 500 });
 
 const objectsFolder = gui.addFolder('Objects');
 
@@ -61,6 +61,33 @@ var params = {};
 
 function createGuiFromStage(stage) {
     const hightlightColor = new THREE.Color(0xffff00);
+
+    const ontologyList = ["DUL", "SOMA"];
+    const ontologies = {};
+    for (let ontology of ontologyList) {
+        ontologies[ontology] = {};
+        ontologies[ontology][""] = null;
+        const ontoPrim = stage.GetPrimAtPath('/' + ontology);
+        for (let classPrim of ontoPrim.GetAllChildren()) {
+            if (classPrim.HasProperty('rdf:conceptName') && classPrim.HasProperty('rdf:namespace')) {
+                const rdfNamespace = classPrim.GetProperty('rdf:namespace').Get();
+                const rdfConceptName = classPrim.GetProperty('rdf:conceptName').Get();
+                const rdfClassName = rdfNamespace + rdfConceptName;
+                ontologies[ontology][rdfConceptName] = rdfClassName;
+            }
+        }
+
+        // Get the keys and sort them alphabetically
+        var sortedKeys = Object.keys(ontologies[ontology]).sort();
+
+        // Create a new object with sorted keys
+        var sortedDictionary = {};
+        sortedKeys.forEach(function (key) {
+            sortedDictionary[key] = ontologies[ontology][key];
+        });
+
+        ontologies[ontology] = sortedDictionary;
+    }
 
     for (let prim of stage.Traverse()) {
         const primPath = prim.GetPath().pathString;
@@ -87,7 +114,7 @@ function createGuiFromStage(stage) {
 
         if (prim.GetTypeName() === 'Xform') {
             const primObject3D = prim.object3D;
-            
+
             const primFolder = objectsFolder.addFolder(primPath);
 
             params[primPath]["show"] = primObject3D.visible;
@@ -99,8 +126,8 @@ function createGuiFromStage(stage) {
             for (let childPrim of prim.GetAllChildren()) {
                 const childPrimPath = childPrim.GetPath().pathString;
                 if (['Cube', 'Mesh'].includes(childPrim.GetTypeName())) {
-                    if (childPrim.object3D === undefined || 
-                        childPrim.object3D.children.length === 0 || 
+                    if (childPrim.object3D === undefined ||
+                        childPrim.object3D.children.length === 0 ||
                         childPrim.object3D.children[0].material === undefined) {
                         continue;
                     }
@@ -118,29 +145,115 @@ function createGuiFromStage(stage) {
                     }
                 }
             });
+
+            params[primPath]['semanticLabels'] = {};
+            const ontoFolders = primFolder.addFolder('semantic labels');
+            for (let ontology of ontologyList) {
+                const ontoFolder = ontoFolders.addFolder(ontology);
+                ontoFolder.add(ontologies, ontology, ontologies[ontology]).name(ontology).onChange(function (value) {
+                    if (value === 'null') {
+                        return;
+                    }
+                    params[primPath]['semanticLabels'][ontology] = value;
+                });
+
+                // Create an object to hold the button actions
+                var buttonActions = {
+                    addButton: function () {
+                        const value = params[primPath]['semanticLabels'][ontology];
+
+                        if (value === 'null') {
+                            return;
+                        }
+                        const prim = stage.GetPrimAtPath(primPath);
+                        const relationships = prim.CreateRelationship('semanticTag:semanticLabel');
+                        relationships.AddTarget('/' + ontology + '/_class_' + value.split('#').pop());
+                        console.log(`Set classes of prim at path ${primPath} to:`);
+                        for (let ontoPath of relationships.GetTargets()) {
+                            const ontoPrim = stage.GetPrimAtPath(ontoPath);
+                            const rdfClassName = ontoPrim.GetProperty('rdf:namespace').Get() + ontoPrim.GetProperty('rdf:conceptName').Get();
+                            console.log(rdfClassName);
+                        }
+                    },
+                    removeButton: function () {
+                        const value = params[primPath]['semanticLabels'][ontology];
+
+                        if (value === 'null') {
+                            return;
+                        }
+
+                        const prim = stage.GetPrimAtPath(primPath);
+                        if (!prim.HasProperty('semanticTag:semanticLabel')) {
+                            return;
+                        }
+
+                        const relationships = prim.GetProperty('semanticTag:semanticLabel');
+                        if (relationships.RemoveTarget('/' + ontology + '/_class_' + value.split('#').pop())) {
+                            console.log(`Set classes of prim at path ${primPath} to:`);
+                            for (let ontoPath of relationships.GetTargets()) {
+                                const ontoPrim = stage.GetPrimAtPath(ontoPath);
+                                const rdfClassName = ontoPrim.GetProperty('rdf:namespace').Get() + ontoPrim.GetProperty('rdf:conceptName').Get();
+                                console.log(rdfClassName);
+                            }
+                        }
+                    }
+                };
+
+                // Add buttons to GUI
+                ontoFolder.add(buttonActions, 'addButton').name('Add');
+                ontoFolder.add(buttonActions, 'removeButton').name('Remove');
+            }
         }
     }
 }
 
+let stage = null;
+
 async function usdView(path) {
     try {
-        const stage = await Usd.Stage.Open(path);
+        stage = await Usd.Stage.Open(path);
         const defaultPrim = stage.GetDefaultPrim();
         object3D = getObject3DFromXform(defaultPrim);
         scene.add(object3D);
 
         createGuiFromStage(stage);
-        
     } catch (error) {
         console.error('Failed to load file:', error);
     }
 }
 
 // const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
-// usdView('/assets/panda/panda_flatten.usda');
+// const usdFilePath = '/assets/panda/panda_flatten.usda';
 const usdFilePath = '/assets/ApartmentECAI/ApartmentECAI_flatten.usda';
 
 usdView(usdFilePath);
+
+document.getElementById('downloadBtn').addEventListener('click', () => {
+    if (stage == null) {
+        console.error('Stage is null');
+        return;
+    }
+
+    // Define the text content of the file
+    const fileContent = stage.ExportToString();
+
+    // Create a blob with the file content
+    const blob = new Blob([fileContent], { type: 'text/plain' });
+
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = usdFilePath.split('/').pop();
+
+    // Append the link to the body
+    document.body.appendChild(link);
+
+    // Programatically click the link to trigger the download
+    link.click();
+
+    // Remove the link from the body
+    document.body.removeChild(link);
+});
 
 ///////////////
 // Main loop //

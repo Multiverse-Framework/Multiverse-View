@@ -7,6 +7,5332 @@
     upAxis = "Z"
 )
 
+class "_class_owl_namespace" (
+    apiSchemas = ["RdfAPI"]
+)
+{
+    string rdf:namespace = "http://www.w3.org/2002/07/owl#"
+}
+
+def "owl"
+{
+    class "_class_Thing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Thing"
+        string rdf:namespace = "http://www.w3.org/2002/07/owl#"
+    }
+}
+
+class "_class_DUL_namespace" (
+    apiSchemas = ["RdfAPI"]
+)
+{
+    string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+}
+
+def "DUL"
+{
+    class "_class_DesignedArtifact" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DesignedArtifact"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Substance" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Substance"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_DesignedSubstance" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DesignedSubstance"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Description" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Description"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_EventType" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "EventType"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Event" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Event"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Action" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Action"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Situation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Situation"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Agent" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Agent"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Role" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Role"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Task" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Task"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_SocialObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SocialObject"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Region" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Region"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_InformationObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InformationObject"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_InformationRealization" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InformationRealization"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_PhysicalAgent" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalAgent"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_PhysicalObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalObject"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Plan" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Plan"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Transition" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Transition"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_SocialAgent" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SocialAgent"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Entity" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Entity"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Concept" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Concept"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Collection" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Collection"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Object" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Object"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Parameter" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Parameter"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Quality" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Quality"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_TimeInterval" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TimeInterval"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Abstract" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Abstract"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Amount" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Amount"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_PhysicalAttribute" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalAttribute"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_SpaceRegion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SpaceRegion"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_BiologicalObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "BiologicalObject"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_PhysicalBody" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalBody"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_ChemicalObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ChemicalObject"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Classification" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Classification"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_TimeIndexedRelation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TimeIndexedRelation"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Collective" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Collective"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_CollectiveAgent" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CollectiveAgent"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Community" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Community"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Configuration" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Configuration"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Contract" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Contract"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Design" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Design"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_PhysicalArtifact" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalArtifact"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_FunctionalSubstance" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FunctionalSubstance"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Diagnosis" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Diagnosis"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_FormalEntity" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FormalEntity"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Goal" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Goal"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Group" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Group"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_InformationEntity" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InformationEntity"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_LocalConcept" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "LocalConcept"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Method" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Method"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Narrative" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Narrative"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_NaturalPerson" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "NaturalPerson"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Person" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Person"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Norm" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Norm"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_ObjectAggregate" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ObjectAggregate"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Organism" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Organism"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Organization" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Organization"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Parthood" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Parthood"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Pattern" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Pattern"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Relation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Relation"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Personification" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Personification"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_PhysicalPlace" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalPlace"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Place" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Place"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_PlanExecution" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PlanExecution"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Process" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Process"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Project" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Project"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Right" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Right"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Set" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Set"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_SocialObjectAttribute" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SocialObjectAttribute"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_SocialPerson" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SocialPerson"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_SocialRelation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SocialRelation"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_SpatioTemporalRegion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SpatioTemporalRegion"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Theory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Theory"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_TypeCollection" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TypeCollection"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_UnitOfMeasure" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "UnitOfMeasure"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_Workflow" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Workflow"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+
+    class "_class_WorkflowExecution" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "WorkflowExecution"
+        string rdf:namespace = "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    }
+}
+
+class "_class_SOMA_namespace" (
+    apiSchemas = ["RdfAPI"]
+)
+{
+    string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+}
+
+def "SOMA"
+{
+    class "_class_KinoDynamicData" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "KinoDynamicData"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MeshShapeData" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MeshShapeData"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_VideoData" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "VideoData"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AssumingPose" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AssumingPose"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Capability" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Capability"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Message" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Message"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Answer" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Answer"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ExecutionStateRegion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ExecutionStateRegion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SituationTransition" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SituationTransition"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_NonmanifestedSituation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "NonmanifestedSituation"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_QueryingTask" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "QueryingTask"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AbductiveReasoning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AbductiveReasoning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Reasoning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Reasoning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Actuating" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Actuating"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhysicalTask" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalTask"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AnsweringTask" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AnsweringTask"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_IllocutionaryTask" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "IllocutionaryTask"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CommandingTask" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CommandingTask"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AreaSurveying" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AreaSurveying"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Perceiving" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Perceiving"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Arranging" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Arranging"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Constructing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Constructing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Assembling" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Assembling"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AssertionTask" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AssertionTask"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AssumingArmPose" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AssumingArmPose"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AttentionShift" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AttentionShift"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MentalTask" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MentalTask"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Avoiding" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Avoiding"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Navigating" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Navigating"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Catching" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Catching"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PickingUp" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PickingUp"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Channel" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Channel"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CommunicationTask" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CommunicationTask"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CheckingObjectPresence" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CheckingObjectPresence"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Cleaning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Cleaning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ModifyingPhysicalObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ModifyingPhysicalObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Closing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Closing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Delivering" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Delivering"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Fetching" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Fetching"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Lifting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Lifting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Opening" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Opening"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Pulling" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Pulling"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Pushing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Pushing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Squeezing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Squeezing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CommunicationAction" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CommunicationAction"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_LinguisticObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "LinguisticObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CommunicationReport" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CommunicationReport"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Receiver" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Receiver"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Sender" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Sender"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CommunicationTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CommunicationTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Conclusion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Conclusion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Knowledge" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Knowledge"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Cutting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Cutting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Deciding" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Deciding"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DerivingInformation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DerivingInformation"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DeductiveReasoning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DeductiveReasoning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InformationAcquisition" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InformationAcquisition"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Premise" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Premise"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Dicing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Dicing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Discourse" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Discourse"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Distancing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Distancing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Dreaming" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Dreaming"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Dropping" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Dropping"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Placing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Placing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_EndEffectorPositioning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "EndEffectorPositioning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Manipulating" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Manipulating"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhysicalAcquiring" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalAcquiring"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Flipping" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Flipping"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Focusing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Focusing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ForgettingIncorrectInformation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ForgettingIncorrectInformation"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InformationDismissal" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InformationDismissal"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ForgettingIrrelevantInformation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ForgettingIrrelevantInformation"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_GetTaskParameter" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "GetTaskParameter"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Planning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Planning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_GraspTransfer" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "GraspTransfer"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Grasping" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Grasping"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Releasing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Releasing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Holding" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Holding"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Imagining" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Imagining"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InductiveReasoning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InductiveReasoning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InferenceRules" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InferenceRules"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InformationRetrieval" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InformationRetrieval"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InformationStorage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InformationStorage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Instructions" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Instructions"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Interpreting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Interpreting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Introspecting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Introspecting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Labeling" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Labeling"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Learning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Learning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_LookingAt" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "LookingAt"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_LookingFor" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "LookingFor"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Lowering" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Lowering"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhysicalAction" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalAction"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Memorizing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Memorizing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MentalAction" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MentalAction"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MetaCognitionEvaluationTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MetaCognitionEvaluationTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MetaCognitionTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MetaCognitionTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MetaCognitionMemoryTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MetaCognitionMemoryTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MetaCognitionPlanningTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MetaCognitionPlanningTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ThinkAloudTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ThinkAloudTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MetacognitiveControlling" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MetacognitiveControlling"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MetacognitiveMonitoring" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MetacognitiveMonitoring"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Mixing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Mixing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MonitoringJointState" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MonitoringJointState"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Proprioceiving" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Proprioceiving"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MovingTo" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MovingTo"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Orienting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Orienting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Positioning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Positioning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ParkingArms" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ParkingArms"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Pouring" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Pouring"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PouringInto" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PouringInto"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PouringOnto" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PouringOnto"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Prediction" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Prediction"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Prospecting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Prospecting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PushingAway" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PushingAway"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PushingDown" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PushingDown"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PuttingDown" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PuttingDown"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Query" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Query"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_QueryAnsweringTask" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "QueryAnsweringTask"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Reaching" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Reaching"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Retracting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Retracting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Remembering" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Remembering"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Retrospecting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Retrospecting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Replanning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Replanning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SelectingItem" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SelectingItem"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SelfReflection" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SelfReflection"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Serving" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Serving"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SettingGripper" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SettingGripper"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Simulating" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Simulating"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Slicing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Slicing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Stirring" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Stirring"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ThinkAloud" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ThinkAloud"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ThinkAloudActionTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ThinkAloudActionTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ThinkAloudGeneralKnowledgeTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ThinkAloudGeneralKnowledgeTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ThinkAloudKnowledgeTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ThinkAloudKnowledgeTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ThinkAloudObstructionTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ThinkAloudObstructionTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ThinkAloudOpinionTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ThinkAloudOpinionTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ThinkAloudPerceptionTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ThinkAloudPerceptionTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ThinkAloudPlanTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ThinkAloudPlanTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ThinkAloudSceneKnowledgeTopic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ThinkAloudSceneKnowledgeTopic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Throwing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Throwing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Transporting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Transporting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_State" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "State"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Patient" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Patient"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Instrument" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Instrument"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_StateTransition" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "StateTransition"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Scene" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Scene"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DeclarativeClause" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DeclarativeClause"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CausedMotionTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CausedMotionTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ImageSchemaTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ImageSchemaTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SourcePathGoalTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SourcePathGoalTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ClausalObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ClausalObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Phrase" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Phrase"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ImperativeClause" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ImperativeClause"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ContainmentTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ContainmentTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ControlTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ControlTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FunctionalSpatialSchemaTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FunctionalSpatialSchemaTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CoverageTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CoverageTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CoveringTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CoveringTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ExecutableSchematicTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ExecutableSchematicTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CrackingTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CrackingTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ESTSchemaTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ESTSchemaTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SchematicTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SchematicTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InterrogativeClause" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InterrogativeClause"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_LocutionaryAction" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "LocutionaryAction"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MixingTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MixingTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PlacingTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PlacingTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ProximalTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ProximalTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SupportTheory" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SupportTheory"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Binding" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Binding"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Succedence" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Succedence"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CounterfactualBinding" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CounterfactualBinding"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FactualBinding" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FactualBinding"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RoleFillerBinding" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RoleFillerBinding"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RoleRoleBinding" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RoleRoleBinding"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ConditionalSuccedence" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ConditionalSuccedence"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_StatusFailure" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "StatusFailure"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TaskInvocation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TaskInvocation"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Containment" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Containment"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Item" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Item"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Restrictor" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Restrictor"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ConnectedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ConnectedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Container" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Container"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_LinkedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "LinkedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Supporter" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Supporter"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_StateType" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "StateType"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Configuration" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Configuration"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ContactState" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ContactState"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ContainmentState" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ContainmentState"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FunctionalControl" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FunctionalControl"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_LinkageState" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "LinkageState"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhysicalAccessibility" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalAccessibility"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhysicalBlockage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalBlockage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhysicalExistence" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalExistence"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhysicalState" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalState"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SocialState" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SocialState"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SupportState" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SupportState"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Affordance" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Affordance"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AgentRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AgentRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Appliance" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Appliance"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DesignedComponent" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DesignedComponent"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DesignedContainer" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DesignedContainer"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_BoxShape" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "BoxShape"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Deposition" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Deposition"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RoomSurface" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RoomSurface"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Linkage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Linkage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Insertion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Insertion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DesignedFurniture" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DesignedFurniture"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DesignedTool" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DesignedTool"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Shaping" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Shaping"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Graspability" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Graspability"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Destination" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Destination"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Room" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Room"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Surface" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Surface"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Tempering" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Tempering"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Disposition" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Disposition"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PathRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PathRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Purification" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Purification"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ResourceRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ResourceRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CreatedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CreatedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Shifting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Shifting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DestroyedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DestroyedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_StoredObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "StoredObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Pourable" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Pourable"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ExperiencerRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ExperiencerRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SelectedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SelectedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PerformerRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PerformerRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Composing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Composing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AlteredObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AlteredObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ShapedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ShapedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MovedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MovedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Limb" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Limb"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhysicalEffector" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalEffector"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PrehensileEffector" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PrehensileEffector"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Setpoint" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Setpoint"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Joint" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Joint"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Color" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Color"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Feature" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Feature"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FrictionAttribute" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FrictionAttribute"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_JointLimit" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "JointLimit"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_JointState" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "JointState"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Localization" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Localization"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MassAttribute" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MassAttribute"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_NetForce" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "NetForce"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Shape" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Shape"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ShapeRegion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ShapeRegion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Transient" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Transient"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ColorRegion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ColorRegion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ForceAttribute" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ForceAttribute"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Accessor" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Accessor"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AestheticDesign" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AestheticDesign"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CausativeRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CausativeRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Arm" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Arm"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ArtificialAgent" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ArtificialAgent"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AvoidedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AvoidedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Barrier" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Barrier"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_BeneficiaryRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "BeneficiaryRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_GoalRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "GoalRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Blockage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Blockage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_BlockedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "BlockedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CanCut" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CanCut"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Variability" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Variability"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Cutter" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Cutter"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CutObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CutObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Capacity" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Capacity"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Intrinsic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Intrinsic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CausalEventRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CausalEventRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_EventAdjacentRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "EventAdjacentRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CircularCylinder" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CircularCylinder"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CylinderShape" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CylinderShape"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Clean" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Clean"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CleanlinessRegion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CleanlinessRegion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Cleanliness" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Cleanliness"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SocialQuality" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SocialQuality"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Extrinsic" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Extrinsic"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CommitedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CommitedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Connectivity" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Connectivity"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_IncludedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "IncludedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ContinuousJoint" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ContinuousJoint"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_HingeJoint" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "HingeJoint"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Cover" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Cover"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Coverage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Coverage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CoveredObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CoveredObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Cuttability" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Cuttability"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Tool" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Tool"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DependentPlace" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DependentPlace"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Deposit" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Deposit"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DepositedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DepositedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FunctionalPart" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FunctionalPart"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Location" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Location"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DetectedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DetectedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DeviceState" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DeviceState"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DeviceStateRange" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DeviceStateRange"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DeviceTurnedOff" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DeviceTurnedOff"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DeviceTurnedOn" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DeviceTurnedOn"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Dirty" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Dirty"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Effort" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Effort"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_EnclosedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "EnclosedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Enclosing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Enclosing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ExcludedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ExcludedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ExistingObjectRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ExistingObjectRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RelationAdjacentRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RelationAdjacentRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ExtractedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ExtractedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhysicalQuality" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicalQuality"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Finger" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Finger"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Hand" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Hand"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FixedJoint" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FixedJoint"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MovableJoint" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MovableJoint"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FloatingJoint" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FloatingJoint"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FunctionalDesign" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FunctionalDesign"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_GreenColor" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "GreenColor"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Gripper" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Gripper"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_HasQualityRegion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "HasQualityRegion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Head" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Head"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Impediment" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Impediment"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Obstacle" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Obstacle"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RestrictedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RestrictedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InsertedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InsertedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_KineticFrictionAttribute" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "KineticFrictionAttribute"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Leg" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Leg"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SpatioTemporalRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SpatioTemporalRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_LocatumRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "LocatumRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SpatialRelationRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SpatialRelationRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Material" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Material"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MeshShape" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MeshShape"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Origin" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Origin"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PlanarJoint" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PlanarJoint"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PouredObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PouredObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PrismaticJoint" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PrismaticJoint"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Protector" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Protector"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_QualityTransition" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "QualityTransition"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RecipientRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RecipientRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RedColor" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RedColor"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RelatumRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RelatumRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RelevantPart" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RelevantPart"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RemovedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RemovedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ResultRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ResultRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RevoluteJoint" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RevoluteJoint"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DPose" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "6DPose"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Sharpness" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Sharpness"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Size" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Size"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SourceMaterialRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SourceMaterialRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SphereShape" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SphereShape"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_StaticFrictionAttribute" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "StaticFrictionAttribute"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_StimulusRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "StimulusRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Storage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Storage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_StructuralDesign" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "StructuralDesign"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SupportedObject" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SupportedObject"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Temperature" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Temperature"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TemperatureRegion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TemperatureRegion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TimeRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TimeRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DPosition" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "3DPosition"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_System" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "System"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SoftwareInstance" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SoftwareInstance"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_APISpecification" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "API_Specification"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InterfaceSpecification" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InterfaceSpecification"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Algorithm" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Algorithm"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ArchiveFile" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ArchiveFile"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DigitalFile" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Digital_File"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ArchiveText" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ArchiveText"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ArchiveFormat" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ArchiveFormat"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Fileformat" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "File_format"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_StructuredText" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Structured_Text"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FileConfiguration" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FileConfiguration"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Classifier" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Classifier"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_StatisticalReasoner" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "StatisticalReasoner"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ClientServerSpecification" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Client-Server_Specification"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ClientRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ClientRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ServerRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ServerRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InterfaceComponentRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InterfaceComponentRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CognitiveAgent" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CognitiveAgent"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SubCognitiveAgent" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SubCognitiveAgent"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ComputerLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Computer_Language"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FormalLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FormalLanguage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ComputerProgram" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Computer_Program"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ProgrammingLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Programming_Language"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Database" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Database"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SoftwareRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SoftwareRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ExecutableFile" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ExecutableFile"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ExecutableCode" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Executable_Code"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ExecutableFormat" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ExecutableFormat"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ExecutableSoftware" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ExecutableSoftware"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Software" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Software"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FaultySoftware" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FaultySoftware"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Language" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Language"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_GraphDatabase" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "GraphDatabase"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_GraphQueryLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "GraphQueryLanguage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_QueryLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "QueryLanguage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_HostRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "HostRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PluginSpecification" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PluginSpecification"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_HumanreadableProgrammingLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Human-readable_Programming_Language"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SourceCode" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Source_Code"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_IncompatibleSoftware" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "IncompatibleSoftware"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_KnowledgeRepresentationLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "KnowledgeRepresentationLanguage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Text" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Text"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MarkupLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Markup_Language"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_NaturalLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Natural_Language"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_NaturalLanguageText" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Natural_Language_Text"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Ontology" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Ontology"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_OntologyLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Ontology_Language"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PluginRole" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PluginRole"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_QueryEngine" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "QueryEngine"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Reasoner" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Reasoner"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RelationalDatabase" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RelationalDatabase"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RelationalQueryLanguage" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RelationalQueryLanguage"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SimulationReasoner" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Simulation_Reasoner"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SoftwareConfiguration" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Software_Configuration"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SoftwareLibrary" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SoftwareLibrary"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SymbolicReasoner" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SymbolicReasoner"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Triplestore" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Triplestore"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_UnavailableSoftware" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "UnavailableSoftware"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ProcessType" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ProcessType"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Agonist" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Agonist"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Alteration" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Alteration"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AlterativeInteraction" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AlterativeInteraction"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ForceInteraction" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ForceInteraction"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PreservativeInteraction" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PreservativeInteraction"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Antagonist" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Antagonist"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Approaching" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Approaching"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Locomotion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Locomotion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_BodyMovement" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "BodyMovement"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Motion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Motion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Boiling" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Boiling"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Vaporizing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Vaporizing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ChemicalProcess" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ChemicalProcess"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Collision" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Collision"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Creation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Creation"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Deformation" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Deformation"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FluidFlow" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FluidFlow"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Destruction" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Destruction"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DirectedMotion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DirectedMotion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_UndirectedMotion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "UndirectedMotion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Driving" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Driving"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Flying" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Flying"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Swimming" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Swimming"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Walking" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Walking"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Fluid" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Fluid"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_GraspingMotion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "GraspingMotion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_IntermediateGrasp" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "IntermediateGrasp"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PowerGrasp" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PowerGrasp"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PrecisionGrasp" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PrecisionGrasp"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PrehensileMotion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PrehensileMotion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ReleasingMotion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ReleasingMotion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_HeadMovement" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "HeadMovement"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_HeadTurning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "HeadTurning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Leaning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Leaning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PosturalMoving" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PosturalMoving"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_LimbMotion" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "LimbMotion"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MovingAway" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MovingAway"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhaseTransition" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhaseTransition"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PhysicsProcess" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PhysicsProcess"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ProcessFlow" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ProcessFlow"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Progression" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Progression"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Rubbing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Rubbing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Standing" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Standing"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Tapping" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Tapping"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Taxis" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Taxis"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Turning" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Turning"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Accident" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Accident"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ActionExecutionPlan" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ActionExecutionPlan"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Status" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Status"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Amateurish" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Amateurish"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DexterityDiagnosis" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DexterityDiagnosis"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Masterful" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Masterful"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_BehavioralDiagnosis" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "BehavioralDiagnosis"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Clumsiness" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Clumsiness"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Episode" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Episode"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FailedAttempt" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FailedAttempt"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Unsuccessfulness" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Unsuccessfulness"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SoftwareDiagnosis" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SoftwareDiagnosis"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Foolishness" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Foolishness"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FunctionalDiagnosis" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FunctionalDiagnosis"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_HardwareDiagnosis" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "HardwareDiagnosis"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TechnicalDiagnosis" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TechnicalDiagnosis"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_HumanActivityRecording" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "HumanActivityRecording"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RecordedEpisode" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RecordedEpisode"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Inability" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Inability"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Infeasibility" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Infeasibility"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MedicalDiagnosis" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MedicalDiagnosis"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Reification" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Reification"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Sluggishness" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Sluggishness"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SuccessDiagnosis" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SuccessDiagnosis"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Successfulness" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Successfulness"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Threshold" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Threshold"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_AffordsBeingSitOn" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "AffordsBeingSitOn"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CanBeSatOn" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CanBeSatOn"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SittingDestination" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SittingDestination"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CanSit" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CanSit"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Sitting" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Sitting"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Armchair" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Armchair"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DesignedChair" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DesignedChair"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_BakedGood" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "BakedGood"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Dish" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Dish"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_BedsideTable" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "BedsideTable"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Table" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Table"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Blade" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Blade"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Bottle" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Bottle"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Bowl" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Bowl"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Crockery" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Crockery"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Box" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Box"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Bread" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Bread"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_BreadKnife" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "BreadKnife"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_KitchenKnife" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "KitchenKnife"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_BreakfastPlate" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "BreakfastPlate"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Plate" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Plate"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Building" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Building"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Carafe" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Carafe"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Ceiling" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Ceiling"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Floor" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Floor"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Wall" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Wall"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CeramicCooktop" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CeramicCooktop"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ElectricCooktop" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ElectricCooktop"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CerealBox" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CerealBox"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_ClosingDisposition" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "ClosingDisposition"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CoffeeCarafe" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CoffeeCarafe"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CoffeeTable" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CoffeeTable"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CoilCooktop" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CoilCooktop"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Compartment" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Compartment"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Cooktop" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Cooktop"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Countertop" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Countertop"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Tableware" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Tableware"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Cup" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Cup"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DesignedHandle" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DesignedHandle"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Cupboard" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Cupboard"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Rack" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Rack"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Cutlery" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Cutlery"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_CuttingTool" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "CuttingTool"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DesignedSpade" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DesignedSpade"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DessertFork" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DessertFork"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Fork" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Fork"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DinnerPlate" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DinnerPlate"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Dishwasher" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Dishwasher"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_DishwasherTab" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "DishwasherTab"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Dispenser" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Dispenser"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Door" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Door"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Drawer" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Drawer"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_FreezerCompartment" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "FreezerCompartment"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_GasCooktop" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "GasCooktop"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Glass" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Glass"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Hotplate" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Hotplate"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_InductionCooktop" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "InductionCooktop"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_JamJar" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "JamJar"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Jar" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Jar"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Kitchen" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Kitchen"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_KitchenCabinet" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "KitchenCabinet"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Knife" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Knife"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_KitchenUnit" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "KitchenUnit"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Lid" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Lid"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MilkBottle" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MilkBottle"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_MilkPack" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "MilkPack"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Pack" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Pack"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_NutellaJar" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "NutellaJar"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Oven" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Oven"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TemperingByHeating" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TemperingByHeating"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Pan" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Pan"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Pancake" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Pancake"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PancakeMix" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PancakeMix"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PastaBowl" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PastaBowl"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_PepperShaker" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "PepperShaker"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Shaker" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Shaker"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Pot" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Pot"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_RaspberryJamJar" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "RaspberryJamJar"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Refrigerator" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Refrigerator"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SaladBowl" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SaladBowl"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SaltShaker" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SaltShaker"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Sink" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Sink"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Sofa" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Sofa"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SoupPot" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SoupPot"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Spatula" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Spatula"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Spoon" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Spoon"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Stove" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Stove"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_SugarDispenser" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "SugarDispenser"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TableFork" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TableFork"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TableKnife" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TableKnife"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TableSpoon" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TableSpoon"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TeaSpoon" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TeaSpoon"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Tap" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Tap"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TemperingByCooling" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TemperingByCooling"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_TrashContainer" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "TrashContainer"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_Wardrobe" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "Wardrobe"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_WaterBottle" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "WaterBottle"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_WaterGlass" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "WaterGlass"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_WineBottle" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "WineBottle"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+
+    class "_class_WineGlass" (
+        apiSchemas = ["RdfAPI"]
+    )
+    {
+        string rdf:conceptName = "WineGlass"
+        string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
+    }
+}
+
 def Mujoco "mujoco" (
     apiSchemas = ["MujocoOptionAPI"]
 )
@@ -61,7 +5387,7 @@ def Xform "milk_box" (
     float3 physics:diagonalInertia = (0.0011993749, 0.004142, 0.0046573747)
     float physics:mass = 1.14
     quatf physics:principalAxes = (-0.70710677, 1.1119388e-9, 0.70710677, 1.1119388e-9)
-
+    
     def Mesh "milk_box_visual" (
         apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI"]
     )
