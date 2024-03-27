@@ -57,7 +57,17 @@ const objectsFolder = gui.addFolder('Objects');
 
 var params = {};
 
-
+function logPrimSemanticLabels(stage, primPath, relationships) {
+    console.log(`Set classes of prim ${primPath} to:`);
+    for (let ontoPath of relationships.GetTargets()) {
+        const ontoPrim = stage.GetPrimAtPath(ontoPath);
+        if (!ontoPrim.HasProperty('rdf:conceptName') || !ontoPrim.HasProperty('rdf:namespace')) {
+            continue;
+        }
+        const rdfClassName = ontoPrim.GetProperty('rdf:namespace').Get() + ontoPrim.GetProperty('rdf:conceptName').Get();
+        console.log(rdfClassName);
+    }
+}
 
 function createGuiFromStage(stage) {
     const hightlightColor = new THREE.Color(0xffff00);
@@ -149,60 +159,51 @@ function createGuiFromStage(stage) {
             params[primPath]['semanticLabels'] = {};
             const ontoFolders = primFolder.addFolder('semantic labels');
             for (let ontology of ontologyList) {
-                const ontoFolder = ontoFolders.addFolder(ontology);
-                ontoFolder.add(ontologies, ontology, ontologies[ontology]).name(ontology).onChange(function (value) {
-                    if (value === 'null') {
+                ontoFolders.add(ontologies, ontology, ontologies[ontology]).name(ontology).onChange(function (value) {
+                    if (value === undefined || value === 'null') {
                         return;
                     }
                     params[primPath]['semanticLabels'][ontology] = value;
                 });
+            }
 
-                // Create an object to hold the button actions
-                var buttonActions = {
-                    addButton: function () {
+            // Create an object to hold the button actions
+            var buttonActions = {
+                addButton: function () {
+                    const prim = stage.GetPrimAtPath(primPath);
+                    const relationships = prim.CreateRelationship('semanticTag:semanticLabel');
+                    for (let ontology of ontologyList) {
                         const value = params[primPath]['semanticLabels'][ontology];
-
-                        if (value === 'null') {
-                            return;
+                        if (value === undefined || value === 'null') {
+                            continue;
                         }
-                        const prim = stage.GetPrimAtPath(primPath);
-                        const relationships = prim.CreateRelationship('semanticTag:semanticLabel');
                         relationships.AddTarget('/' + ontology + '/_class_' + value.split('#').pop());
-                        console.log(`Set classes of prim at path ${primPath} to:`);
-                        for (let ontoPath of relationships.GetTargets()) {
-                            const ontoPrim = stage.GetPrimAtPath(ontoPath);
-                            const rdfClassName = ontoPrim.GetProperty('rdf:namespace').Get() + ontoPrim.GetProperty('rdf:conceptName').Get();
-                            console.log(rdfClassName);
-                        }
-                    },
-                    removeButton: function () {
+                    }
+                    logPrimSemanticLabels(stage, primPath, relationships);
+                },
+                removeButton: function () {
+                    const prim = stage.GetPrimAtPath(primPath);
+                    if (!prim.HasProperty('semanticTag:semanticLabel')) {
+                        return;
+                    }
+
+                    const relationships = prim.GetProperty('semanticTag:semanticLabel');
+                    for (let ontology of ontologyList) {
                         const value = params[primPath]['semanticLabels'][ontology];
-
-                        if (value === 'null') {
-                            return;
+                        if (value === undefined || value === 'null') {
+                            continue;
                         }
-
-                        const prim = stage.GetPrimAtPath(primPath);
-                        if (!prim.HasProperty('semanticTag:semanticLabel')) {
-                            return;
-                        }
-
-                        const relationships = prim.GetProperty('semanticTag:semanticLabel');
                         if (relationships.RemoveTarget('/' + ontology + '/_class_' + value.split('#').pop())) {
-                            console.log(`Set classes of prim at path ${primPath} to:`);
-                            for (let ontoPath of relationships.GetTargets()) {
-                                const ontoPrim = stage.GetPrimAtPath(ontoPath);
-                                const rdfClassName = ontoPrim.GetProperty('rdf:namespace').Get() + ontoPrim.GetProperty('rdf:conceptName').Get();
-                                console.log(rdfClassName);
-                            }
+                            console.log(`Removed class ${value} from prim ${primPath}`)
                         }
                     }
-                };
+                    logPrimSemanticLabels(stage, primPath, relationships);
+                }
+            };
 
-                // Add buttons to GUI
-                ontoFolder.add(buttonActions, 'addButton').name('Add');
-                ontoFolder.add(buttonActions, 'removeButton').name('Remove');
-            }
+            // Add buttons to GUI
+            ontoFolders.add(buttonActions, 'addButton').name('Add');
+            ontoFolders.add(buttonActions, 'removeButton').name('Remove');
         }
     }
 }
@@ -222,9 +223,9 @@ async function usdView(path) {
     }
 }
 
-// const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
+const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
 // const usdFilePath = '/assets/panda/panda_flatten.usda';
-const usdFilePath = '/assets/ApartmentECAI/ApartmentECAI_flatten.usda';
+// const usdFilePath = '/assets/ApartmentECAI/ApartmentECAI_flatten.usda';
 
 usdView(usdFilePath);
 
@@ -235,7 +236,7 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
     }
 
     // Define the text content of the file
-    const fileContent = stage.ExportToString();
+    const fileContent = stage.Save();
 
     // Create a blob with the file content
     const blob = new Blob([fileContent], { type: 'text/plain' });

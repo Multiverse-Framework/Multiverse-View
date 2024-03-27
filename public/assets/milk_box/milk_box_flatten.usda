@@ -3364,7 +3364,7 @@ def "SOMA"
         string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
     }
 
-    class "_class_DPose" (
+    class "_class_6DPose" (
         apiSchemas = ["RdfAPI"]
     )
     {
@@ -3468,7 +3468,7 @@ def "SOMA"
         string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
     }
 
-    class "_class_DPosition" (
+    class "_class_3DPosition" (
         apiSchemas = ["RdfAPI"]
     )
     {
@@ -3492,7 +3492,7 @@ def "SOMA"
         string rdf:namespace = "http://www.ease-crc.org/ont/SOMA.owl#"
     }
 
-    class "_class_APISpecification" (
+    class "_class_API_Specification" (
         apiSchemas = ["RdfAPI"]
     )
     {

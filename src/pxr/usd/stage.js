@@ -14,8 +14,7 @@ function Open(path) {
     });
 }
 
-function getDefaultPrimName(stageContent) {
-    // Match everything from '#usda 1.0' up to the first occurrence of a line not part of the header
+function getHeaderSection(stageContent) {
     const headerRegex = /#usda 1.0\s*\(([^)]+)\)/s;
     const headerMatch = stageContent.match(headerRegex);
     let headerSection = '';
@@ -25,6 +24,12 @@ function getDefaultPrimName(stageContent) {
     } else {
         throw new Error('No header found in the stage');
     }
+
+    return headerSection;
+}
+
+function getDefaultPrimName(stageContent) {
+    const headerSection = getHeaderSection(stageContent);
 
     const defaultPrimRegex = /defaultPrim\s*=\s*"([^"]+)"/;
     const defaultPrimMatch = headerSection.match(defaultPrimRegex);
@@ -41,6 +46,7 @@ export class Stage {
     constructor(content) {
         this._content = content;
         this._primsCached = {};
+        this.GetPrimAtPath('/');
         const defaultPrimName = getDefaultPrimName(this._content);
         this._defaultPrim = this.GetPrimAtPath('/' + defaultPrimName);
     }
@@ -74,8 +80,24 @@ export class Stage {
     }
 
     Traverse() {
-        // Convert this._primsCached to an array of prims
-        return Object.values(this._primsCached);
+        return this.GetPrimAtPath('/').GetAllChildren();
+    }
+
+    Save() {
+        const stageContent = this.ExportToString();
+        let saveContent = getHeaderSection(stageContent) + '\n\n';
+        
+        for (let prim of this.Traverse()) {
+            if (prim.GetChildren().lenth > 0) {
+                const primContent = stageContent.substring(prim._data.contentIndex.startIndex, prim._data.contentIndex.primBlockEndIndex);
+                saveContent += primContent + '\n\n';
+            } else {
+                const primContent = stageContent.substring(prim._data.contentIndex.startIndex, prim._data.contentIndex.endIndex);
+                saveContent += primContent + '\n\n';
+            }
+        }
+
+        return saveContent;
     }
 }
 

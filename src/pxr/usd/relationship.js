@@ -1,7 +1,9 @@
+import { Property } from './property.js';
 import { Path } from './../sdf/path.js';
 
-export class Relationship {
-    constructor(paths) {
+export class Relationship extends Property {
+    constructor(name, paths) {
+        super(name);
         this._paths = [];
         if (paths.startsWith('[') && paths.endsWith(']')) {
             for (let path of paths.slice(1, paths.length - 1).split(',')) {
