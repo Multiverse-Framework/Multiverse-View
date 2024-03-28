@@ -223,9 +223,9 @@ async function usdView(path) {
     }
 }
 
-// const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
+const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
 // const usdFilePath = '/assets/panda/panda_flatten.usda';
-const usdFilePath = '/assets/ApartmentECAI/ApartmentECAI_flatten.usda';
+// const usdFilePath = '/assets/ApartmentECAI/ApartmentECAI_flatten.usda';
 
 usdView(usdFilePath);
 

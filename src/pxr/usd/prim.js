@@ -115,7 +115,7 @@ function extractPrimHeader(primHeader) {
     };
 }
 
-function extractPrimData(primContent) {
+function extractPrimData(prim, primContent) {
     let primType = null;
     const defPrimType = primContent.match(/def\s+(.+?)\s+"/);
     const classPrimType = primContent.match(/class\s+(.+?)\s+"/);
@@ -160,7 +160,7 @@ function extractPrimData(primContent) {
         primBlockLength = primBlock.length;
     }
 
-    const primProperties = primBlock === null ? {} : getPrimProperties(primBlock);
+    const primProperties = primBlock === null ? {} : getPrimProperties(prim, primBlock);
 
     return {
         primType: primType,
@@ -171,7 +171,7 @@ function extractPrimData(primContent) {
     };
 }
 
-function getPrimProperties(primBlock) {
+function getPrimProperties(prim, primBlock) {
     const lines = primBlock.split('\n');
     const result = {};
 
@@ -204,10 +204,10 @@ function getPrimProperties(primBlock) {
             if (type == 'custom') {
                 result[name] = trimmedValueString;
             } else if (type === 'rel') {
-                result[name] = new Relationship(name, trimmedValueString);
+                result[name] = new Relationship(prim, name, trimmedValueString);
             }
             else {
-                result[name.replace('.connect', '')] = new Attribute(name, type, trimmedValueString);
+                result[name.replace('.connect', '')] = new Attribute(prim, name, type, trimmedValueString);
             }
         }
     });
@@ -215,7 +215,8 @@ function getPrimProperties(primBlock) {
     return result;
 }
 
-function getPrimData(primStage, primPath, primContent, pathLevel) {
+function getPrimData(prim, primPath, primContent, pathLevel) {
+    const primStage = prim.GetStage();
     let primName;
     let primData;
     let parentPrimPath = '';
@@ -279,7 +280,7 @@ function getPrimData(primStage, primPath, primContent, pathLevel) {
             }
             
             primContent = tmpPrimContent;
-            primData = extractPrimData(primContent);
+            primData = extractPrimData(prim, primContent);
             for (let childPrimContent of primData.childPrimContents) {
                 const primNameRegexes = [/def\s+"([^"]+)"/, /class\s+"([^"]+)"/, /def\s+.+?\s+"([^"]+)"/, /class\s+.+?|\s+"([^"]+)"/]
                 for (let primNameRegex of primNameRegexes) {
@@ -325,7 +326,6 @@ function addPrimContent(prim, primContent) {
     
     let stageContent = stage.ExportToString();
     stage._content = stageContent.substring(0, startIndex) + primContent + stageContent.substring(startIndex);
-    console.log(stage._content);
 
     prim._data.contentIndex.primBlockEndIndex += primContent.length;
     prim._data.contentIndex.endIndex += primContent.length;
@@ -339,7 +339,7 @@ export class Prim {
             content = stage.ExportToString();
         }
         this._pathLevel = pathLevel;
-        this._data = getPrimData(stage, path, content, pathLevel);
+        this._data = getPrimData(this, path, content, pathLevel);
         if (!(path in stage._primsCached)) {
             stage._primsCached[path] = this;
         }
@@ -394,7 +394,7 @@ export class Prim {
         if (this.HasProperty(relationshipName)) {
             return this.GetProperty(relationshipName);
         } else {
-            this.GetProperties()[relationshipName] = new Relationship(relationshipName, '[]');
+            this.GetProperties()[relationshipName] = new Relationship(this, relationshipName, '[]');
             const newPrimContent = `rel ${relationshipName}\n`;
             addPrimContent(this, newPrimContent);
             return this.GetProperties()[relationshipName];

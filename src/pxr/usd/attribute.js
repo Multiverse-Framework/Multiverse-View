@@ -3,8 +3,8 @@ import { ValueTypeName, getValueFromTypeName } from '../sdf/types.js';
 import { Path } from '../sdf/path.js';
 
 export class Attribute extends Property {
-    constructor(name, type, value = null) {
-        super(name);
+    constructor(prim, name, type, value = null) {
+        super(prim, name);
         this._valueTypeName = new ValueTypeName(type);
         if (name.endsWith('.connect')) {
             this._value = null;
