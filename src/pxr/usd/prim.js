@@ -7,15 +7,13 @@ function splitPath(path) {
     return parts.filter(part => part !== '');
 }
 
-function extractPrimContentFromName(primName, primContent, startIndexMustEqualZero = false) {
-    const regexPattern1 = `(def|class)\\s+\\w+\\s+"${primName}"`;
-    const regexPattern2 = `(def|class)\\s+"${primName}"`;
-    const primStartPatterns = [new RegExp(regexPattern1), new RegExp(regexPattern2)];
+function extractPrimContentFromName(primName, primContent) {
+    const primStartPatterns = [new RegExp(`(def|class)\\s+\\w+\\s+"${primName}"`), new RegExp(`(def|class)\\s+"${primName}"`)];
 
-    return extractPrimContentFromStartPattern(primContent, primStartPatterns, startIndexMustEqualZero);
+    return extractPrimContentFromStartPattern(primContent, primStartPatterns);
 }
 
-function extractPrimContentFromStartPattern(primContent, primStartPatterns, startIndexMustEqualZero = false) {
+function extractPrimContentFromStartPattern(primContent, primStartPatterns) {
     let startIndex = -1;
     for (let primStartPattern of primStartPatterns) {
         startIndex = primContent.search(primStartPattern);
@@ -26,9 +24,6 @@ function extractPrimContentFromStartPattern(primContent, primStartPatterns, star
 
     if (startIndex === -1) {
         return null; // Prim block not found
-    }
-    if (startIndexMustEqualZero && startIndex !== 0) {
-        return null;
     }
 
     let openBraces = 0;
@@ -278,7 +273,7 @@ function getPrimData(primStage, primPath, primContent, pathLevel) {
 
             pathLevel++;
             
-            const tmpPrimContent = extractPrimContentFromName(primName, primContent, false);
+            const tmpPrimContent = extractPrimContentFromName(primName, primContent);
             if (tmpPrimContent === null) {
                 continue;
             }
@@ -331,6 +326,7 @@ export class Prim {
         if (content === null) {
             content = stage.ExportToString();
         }
+        this._pathLevel = pathLevel;
         this._data = getPrimData(stage, path, content, pathLevel);
         if (!(path in stage._primsCached)) {
             stage._primsCached[path] = this;

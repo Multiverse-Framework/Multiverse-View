@@ -42,6 +42,31 @@ function getDefaultPrimName(stageContent) {
     }
 }
 
+function printPrimContent(stageContent, prim) {
+    let primContent = '';
+    if (prim.GetChildren().length == 0) {
+        primContent += stageContent.substring(prim._data.contentIndex.startIndex, prim._data.contentIndex.endIndex);
+    } else {
+        primContent += stageContent.substring(prim._data.contentIndex.startIndex, prim._data.contentIndex.primBlockEndIndex);
+        for (let childPrim of prim.GetChildren()) {
+            primContent += '\n';
+            for (let i = 0; i <= prim._pathLevel; i++) {
+                primContent += '\t';
+            }
+            primContent += printPrimContent(stageContent, childPrim);
+        }
+        for (let i = 0; i < prim._pathLevel - 1; i++) {
+            primContent += '\t';
+        }
+        if (prim._pathLevel === 1) {
+            primContent += '\t';
+        }
+        primContent += '}';
+    }
+    primContent += '\n';
+    return primContent;
+}
+
 export class Stage {
     constructor(content) {
         this._content = content;
@@ -85,16 +110,12 @@ export class Stage {
 
     Save() {
         const stageContent = this.ExportToString();
+
         let saveContent = getHeaderSection(stageContent) + '\n\n';
         
-        for (let prim of this.Traverse()) {
-            if (prim.GetChildren().lenth > 0) {
-                const primContent = stageContent.substring(prim._data.contentIndex.startIndex, prim._data.contentIndex.primBlockEndIndex);
-                saveContent += primContent + '\n\n';
-            } else {
-                const primContent = stageContent.substring(prim._data.contentIndex.startIndex, prim._data.contentIndex.endIndex);
-                saveContent += primContent + '\n\n';
-            }
+        for (let prim of this.GetPrimAtPath('/').GetChildren()) {
+            saveContent += '\n';
+            saveContent += printPrimContent(stageContent, prim);
         }
 
         return saveContent;
