@@ -319,6 +319,18 @@ function getPrimData(primStage, primPath, primContent, pathLevel) {
     }
 }
 
+function addPrimContent(prim, primContent) {
+    let stage = prim.GetStage();
+    let startIndex = prim._data.contentIndex.primBlockEndIndex;
+    
+    let stageContent = stage.ExportToString();
+    stage._content = stageContent.substring(0, startIndex) + primContent + stageContent.substring(startIndex);
+    console.log(stage._content);
+
+    prim._data.contentIndex.primBlockEndIndex += primContent.length;
+    prim._data.contentIndex.endIndex += primContent.length;
+}
+
 export class Prim {
     constructor(stage, path, content = null, pathLevel = 0) {
         this._stage = stage;
@@ -383,6 +395,8 @@ export class Prim {
             return this.GetProperty(relationshipName);
         } else {
             this.GetProperties()[relationshipName] = new Relationship(relationshipName, '[]');
+            const newPrimContent = `rel ${relationshipName}\n`;
+            addPrimContent(this, newPrimContent);
             return this.GetProperties()[relationshipName];
         }
     }

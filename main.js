@@ -223,9 +223,9 @@ async function usdView(path) {
     }
 }
 
-const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
+// const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
 // const usdFilePath = '/assets/panda/panda_flatten.usda';
-// const usdFilePath = '/assets/ApartmentECAI/ApartmentECAI_flatten.usda';
+const usdFilePath = '/assets/ApartmentECAI/ApartmentECAI_flatten.usda';
 
 usdView(usdFilePath);
 
@@ -236,7 +236,7 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
     }
 
     // Define the text content of the file
-    const fileContent = stage.Save();
+    const fileContent = stage.ExportToString();
 
     // Create a blob with the file content
     const blob = new Blob([fileContent], { type: 'text/plain' });

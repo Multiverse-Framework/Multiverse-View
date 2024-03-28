@@ -107,18 +107,5 @@ export class Stage {
     Traverse() {
         return this.GetPrimAtPath('/').GetAllChildren();
     }
-
-    Save() {
-        const stageContent = this.ExportToString();
-
-        let saveContent = getHeaderSection(stageContent) + '\n\n';
-        
-        for (let prim of this.GetPrimAtPath('/').GetChildren()) {
-            saveContent += '\n';
-            saveContent += printPrimContent(stageContent, prim);
-        }
-
-        return saveContent;
-    }
 }
 
