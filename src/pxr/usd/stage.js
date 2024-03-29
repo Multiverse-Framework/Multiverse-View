@@ -85,7 +85,7 @@ export class Stage {
     static async Open(path) {
         const content = await Open(path);
         if (content.length === 0) {
-            throw new Error('Failed to open stage');
+            throw new Error(`Failed to open stage) ${path}`);
         }
         return new Stage(content);
     }
