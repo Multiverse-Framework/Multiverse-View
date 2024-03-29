@@ -1,7 +1,7 @@
 #usda 1.0
 (
     defaultPrim = "milk_box"
-    doc = """Generated from Composed Stage of root layer /media/giangnguyen/Storage/Multiverse-View/public/assets/milk_box/milk_box.usda
+    doc = """Generated from Composed Stage of root layer ./milk_box/milk_box.usda
 """
     metersPerUnit = 1
     upAxis = "Z"
@@ -5346,7 +5346,7 @@ def Mujoco "mujoco" (
         {
             def MujocoMesh "milk_box_visual"
             {
-                asset mujoco:mesh:file = @/media/giangnguyen/Storage/Multiverse-View/public/assets/milk_box/milk_box/meshes/obj/milk_box_visual.obj@
+                asset mujoco:mesh:file = @./milk_box/milk_box/meshes/obj/milk_box_visual.obj@
             }
         }
 
@@ -5439,7 +5439,7 @@ def Xform "milk_box" (
                 def Shader "DiffuseTexture"
                 {
                     uniform token info:id = "UsdUVTexture"
-                    asset inputs:file = @/media/giangnguyen/Storage/Multiverse-View/public/assets/milk_box/milk_box/textures/milk_box_visual.png@
+                    asset inputs:file = @./milk_box/milk_box/textures/milk_box_visual.png@
                     float2 inputs:st.connect = </milk_box/milk_box_visual/Materials/milk_box_visual/PrimvarReader.outputs:result>
                     float3 outputs:rgb
                 }
