@@ -3357,7 +3357,7 @@ def "SOMA"
         string rdf:conceptName = "RevoluteJoint"
     }
 
-    class "_class_DPose" (
+    class "_class_6DPose" (
         prepend apiSchemas = ["RdfAPI"]
         prepend inherits = </_class_SOMA_namespace>
     )
@@ -3461,7 +3461,7 @@ def "SOMA"
         string rdf:conceptName = "TimeRole"
     }
 
-    class "_class_DPosition" (
+    class "_class_3DPosition" (
         prepend apiSchemas = ["RdfAPI"]
         prepend inherits = </_class_SOMA_namespace>
     )
@@ -3485,7 +3485,7 @@ def "SOMA"
         string rdf:conceptName = "SoftwareInstance"
     }
 
-    class "_class_APISpecification" (
+    class "_class_API_Specification" (
         prepend apiSchemas = ["RdfAPI"]
         prepend inherits = </_class_SOMA_namespace>
     )

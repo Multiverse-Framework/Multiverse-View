@@ -8,22 +8,15 @@ function splitPath(path) {
 }
 
 function extractPrimContentFromName(primName, primContent) {
-    const primStartPatterns = [new RegExp(`(def|class)\\s+\\w+\\s+"${primName}"`), new RegExp(`(def|class)\\s+"${primName}"`)];
+    const primStartPattern = new RegExp(`(def|class)\\s+(\\w*)\\s*"${primName}"`);
 
-    return extractPrimContentFromStartPattern(primContent, primStartPatterns);
+    return extractPrimContentFromStartPattern(primContent, primStartPattern);
 }
 
-function extractPrimContentFromStartPattern(primContent, primStartPatterns) {
-    let startIndex = -1;
-    for (let primStartPattern of primStartPatterns) {
-        startIndex = primContent.search(primStartPattern);
-        if (startIndex !== -1) {
-            break;
-        }
-    }
-
+function extractPrimContentFromStartPattern(primContent, primStartPattern) {
+    let startIndex = primContent.search(primStartPattern);
     if (startIndex === -1) {
-        return null; // Prim block not found
+        return null;
     }
 
     let openBraces = 0;
@@ -57,38 +50,29 @@ function extractPrimContentFromStartPattern(primContent, primStartPatterns) {
     return primContent.substring(startIndex, endIndex + 1);
 }
 
-function extractPrimDataFromBrace(primContent, startBrace, endBrace) {
-    let braceCount = 0;
-    let insidePrim = false;
-    let primContentStart = -1;
-    let primContentEnd = -1;
+function extractPrimContentFromBrace(primContent, startBrace, endBrace) {
+    let openBraces = 0;
+    let startIndex = primContent.indexOf(startBrace);
+    let endIndex = startIndex;
 
-    // Start searching from the found prim block
-    for (let i = 0; i < primContent.length; i++) {
-        const char = primContent[i];
-
-        if (char === startBrace) {
-            braceCount++;
-            if (!insidePrim) {
-                insidePrim = true;
-                primContentStart = i + 1; // Content starts after this brace
+    // Start searching from the point where the prim block starts
+    for (let i = startIndex; i < primContent.length; i++) {
+        if (primContent[i] === startBrace) {
+            openBraces++;
+        } else if (primContent[i] === endBrace) {
+            openBraces--;
+            if (openBraces === 0) { // Found the matching closing brace
+                endIndex = i;
+                break;
             }
-        } else if (char === endBrace) {
-            braceCount--;
-        }
-
-        if (insidePrim && braceCount === 0) {
-            primContentEnd = i; // Content ends before this brace
-            break;
         }
     }
 
-    if (primContentStart === -1 || primContentEnd === -1) {
-        return null; // Proper content block not found
+    if (endIndex === startIndex) {
+        return null; // Matching closing brace not found
     }
 
-    // Extract the content block
-    return primContent.substring(primContentStart, primContentEnd).trim();
+    return primContent.substring(startIndex, endIndex + 1);
 }
 
 function extractPrimHeader(primHeader) {
@@ -127,13 +111,13 @@ function extractPrimData(prim, primContent) {
 
     let primHeader = null;
     if (primContent.indexOf('(') < primContent.indexOf('{')) {
-        const primHeaderString = extractPrimDataFromBrace(primContent, "(", ")");
+        const primHeaderString = extractPrimContentFromBrace(primContent, "(", ")");
         if (primHeaderString !== null) {
             primHeader = extractPrimHeader(primHeaderString);
         }
     }
 
-    let primBlock = extractPrimDataFromBrace(primContent, "{", "}");
+    let primBlock = extractPrimContentFromBrace(primContent, "{", "}");
 
     // Further processing to exclude child definitions like 'def Mesh', if necessary
     let childPrimContents = [];
@@ -148,7 +132,7 @@ function extractPrimData(prim, primContent) {
         primBlock = primBlock.substring(0, childDefIndex).trim();
 
         while (childDefIndex !== -1) {
-            const childPrimContent = extractPrimContentFromStartPattern(childPrimsContent, [/(def|class)\s+/]);
+            const childPrimContent = extractPrimContentFromStartPattern(childPrimsContent, /(def|class)\s+/);
 
             childPrimContents.push(childPrimContent);
 
@@ -215,7 +199,7 @@ function getPrimProperties(prim, primBlock) {
     return result;
 }
 
-function getPrimData(prim, primPath, primContent, pathLevel) {
+function getPrimData(prim, primPath, primContent) {
     const primStage = prim.GetStage();
     let primName;
     let primData;
@@ -234,7 +218,7 @@ function getPrimData(prim, primPath, primContent, pathLevel) {
             primContent = primContent.substring(childDefIndex).trim();
 
             while (childDefIndex !== -1) {
-                const childPrimContent = extractPrimContentFromStartPattern(childPrimsContent, [/(def|class)\s+/]);
+                const childPrimContent = extractPrimContentFromStartPattern(childPrimsContent, /(def|class)\s+/);
 
                 childPrimContents.push(childPrimContent);
 
@@ -245,13 +229,9 @@ function getPrimData(prim, primPath, primContent, pathLevel) {
         }
 
         for (let childPrimContent of childPrimContents) {
-            const primNameRegexes = [/def\s+"([^"]+)"/, /class\s+"([^"]+)"/, /def\s+.+?\s+"([^"]+)"/, /class\s+.+?|\s+"([^"]+)"/]
-            for (let primNameRegex of primNameRegexes) {
-                const childPrimName = childPrimContent.match(primNameRegex);
-                if (childPrimName) {
-                    childPrims.push(new Prim(primStage, `/${childPrimName[1]}`, childPrimContent, pathLevel));
-                    break;
-                }
+            const childPrimName = childPrimContent.match(/(def|class)\s+(\w*)\s*"([^"]+)"/);
+            if (childPrimName) {
+                childPrims.push(new Prim(primStage, `/${childPrimName[3]}`, childPrimContent));
             }
         }
 
@@ -264,6 +244,7 @@ function getPrimData(prim, primPath, primContent, pathLevel) {
 
     } else {
         let currentPathLevel = 0;
+        let pathLevel = getPathLevel(primPath);
         for (primName of splitPath(primPath)) {
             currentPathLevel++;
             parentPrimPath += '/' + primName;
@@ -282,13 +263,9 @@ function getPrimData(prim, primPath, primContent, pathLevel) {
             primContent = tmpPrimContent;
             primData = extractPrimData(prim, primContent);
             for (let childPrimContent of primData.childPrimContents) {
-                const primNameRegexes = [/def\s+"([^"]+)"/, /class\s+"([^"]+)"/, /def\s+.+?\s+"([^"]+)"/, /class\s+.+?|\s+"([^"]+)"/]
-                for (let primNameRegex of primNameRegexes) {
-                    const childPrimName = childPrimContent.match(primNameRegex);
-                    if (childPrimName) {
-                        childPrims.push(new Prim(primStage, `${parentPrimPath}/${childPrimName[1]}`, childPrimContent, pathLevel));
-                        break;
-                    }
+                const childPrimName = childPrimContent.match(/(def|class)\s+(\w*)\s*"([^"]+)"/);
+                if (childPrimName) {
+                    childPrims.push(new Prim(primStage, `${parentPrimPath}/${childPrimName[3]}`, childPrimContent, pathLevel));
                 }
             }
         }
@@ -302,7 +279,7 @@ function getPrimData(prim, primPath, primContent, pathLevel) {
     const primBlockStartIndex = stageContent.indexOf(primContent) + 1;
     let primBlockEndIndex = endIndex - 1;
     if (childPrims.length > 0) {
-        primBlockEndIndex = primBlockStartIndex + primData.primBlockLength;
+        primBlockEndIndex = primBlockStartIndex + primData.primBlockLength - 1;
     }
 
     const contentIndex = {
@@ -321,28 +298,39 @@ function getPrimData(prim, primPath, primContent, pathLevel) {
 }
 
 function addPrimContent(prim, primContent) {
-    let stage = prim.GetStage();
-    let startIndex = prim._data.contentIndex.primBlockEndIndex;
+    const stage = prim.GetStage();
+    const primBLockEndIndex = prim._data.contentIndex.primBlockEndIndex;
     
-    let stageContent = stage.ExportToString();
-    stage._content = stageContent.substring(0, startIndex) + primContent + stageContent.substring(startIndex);
+    const stageContent = stage.ExportToString();
+
+    primContent += '\n\t';
+    for (let i = 0; i < prim._pathLevel; i++) {
+        primContent += '\t';
+    }
+
+    stage._content = stageContent.substring(0, primBLockEndIndex) + primContent + stageContent.substring(primBLockEndIndex);
 
     prim._data.contentIndex.primBlockEndIndex += primContent.length;
     prim._data.contentIndex.endIndex += primContent.length;
 }
 
+function getPathLevel(path) {
+    return path.split('/').length - 1;
+}
+
 export class Prim {
-    constructor(stage, path, content = null, pathLevel = 0) {
+    constructor(stage, path, content = null) {
+        if (path in stage._primsCached) {
+            throw new Error('Prim already exists');
+        }
+        console.log('Loading prim', path);
+        stage._primsCached[path] = this;
         this._stage = stage;
         this._path = new Path(path);
         if (content === null) {
             content = stage.ExportToString();
         }
-        this._pathLevel = pathLevel;
-        this._data = getPrimData(this, path, content, pathLevel);
-        if (!(path in stage._primsCached)) {
-            stage._primsCached[path] = this;
-        }
+        this._data = getPrimData(this, path, content);
     }
 
     GetStage() {

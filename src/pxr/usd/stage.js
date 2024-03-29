@@ -7,9 +7,15 @@ function Open(path) {
         const loader = new THREE.FileLoader();
 
         loader.load(path,
-            data => resolve(data), // Resolve the promise with the content
-            xhr => console.log(path + ' ' + (xhr.loaded / xhr.total * 100) + '% loaded'),
-            err => reject(err) // Reject the promise on error
+            function (data) {
+                resolve(data);
+            },
+            function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+            },
+            function (error) {
+                reject(error);
+            }
         );
     });
 }
