@@ -37,6 +37,14 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+      - name: Install threejs
+        run: |
+            wget https://nodejs.org/dist/v20.12.0/node-v20.12.0-linux-x64.tar.xz
+            tar -xvf node-v20.12.0-linux-x64.tar.xz
+            export PATH=$PATH:${PWD}\node-v20.12.0-linux-x64/bin
+            npm install --save three
+            npm install --save-dev vite
+            npm install dat.gui
 
   # Deployment job
   deploy:
@@ -49,12 +57,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Install threejs
-        run: |
-            wget https://nodejs.org/dist/v20.12.0/node-v20.12.0-linux-x64.tar.xz
-            tar -xvf node-v20.12.0-linux-x64.tar.xz
-            export PATH=$PATH:${PWD}\node-v20.12.0-linux-x64/bin
-            npm install --save three
-            npm install --save-dev vite
-            npm install dat.gui
-            npx vite
