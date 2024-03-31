@@ -1,8 +1,6 @@
 import * as dat from 'dat.gui';
 import * as THREE from 'three';
-const gui = new dat.GUI({ 'width': 500 });
-
-const objectsFolder = gui.addFolder('Objects');
+let gui = new dat.GUI({ 'width': 500 });
 
 var params = {};
 
@@ -21,6 +19,14 @@ function logPrimSemanticLabels(stage, primPath, relationships) {
 export function createGuiFromStage(stage) {
     const hightlightColor = new THREE.Color(0xffff00);
 
+    params = {};
+    if (gui) {
+        gui.destroy();
+        gui = null; // Remove reference to the old GUI
+    }
+    gui = new dat.GUI({ 'width': 500 });
+    
+    const objectsFolder = gui.addFolder('Objects');
     const ontologyList = ["DUL", "SOMA"];
     const ontologies = {};
     for (let ontology of ontologyList) {

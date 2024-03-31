@@ -3,6 +3,9 @@
     defaultPrim = "milk_box"
     metersPerUnit = 1
     upAxis = "Z"
+    subLayers = [
+        @./milk_box_TBox.usda@
+    ]
 )
 
 def Mujoco "mujoco" (

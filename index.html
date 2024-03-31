@@ -9,29 +9,57 @@
 			margin: 0;
 			position: relative;
 		}
-
-		canvas {
-            display: block;
-        }
-        #downloadBtn {
+        
+		.uploadButton {
             position: absolute; /* Position the button absolutely */
-            top: 20px; /* Adjust as needed */
-            left: 20px; /* Adjust as needed */
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
             cursor: pointer;
-            border-radius: 5px;
-            outline: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            border-radius: 8px;
+        }
+        
+        .uploadButton:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .downloadButton {
+            position: absolute; /* Position the button absolutely */
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 100px;
+            transition-duration: 0.4s;
+            border-radius: 8px;
+        }
+        
+        .downloadButton:hover {
+            background-color: white;
+            color: black;
         }
 	</style>
 </head>
 
 <body>
-	<script type="module" src="/main.js"></script>
-	<button id="downloadBtn">Download</button>
+    <input type="file" id="fileInput" style="display: none;" />
+    <label for="fileInput" class="uploadButton">Upload</label>
+    <button id="downloadBtn" class="downloadButton">Download</button>
+	
+    <script type="module" src="/main.js"></script>
 </body>
 
 </html>

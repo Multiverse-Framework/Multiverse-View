@@ -8,7 +8,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Create a scene
-const scene = new THREE.Scene();
+let scene = new THREE.Scene();
 scene.background = new THREE.Color(0x87CEEB);
 
 // Create a camera
@@ -40,6 +40,15 @@ scene.add(ambientLight);
 // const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 // scene.add(plane);
 
+function resetScene() {
+    while (scene.children.length > 0) { 
+        scene.remove(scene.children[0]); 
+    }
+    scene.add(gridHelper);
+    scene.add(axesHelper);
+    scene.add(ambientLight);
+}
+
 ////////////////
 // USD import //
 ////////////////
@@ -52,7 +61,7 @@ let object3D = null;
 
 let stage = null;
 
-async function usdView(path) {
+async function usdViewFromPath(path) {
     try {
         stage = await Usd.Stage.Open(path);
         const defaultPrim = stage.GetDefaultPrim();
@@ -65,11 +74,35 @@ async function usdView(path) {
     }
 }
 
+function usdViewFromContent(content) {
+    resetScene();
+
+    stage = new Usd.Stage(content);
+    const defaultPrim = stage.GetDefaultPrim();
+    object3D = getObject3DFromXform(defaultPrim);
+    scene.add(object3D);
+
+    createGuiFromStage(stage);
+}
+
 // const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
-const usdFilePath = '/assets/panda/panda_flatten.usda';
+// const usdFilePath = '/assets/cold_cutting_2/cold_cutting_2_flatten.usda';
 // const usdFilePath = '/assets/ApartmentECAI/ApartmentECAI_flatten.usda';
 
-usdView(usdFilePath);
+// usdView(usdFilePath);
+
+document.getElementById('fileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        console.log('File selected:', file);
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const content = e.target.result;
+            usdViewFromContent(content);
+        };
+        reader.readAsText(file); // Adjust based on file type
+    }
+});
 
 document.getElementById('downloadBtn').addEventListener('click', () => {
     if (stage == null) {
