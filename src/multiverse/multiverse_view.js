@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 
-const CURRENTPATH = '/media/giangnguyen/Storage/Multiverse-View';
-const USDPATH = '/assets/ApartmentECAI';
+const TEXTUREPATH = '/assets/textures';
 
 function createCube(transform) {
     const geometry = new THREE.BoxGeometry(2, 2, 2);
@@ -20,16 +19,7 @@ function createGeom(transform, vertices, uvs) {
 }
 
 function createTexture(textureFile, anisotropy = 1, colorSpace = THREE.SRGBColorSpace, wrapS = THREE.ClampToEdgeWrapping, wrapT = THREE.ClampToEdgeWrapping) {
-    if (textureFile.startsWith(`${CURRENTPATH}/public`)) {
-        textureFile = textureFile.slice(`${CURRENTPATH}/public`.length);
-    }
-    if (!textureFile.startsWith('/')) {
-        if (textureFile.startsWith('.'))
-        {
-            textureFile = textureFile.slice(1);
-        }
-        textureFile = `${USDPATH}/${textureFile}`;
-    }
+    textureFile = `${TEXTUREPATH}/${textureFile.split('/').pop()}`;
     console.log(`Load texture from ${textureFile}`)
     let texture = new THREE.TextureLoader().load(textureFile);
     texture.anisotropy = anisotropy;

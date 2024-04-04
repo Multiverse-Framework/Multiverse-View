@@ -2,16 +2,17 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<title>Multiverse View</title>
-	<style>
-		body {
-			margin: 0;
-			position: relative;
-		}
-        
-		.uploadButton {
-            position: absolute; /* Position the button absolutely */
+    <meta charset="utf-8">
+    <title>Multiverse View</title>
+    <style>
+        body {
+            margin: 0;
+            position: relative;
+        }
+
+        .uploadButton {
+            position: absolute;
+            /* Position the button absolutely */
             cursor: pointer;
             background-color: #4CAF50;
             color: white;
@@ -25,14 +26,15 @@
             transition-duration: 0.4s;
             border-radius: 8px;
         }
-        
+
         .uploadButton:hover {
             background-color: white;
             color: black;
         }
 
         .downloadButton {
-            position: absolute; /* Position the button absolutely */
+            position: absolute;
+            /* Position the button absolutely */
             cursor: pointer;
             background-color: #4CAF50;
             color: white;
@@ -46,19 +48,19 @@
             transition-duration: 0.4s;
             border-radius: 8px;
         }
-        
+
         .downloadButton:hover {
             background-color: white;
             color: black;
         }
-	</style>
+    </style>
 </head>
 
 <body>
     <input type="file" id="fileInput" style="display: none;" />
     <label for="fileInput" class="uploadButton">Upload</label>
     <button id="downloadBtn" class="downloadButton">Download</button>
-	
+
     <script type="module" src="/main.js"></script>
 </body>
 

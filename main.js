@@ -112,6 +112,8 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
 
     // Define the text content of the file
     const fileContent = stage.ExportToString();
+    const defaultPrim = stage.GetDefaultPrim();
+    const primName = defaultPrim.GetName();
 
     // Create a blob with the file content
     const blob = new Blob([fileContent], { type: 'text/plain' });
@@ -119,7 +121,7 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
     // Create a temporary link element
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
-    link.download = usdFilePath.split('/').pop();
+    link.download = primName + '.usda';
 
     // Append the link to the body
     document.body.appendChild(link);
