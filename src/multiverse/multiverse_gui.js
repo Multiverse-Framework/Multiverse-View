@@ -1,5 +1,7 @@
 import * as dat from 'dat.gui';
 import * as THREE from 'three';
+import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
+
 let gui = new dat.GUI({ 'width': 500 });
 
 var params = {};
@@ -16,7 +18,47 @@ function logPrimSemanticLabels(stage, primPath, relationships) {
     }
 }
 
-export function createGuiFromStage(stage) {
+function annotatePrimWithSemanticLabels(prim) {
+    if (!prim.HasProperty('semanticTag:semanticLabel')) {
+        return null;
+    }
+
+    const p = document.createElement('p');
+    p.style.color = 'yellow';
+    p.textContent = '[';
+
+    for (let relationship of prim.GetProperty('semanticTag:semanticLabel').GetTargets()) {
+        const ontoPrim = prim.GetStage().GetPrimAtPath(relationship);
+        if (!ontoPrim.HasProperty('rdf:conceptName') || !ontoPrim.HasProperty('rdf:namespace')) {
+            continue;
+        }
+        p.textContent += ontoPrim.GetParent().GetName() + ':' + ontoPrim.GetProperty('rdf:conceptName').Get() + ', ';
+    }
+
+    p.textContent = p.textContent.slice(0, -2);
+    p.textContent += ']';
+
+    const cPointLabel = new CSS2DObject(p);
+    const primTransform = prim.HasProperty('xformOp:transform') ? prim.GetProperty('xformOp:transform').Get() : new THREE.Matrix4();
+    var position = new THREE.Vector3();
+    var quaternion = new THREE.Quaternion();
+    var scale = new THREE.Vector3();
+    primTransform.decompose(position, quaternion, scale);
+    cPointLabel.position.set(position.x, position.y, position.z);
+    
+    return cPointLabel;
+}
+
+function resetAnnotator(scene, prim, params){
+    const primPath = prim.GetPath().pathString;
+    scene.remove(params[primPath]['annotator']);
+    params[primPath]['annotator'] = annotatePrimWithSemanticLabels(prim);
+    if (params[primPath]['annotator'] !== null) {
+        scene.add(params[primPath]['annotator']);
+    }
+}
+
+export function createGuiFromStage(scene, stage) {
     const hightlightColor = new THREE.Color(0xffff00);
 
     params = {};
@@ -25,7 +67,7 @@ export function createGuiFromStage(stage) {
         gui = null; // Remove reference to the old GUI
     }
     gui = new dat.GUI({ 'width': 500 });
-    
+
     const objectsFolder = gui.addFolder('Objects');
     const ontologyList = ["DUL", "SOMA"];
     const ontologies = {};
@@ -122,6 +164,10 @@ export function createGuiFromStage(stage) {
                 });
             }
 
+            params[primPath]['annotator'] = null;
+
+            resetAnnotator(scene, prim, params);
+
             // Create an object to hold the button actions
             var buttonActions = {
                 addButton: function () {
@@ -132,9 +178,11 @@ export function createGuiFromStage(stage) {
                         if (value === undefined || value === 'null') {
                             continue;
                         }
+
                         relationships.AddTarget('/' + ontology + '/_class_' + value.split('#').pop());
                     }
                     logPrimSemanticLabels(stage, primPath, relationships);
+                    resetAnnotator(scene, prim, params);
                 },
                 removeButton: function () {
                     const prim = stage.GetPrimAtPath(primPath);
@@ -153,6 +201,7 @@ export function createGuiFromStage(stage) {
                         }
                     }
                     logPrimSemanticLabels(stage, primPath, relationships);
+                    resetAnnotator(scene, prim, params);
                 }
             };
 

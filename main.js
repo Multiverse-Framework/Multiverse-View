@@ -40,6 +40,15 @@ scene.add(ambientLight);
 // const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 // scene.add(plane);
 
+import  {CSS2DRenderer} from 'three/examples/jsm/renderers/CSS2DRenderer.js';
+
+const labelRenderer = new CSS2DRenderer();
+labelRenderer.setSize(window.innerWidth, window.innerHeight);
+labelRenderer.domElement.style.position = 'absolute';
+labelRenderer.domElement.style.top = '0px';
+labelRenderer.domElement.style.pointerEvents = 'none';
+document.body.appendChild(labelRenderer.domElement);
+
 function resetScene() {
     while (scene.children.length > 0) { 
         scene.remove(scene.children[0]); 
@@ -68,7 +77,7 @@ async function usdViewFromPath(path) {
         object3D = getObject3DFromXform(defaultPrim);
         scene.add(object3D);
 
-        createGuiFromStage(stage);
+        createGuiFromStage(scene, stage);
     } catch (error) {
         console.error('Failed to load file:', error);
     }
@@ -82,7 +91,7 @@ function usdViewFromContent(content) {
     object3D = getObject3DFromXform(defaultPrim);
     scene.add(object3D);
 
-    createGuiFromStage(stage);
+    createGuiFromStage(scene, stage);
 }
 
 // const usdFilePath = '/assets/milk_box/milk_box_flatten.usda';
@@ -141,6 +150,8 @@ function animate(time_in_ms) {
     requestAnimationFrame(animate);
 
     renderer.render(scene, camera);
+
+    labelRenderer.render(scene, camera);
 }
 
 if (WebGL.isWebGLAvailable()) {
@@ -156,4 +167,5 @@ window.addEventListener('resize', function () {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    labelRenderer.setSize(window.innerWidth, window.innerHeight);
 });
