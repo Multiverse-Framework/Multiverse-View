@@ -12,7 +12,6 @@ def Material "M_Metal_Chrome"
     def Shader "PBRShader"
     {
         uniform token info:id = "UsdPreviewSurface"
-        color3f inputs:diffuseColor = (1, 1, 1)
         color3f inputs:diffuseColor.connect = </M_Metal_Chrome/DiffuseTexture.outputs:rgb>
         float inputs:opacity = 1
         int inputs:useSpecularWorkflow = 1
