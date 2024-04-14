@@ -2,6 +2,9 @@
 (
     defaultPrim = "Apartment"
     metersPerUnit = 1
+    subLayers = [
+        @./ApartmentECAI_TBox.usda@
+    ]
     upAxis = "Z"
 )
 
@@ -152,7 +155,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_06_Base" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.00024082592, 0.03284415, -0.05355912)
@@ -160,6 +163,7 @@ def Xform "Apartment" (
         float physics:mass = 20.696962
         quatf physics:principalAxes = (0.70741904, -0.010275634, -0.7063184, 0.023812994)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_KitchenCabinet>
         matrix4d xformOp:transform = ( (0.000004214684923176115, -0.9999999999911182, 0, 0), (0.9999999999911182, 0.000004214684923176115, 0, 0), (0, 0, 1, 0), (9.17754077911377, -6.156527042388916, 0.42198318243026733, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -208,7 +212,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_06_Base_Drawer_03" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-2.3158208e-7, -0.041785054, -0.081414)
@@ -216,6 +220,7 @@ def Xform "Apartment" (
         float physics:mass = 7.5074883
         quatf physics:principalAxes = (-0.5566898, -0.4359998, 0.5566995, 0.4359889)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000004214684923176115, -0.9999999999911182, 0, 0), (0.9999999999911182, 0.000004214684923176115, 0, 0), (0, 0, 1, 0), (9.12474536895752, -6.157220363616943, 0.22507452964782715, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -496,7 +501,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_06_Base_Drawer_02" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-7.897006e-8, -0.0120703, -0.057703786)
@@ -504,6 +509,7 @@ def Xform "Apartment" (
         float physics:mass = 6.5021696
         quatf physics:principalAxes = (-0.7057985, 0.042975847, 0.042973798, 0.70580083)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000004214684923176115, -0.9999999999911182, 0, 0), (0.9999999999911182, 0.000004214684923176115, 0, 0), (0, 0, 1, 0), (9.124488830566406, -6.157266616821289, 0.554952085018158, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -784,7 +790,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_06_Base_Drawer_01" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-3.4471373e-7, 0.008673859, -0.026011841)
@@ -792,6 +798,7 @@ def Xform "Apartment" (
         float physics:mass = 4.815159
         quatf physics:principalAxes = (-0.70692456, 0.015964609, 0.015964502, 0.70692855)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000004214684923176115, -0.9999999999911182, 0, 0), (0.9999999999911182, 0.000004214684923176115, 0, 0), (0, 0, 1, 0), (9.124244689941406, -6.156850337982178, 0.7529809474945068, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -1648,7 +1655,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_03_Fridge" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (1.1619499, -2.698375, 91.152626)
@@ -1656,6 +1663,7 @@ def Xform "Apartment" (
         float physics:mass = -48.23049
         quatf physics:principalAxes = (0.009681251, 0.7074504, -0.0050134636, 0.7066789)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_KitchenCabinet>
         matrix4d xformOp:transform = ( (-0.000001348699175451884, -0.9999999999990905, 0, 0), (0.9999999999990905, -0.000001348699175451884, 0, 0), (0, 0, 1, 0), (9.177248001098633, -5.052584648132324, 1.0903091430664062, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -1776,7 +1784,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Fridge_Base" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (0.14194797, -3.1003942, -6.099022)
@@ -1784,6 +1792,7 @@ def Xform "Apartment" (
         float physics:mass = -146.61507
         quatf physics:principalAxes = (0.011832113, 0.7071016, -0.004629686, -0.7069978)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Refrigerator>
         matrix4d xformOp:transform = ( (0.0000063744678974477455, -0.999999999979683, 0, 0), (0.999999999979683, 0.0000063744678974477455, 0, 0), (0, 0, 1, 0), (9.158058548131693, -5.055505790245445, 1.008615419268608, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -4948,7 +4957,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_10_Base" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.000019951181, 0.032779057, -0.053457648)
@@ -4956,6 +4965,7 @@ def Xform "Apartment" (
         float physics:mass = 20.68064
         quatf physics:principalAxes = (0.7069912, -0.01666375, -0.7068121, 0.017390521)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_KitchenCabinet>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (6.959235668182373, -4.844614505767822, 0.42854979634284973, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -5004,7 +5014,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_10_Drawer_03" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (5.922868e-7, -0.04177235, -0.08141951)
@@ -5012,6 +5022,7 @@ def Xform "Apartment" (
         float physics:mass = 7.4911585
         quatf physics:principalAxes = (0.5567031, 0.43598458, -0.55669165, -0.43599716)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (7.00963830947876, -4.844245910644531, 0.2245825082063675, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -5292,7 +5303,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_10_Drawer_02" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (6.7271014e-7, -0.012066998, -0.057698783)
@@ -5300,6 +5311,7 @@ def Xform "Apartment" (
         float physics:mass = 6.4883733
         quatf physics:principalAxes = (0.7058011, -0.042974185, -0.042975567, -0.7057982)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (7.009951114654541, -4.844547271728516, 0.556601881980896, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -5580,7 +5592,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_10_Drawer_01" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (7.1419447e-7, 0.008680436, -0.025998726)
@@ -5588,6 +5600,7 @@ def Xform "Apartment" (
         float physics:mass = 4.8052254
         quatf physics:principalAxes = (0.70692974, -0.015959023, -0.015959159, -0.7069236)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (7.010195255279541, -4.845238208770752, 0.7542022466659546, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -5840,7 +5853,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_01_Drawer_02" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-4.2654773e-7, -0.043245587, -0.08026809)
@@ -5848,6 +5861,7 @@ def Xform "Apartment" (
         float physics:mass = 10.737902
         quatf physics:principalAxes = (-0.70211643, 0.08382116, 0.083821505, 0.70212567)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000004214684923176115, -0.9999999999911182, 0, 0), (0.9999999999911182, 0.000004214684923176115, 0, 0), (0, 0, 1, 0), (9.121969223022461, -4.050127029418945, 0.22633399069309235, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -6914,7 +6928,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_02_Base" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.0020468256, -14.207305, 61.716064)
@@ -6922,6 +6936,7 @@ def Xform "Apartment" (
         float physics:mass = -88.58491
         quatf physics:principalAxes = (0.70713377, -0.000025074261, -0.7070793, 0.0008336089)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_KitchenCabinet>
         matrix4d xformOp:transform = ( (0.000006406321083396449, -0.9999999999794793, 0, 0), (0.9999999999794793, 0.000006406321083396449, 0, 0), (0, 0, 1, 0), (9.17232608795166, -4.549736499786377, 1.0898194313049316, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -7000,7 +7015,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_02_Drawer_4" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.0002588848, -0.0022230048, -0.039967105)
@@ -7008,6 +7023,7 @@ def Xform "Apartment" (
         float physics:mass = 5.7774086
         quatf physics:principalAxes = (0.70684916, 0.0050683804, -0.0057673105, 0.70732266)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000006406321083396449, -0.9999999999794793, 0, 0), (0.9999999999794793, 0.000006406321083396449, 0, 0), (0, 0, 1, 0), (9.158632240599164, -4.548772144547034, 0.8473821431398392, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -7072,7 +7088,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_02_Drawer_5" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.0002588848, -0.0022230048, -0.039967105)
@@ -7080,6 +7096,7 @@ def Xform "Apartment" (
         float physics:mass = 5.7774086
         quatf physics:principalAxes = (0.70684916, 0.0050683804, -0.0057673105, 0.70732266)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000006406321083396449, -0.9999999999794793, 0, 0), (0.9999999999794793, 0.000006406321083396449, 0, 0), (0, 0, 1, 0), (9.158632240599164, -4.548772144547034, 0.571723461151123, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -7144,7 +7161,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_02_Drawer_02" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.0002588848, -0.0022230048, -0.039967105)
@@ -7152,6 +7169,7 @@ def Xform "Apartment" (
         float physics:mass = 5.7774086
         quatf physics:principalAxes = (0.70684916, 0.0050683804, -0.0057673105, 0.70732266)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000006406321083396449, -0.9999999999794793, 0, 0), (0.9999999999794793, 0.000006406321083396449, 0, 0), (0, 0, 1, 0), (9.15864444745979, -4.548774585930962, 1.2327158451080322, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -7272,7 +7290,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_02_Drawer_01" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.0002646338, -0.009020468, -0.018153105)
@@ -7280,6 +7298,7 @@ def Xform "Apartment" (
         float physics:mass = 4.834261
         quatf physics:principalAxes = (0.70729613, 0.00018400923, -0.000082193576, -0.70691735)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000006406321083396449, -0.9999999999794793, 0, 0), (0.9999999999794793, 0.000006406321083396449, 0, 0), (0, 0, 1, 0), (9.167677650465555, -4.548392505711261, 1.670282244682312, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -7344,7 +7363,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_02_Drawer_3" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.0002588848, -0.0022230048, -0.039967105)
@@ -7352,6 +7371,7 @@ def Xform "Apartment" (
         float physics:mass = 5.7774086
         quatf physics:principalAxes = (0.70684916, 0.0050683804, -0.0057673105, 0.70732266)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000006406321083396449, -0.9999999999794793, 0, 0), (0.9999999999794793, 0.000006406321083396449, 0, 0), (0, 0, 1, 0), (9.15864444745979, -4.548774585930962, 1.5125695168972015, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -7416,7 +7436,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_02_Drawer_6" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.0002588848, -0.0022230048, -0.039967105)
@@ -7424,6 +7444,7 @@ def Xform "Apartment" (
         float physics:mass = 5.7774086
         quatf physics:principalAxes = (0.70684916, 0.0050683804, -0.0057673105, 0.70732266)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000006406321083396449, -0.9999999999794793, 0, 0), (0.9999999999794793, 0.000006406321083396449, 0, 0), (0, 0, 1, 0), (9.158632240599164, -4.548772144547034, 0.1346273422241211, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -8120,7 +8141,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_09_Base" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.000025411784, 0.044025343, -0.07100574)
@@ -8128,6 +8149,7 @@ def Xform "Apartment" (
         float physics:mass = 23.936703
         quatf physics:principalAxes = (-0.48546088, 0.5145544, 0.5140715, 0.48506913)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_KitchenCabinet>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (6.959348201751709, -5.345383167266846, 0.4214980900287628, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -8176,7 +8198,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_09_Drawer_03" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (0.00014315275, -0.04370449, -0.080588415)
@@ -8184,6 +8206,7 @@ def Xform "Apartment" (
         float physics:mass = 10.750569
         quatf physics:principalAxes = (-0.70040965, 0.08465956, 0.08445488, 0.7036522)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (7.009797096252441, -5.343707084655762, 0.2253846675157547, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -8464,7 +8487,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_09_Drawer_02" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (6.427215e-7, -0.012539153, -0.058405932)
@@ -8472,6 +8495,7 @@ def Xform "Apartment" (
         float physics:mass = 9.248915
         quatf physics:principalAxes = (0.7058086, -0.042950485, -0.042949643, -0.7057938)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (-0.0000022759297624297403, 0.99999999999741, 0, 0), (-0.99999999999741, -0.0000022759297624297403, 0, 0), (0, 0, 1, 0), (7.0100998878479, -5.344728946685791, 0.5564426779747009, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -8752,7 +8776,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_09_Drawer_01" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (6.218183e-7, 0.007697884, -0.027858179)
@@ -8760,6 +8784,7 @@ def Xform "Apartment" (
         float physics:mass = 6.7918124
         quatf physics:principalAxes = (0.9997212, -0.023611017, -1.9065448e-7, -0.000009423479)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (7.010149002075195, -5.343630313873291, 0.7535824179649353, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -9530,7 +9555,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_04_Base" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (0.081800364, 0.033599146, 0.009469893)
@@ -9538,6 +9563,7 @@ def Xform "Apartment" (
         float physics:mass = 32.781895
         quatf physics:principalAxes = (0.7082507, -0.7059598, 0.0012229495, -0.00040245496)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_KitchenCabinet>
         matrix4d xformOp:transform = ( (0.000004214684923176115, -0.9999999999911182, 0, 0), (0.9999999999911182, 0.000004214684923176115, 0, 0), (0, 0, 1, 0), (9.269991874694824, -5.866569519042969, 1.7545452117919922, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -10296,7 +10322,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_11_Base" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.000030812902, 0.056130726, -0.08989313)
@@ -10304,6 +10330,7 @@ def Xform "Apartment" (
         float physics:mass = 28.82074
         quatf physics:principalAxes = (-0.68305725, 0.7303648, 0.00011735624, 0.00012786181)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_KitchenCabinet>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (6.95928955078125, -4.194250583648682, 0.4372747838497162, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -10352,7 +10379,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_11_Base_Drawer_03" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (3.100511e-7, -0.04488209, -0.080065064)
@@ -10360,6 +10387,7 @@ def Xform "Apartment" (
         float physics:mass = 15.655602
         quatf physics:principalAxes = (0.9928634, -0.119257145, -2.2296834e-7, -6.608682e-7)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (7.01006555557251, -4.195715427398682, 0.22396689653396606, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -10640,7 +10668,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_11_Base_Drawer_02" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (2.4396363e-7, -0.012882424, -0.0589198)
@@ -10648,6 +10676,7 @@ def Xform "Apartment" (
         float physics:mass = 13.389728
         quatf physics:principalAxes = (0.998155, -0.060717344, 2.6836188e-8, -5.9204825e-7)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (7.009596824645996, -4.194708347320557, 0.5564532279968262, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -10928,7 +10957,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_11_Base_Drawer_01" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (3.971817e-7, 0.006972901, -0.029229622)
@@ -10936,6 +10965,7 @@ def Xform "Apartment" (
         float physics:mass = 9.771699
         quatf physics:principalAxes = (0.9997039, -0.024333488, -1.0158938e-8, -3.751377e-7)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (-0.0000021073423723816376, 0.9999999999977792, 0, 0), (-0.9999999999977792, -0.0000021073423723816376, 0, 0), (0, 0, 1, 0), (7.010114669799805, -4.194895267486572, 0.7554433941841125, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -14822,7 +14852,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_01_Base" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-7.0195565, -21.929777, 8.597468)
@@ -14830,6 +14860,7 @@ def Xform "Apartment" (
         float physics:mass = -19.388647
         quatf physics:principalAxes = (-0.018529115, 0.7053935, 0.7084428, 0.013617365)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_KitchenCabinet>
         matrix4d xformOp:transform = ( (0.000006406321083396449, -0.9999999999794793, 0, 0), (0.9999999999794793, 0.000006406321083396449, 0, 0), (0, 0, 1, 0), (9.167593955993652, -4.039442539215088, 1.0418363809585571, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -15662,7 +15693,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_05_Base" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.000024932058, 0.044025276, -0.071005404)
@@ -15670,6 +15701,7 @@ def Xform "Apartment" (
         float physics:mass = 23.93668
         quatf physics:principalAxes = (-0.48546085, 0.5145537, 0.5140722, 0.48506913)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_KitchenCabinet>
         matrix4d xformOp:transform = ( (0.000006406321083396449, -0.9999999999794793, 0, 0), (0.9999999999794793, 0.000006406321083396449, 0, 0), (0, 0, 1, 0), (9.177467346191406, -5.656802654266357, 0.4216369390487671, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -15718,7 +15750,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_05_Base_Drawer_03" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-2.871956e-7, -0.04358248, -0.08063115)
@@ -15726,6 +15758,7 @@ def Xform "Apartment" (
         float physics:mass = 10.7569475
         quatf physics:principalAxes = (-0.7020061, 0.08473277, 0.08473317, 0.7020172)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000004214684923176115, -0.9999999999911182, 0, 0), (0.9999999999911182, 0.000004214684923176115, 0, 0), (0, 0, 1, 0), (9.124014854431152, -5.657559871673584, 0.22597000002861023, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -16006,7 +16039,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_05_Base_Drawer_02" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-2.6906375e-7, -0.012539053, -0.058405846)
@@ -16014,6 +16047,7 @@ def Xform "Apartment" (
         float physics:mass = 9.248908
         quatf physics:principalAxes = (-0.7057815, 0.042949405, 0.04295126, 0.7058208)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000004214684923176115, -0.9999999999911182, 0, 0), (0.9999999999911182, 0.000004214684923176115, 0, 0), (0, 0, 1, 0), (9.124430656433105, -5.657596111297607, 0.5553614497184753, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -16294,7 +16328,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_05_Base_Drawer_01" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (2.6641041e-8, 0.007283838, -0.027814504)
@@ -16302,6 +16336,7 @@ def Xform "Apartment" (
         float physics:mass = 6.7838707
         quatf physics:principalAxes = (0.99972427, -0.023481451, -7.397383e-8, -7.6513e-7)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000004214684923176115, -0.9999999999911182, 0, 0), (0.9999999999911182, 0.000004214684923176115, 0, 0), (0, 0, 1, 0), (9.124837875366211, -5.657802581787109, 0.7534152269363403, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -16554,7 +16589,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_08_Sink_Base" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.00002385868, 0.0444337, -0.07370931)
@@ -16562,6 +16597,7 @@ def Xform "Apartment" (
         float physics:mass = 23.721016
         quatf physics:principalAxes = (-0.48506284, 0.51493406, 0.5144458, 0.48466742)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_KitchenCabinet>
         matrix4d xformOp:transform = ( (-2.528810845170426e-7, 0.9999999999999678, 0, 0), (-0.9999999999999678, -2.528810845170426e-7, 0, 0), (0, 0, 1, 0), (6.959555625915527, -5.945012092590332, 0.4219115972518921, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -19802,7 +19838,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Kitchen_01_Drawer_01" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (0.0083922, -0.014544003, -0.05837485)
@@ -19810,6 +19846,7 @@ def Xform "Apartment" (
         float physics:mass = 8.9789295
         quatf physics:principalAxes = (-0.66623944, 0.046517007, 0.039124276, 0.7432567)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Drawer>
         matrix4d xformOp:transform = ( (0.000004214684923176115, -0.9999999999911182, 0, 0), (0.9999999999911182, 0.000004214684923176115, 0, 0), (0, 0, 1, 0), (9.120807647705078, -4.050665378570557, 0.5552511215209961, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -21680,7 +21717,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_Cup" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-0.005028542, 0.000016319951, -0.00084282004)
@@ -21688,6 +21725,7 @@ def Xform "Apartment" (
         float physics:mass = 0.11976868
         quatf physics:principalAxes = (-0.702637, 0.70271075, 0.07895587, 0.07915071)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Cup>
         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (7.05903541021506, -5.374538170408799, 0.9769314333295811, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -25394,7 +25432,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_CerealBox" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
@@ -25402,6 +25440,7 @@ def Xform "Apartment" (
         float physics:mass = 4.2000003
         quatf physics:principalAxes = (0.70710677, 0, 0.70710677, 0)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_CerealBox>
         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (6.859035405744712, -4.874538163354432, 1.0354314320220044, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -25440,7 +25479,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_MilkBox" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (0, 0, 0)
@@ -25448,6 +25487,7 @@ def Xform "Apartment" (
         float physics:mass = 1.1399999
         quatf physics:principalAxes = (0.70710677, -5.2041166e-8, -0.70710677, 5.2730663e-8)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_MilkBottle>
         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (6.859035405744712, -5.374538163354432, 1.0354314320220044, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -25485,7 +25525,7 @@ def Xform "Apartment" (
     }
 
     def Xform "SM_SmallBowl" (
-        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticTagAPI"]
     )
     {
         point3f physics:centerOfMass = (-6.0343575e-9, 2.0324245e-8, -0.0060715917)
@@ -25493,6 +25533,7 @@ def Xform "Apartment" (
         float physics:mass = 0.058381543
         quatf physics:principalAxes = (0.99985737, 1.0665053e-7, -1.0084469e-8, -0.016888605)
         bool physics:rigidBodyEnabled = 1
+        prepend rel semanticTag:semanticLabel = </SOMA/_class_Bowl>
         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (7.059035401274364, -5.074538170215289, 0.9675314335396875, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
