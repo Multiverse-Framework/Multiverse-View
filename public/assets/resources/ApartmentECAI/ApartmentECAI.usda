@@ -28752,7 +28752,7 @@ def Xform "Apartment" (
             color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)]
             float[] primvars:displayOpacity = [1]
             token visibility = "invisible"
-            matrix4d xformOp:transform = ( (-2.220446049250313e-16, 0, 0, 0), (0, -2.220446049250313e-16, 0, 0), (0, 0, 1, 0), (0, 0, -0.08860373497009277, 1) )
+            matrix4d xformOp:transform = ( (-1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, -0.08860373497009277, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
@@ -28766,7 +28766,7 @@ def Xform "Apartment" (
             color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)]
             float[] primvars:displayOpacity = [1]
             token visibility = "invisible"
-            matrix4d xformOp:transform = ( (-2.220446049250313e-16, 0, 0, 0), (0, -2.220446049250313e-16, 0, 0), (0, 0, 1, 0), (0, 0, -0.08860373497009277, 1) )
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, -1, 0, 0), (0, 0, 1, 0), (0, 0, -0.08860373497009277, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
