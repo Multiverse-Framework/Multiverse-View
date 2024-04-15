@@ -19,7 +19,7 @@ function logPrimSemanticLabels(stage, primPath, relationships) {
 }
 
 function annotatePrimWithSemanticLabels(prim) {
-    if (!prim.HasProperty('semanticTag:semanticLabel')) {
+    if (!prim.HasProperty('semanticTag:semanticLabels') || prim.GetProperty('semanticTag:semanticLabels').GetTargets().length == 0) {
         return null;
     }
 
@@ -27,7 +27,7 @@ function annotatePrimWithSemanticLabels(prim) {
     p.style.color = 'yellow';
     p.textContent = '[';
 
-    for (let relationship of prim.GetProperty('semanticTag:semanticLabel').GetTargets()) {
+    for (let relationship of prim.GetProperty('semanticTag:semanticLabels').GetTargets()) {
         const ontoPrim = prim.GetStage().GetPrimAtPath(relationship);
         if (!ontoPrim.HasProperty('rdf:conceptName') || !ontoPrim.HasProperty('rdf:namespace')) {
             continue;
@@ -45,16 +45,23 @@ function annotatePrimWithSemanticLabels(prim) {
     var scale = new THREE.Vector3();
     primTransform.decompose(position, quaternion, scale);
     cPointLabel.position.set(position.x, position.y, position.z);
-    
+
     return cPointLabel;
 }
 
-function resetAnnotator(scene, prim, params){
+function resetAnnotator(scene, prim, params, ontoFolders) {
     const primPath = prim.GetPath().pathString;
     scene.remove(params[primPath]['annotator']);
+    if (params[primPath]['semanticLabelButton'] !== undefined) {
+        ontoFolders.remove(params[primPath]['semanticLabelButton']);
+    }
     params[primPath]['annotator'] = annotatePrimWithSemanticLabels(prim);
     if (params[primPath]['annotator'] !== null) {
         scene.add(params[primPath]['annotator']);
+        params[primPath]['semanticLabelResults'] = params[primPath]['annotator'].element.textContent;
+        params[primPath]['semanticLabelButton'] = ontoFolders.add(params[primPath], 'semanticLabelResults').name('Semantic labels').listen();
+    } else {
+        params[primPath]['semanticLabelButton'] = undefined;
     }
 }
 
@@ -69,32 +76,6 @@ export function createGuiFromStage(scene, stage) {
     gui = new dat.GUI({ 'width': 500 });
 
     const objectsFolder = gui.addFolder('Objects');
-    const ontologyList = ["DUL", "SOMA"];
-    const ontologies = {};
-    for (let ontology of ontologyList) {
-        ontologies[ontology] = {};
-        ontologies[ontology][""] = null;
-        const ontoPrim = stage.GetPrimAtPath('/' + ontology);
-        for (let classPrim of ontoPrim.GetAllChildren()) {
-            if (classPrim.HasProperty('rdf:conceptName') && classPrim.HasProperty('rdf:namespace')) {
-                const rdfNamespace = classPrim.GetProperty('rdf:namespace').Get();
-                const rdfConceptName = classPrim.GetProperty('rdf:conceptName').Get();
-                const rdfClassName = rdfNamespace + rdfConceptName;
-                ontologies[ontology][rdfConceptName] = rdfClassName;
-            }
-        }
-
-        // Get the keys and sort them alphabetically
-        var sortedKeys = Object.keys(ontologies[ontology]).sort();
-
-        // Create a new object with sorted keys
-        var sortedDictionary = {};
-        sortedKeys.forEach(function (key) {
-            sortedDictionary[key] = ontologies[ontology][key];
-        });
-
-        ontologies[ontology] = sortedDictionary;
-    }
 
     for (let prim of stage.Traverse()) {
         const primPath = prim.GetPath().pathString;
@@ -153,45 +134,66 @@ export function createGuiFromStage(scene, stage) {
                 }
             });
 
+            params[primPath]['semanticReports'] = {};
+
+            const ontoFolders = primFolder.addFolder('Semantic tagging');
+
+            if (!prim.HasProperty('semanticTag:semanticReports')) {
+                continue;
+            }
+
+            for (let relationship of prim.GetProperty('semanticTag:semanticReports').GetTargets()) {
+                const ontoPrim = prim.GetStage().GetPrimAtPath(relationship);
+                if (!ontoPrim.HasProperty('rdf:conceptName') || !ontoPrim.HasProperty('rdf:namespace')) {
+                    continue;
+                }
+                const ontology = ontoPrim.GetParent().GetName();
+                if (!(ontology in params[primPath]['semanticReports'])) {
+                    params[primPath]['semanticReports'][ontology] = {};
+                    params[primPath]['semanticReports'][ontology][""] = null;
+                }
+                params[primPath]['semanticReports'][ontology][ontoPrim.GetProperty('rdf:conceptName').Get()] = ontoPrim.GetProperty('rdf:conceptName').Get();
+            }
+
             params[primPath]['semanticLabels'] = {};
-            const ontoFolders = primFolder.addFolder('semantic labels');
-            for (let ontology of ontologyList) {
-                ontoFolders.add(ontologies, ontology, ontologies[ontology]).name(ontology).onChange(function (value) {
+
+            for (let ontology in params[primPath]['semanticReports']) {
+                ontoFolders.add(params[primPath]['semanticReports'], ontology, params[primPath]['semanticReports'][ontology]).name(ontology).onChange(function (value) {
                     if (value === undefined || value === 'null') {
                         return;
                     }
                     params[primPath]['semanticLabels'][ontology] = value;
                 });
+                
             }
 
             params[primPath]['annotator'] = null;
 
-            resetAnnotator(scene, prim, params);
+            resetAnnotator(scene, prim, params, ontoFolders);
 
             // Create an object to hold the button actions
             var buttonActions = {
                 addButton: function () {
                     const prim = stage.GetPrimAtPath(primPath);
-                    const relationships = prim.CreateRelationship('semanticTag:semanticLabel');
-                    for (let ontology of ontologyList) {
+                    const relationships = prim.CreateRelationship('semanticTag:semanticLabels');
+                    for (let ontology in params[primPath]['semanticLabels']) {
                         const value = params[primPath]['semanticLabels'][ontology];
                         if (value === undefined || value === 'null') {
                             continue;
                         }
-
                         relationships.AddTarget('/' + ontology + '/_class_' + value.split('#').pop());
                     }
                     logPrimSemanticLabels(stage, primPath, relationships);
-                    resetAnnotator(scene, prim, params);
+                    resetAnnotator(scene, prim, params, ontoFolders);
                 },
                 removeButton: function () {
                     const prim = stage.GetPrimAtPath(primPath);
-                    if (!prim.HasProperty('semanticTag:semanticLabel')) {
+                    if (!prim.HasProperty('semanticTag:semanticLabels')) {
                         return;
                     }
 
-                    const relationships = prim.GetProperty('semanticTag:semanticLabel');
-                    for (let ontology of ontologyList) {
+                    const relationships = prim.GetProperty('semanticTag:semanticLabels');
+                    for (let ontology in params[primPath]['semanticLabels']) {
                         const value = params[primPath]['semanticLabels'][ontology];
                         if (value === undefined || value === 'null') {
                             continue;
@@ -201,7 +203,7 @@ export function createGuiFromStage(scene, stage) {
                         }
                     }
                     logPrimSemanticLabels(stage, primPath, relationships);
-                    resetAnnotator(scene, prim, params);
+                    resetAnnotator(scene, prim, params, ontoFolders);
                 }
             };
 
