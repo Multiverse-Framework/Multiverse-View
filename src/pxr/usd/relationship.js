@@ -83,14 +83,14 @@ export class Relationship extends Property {
         super(prim, name);
         this._paths = [];
         if (paths.startsWith('[') && paths.endsWith(']')) {
+            paths = paths.replace(/ /g, '');
             for (let path of paths.slice(1, paths.length - 1).split(',')) {
                 path = path.slice(1, path.length - 1);
-                if (path !== '') {
+                if (path.startsWith('/')) {
                     this._paths.push(new Path(path));
                 }
             }
-        }
-        else {
+        } else {
             paths = paths.slice(1, paths.length - 1);
             this._paths = [new Path(paths)];
         }

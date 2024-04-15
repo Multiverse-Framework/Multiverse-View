@@ -2,6 +2,9 @@
 (
     defaultPrim = "milk_box"
     metersPerUnit = 1
+    subLayers = [
+        @/media/giangnguyen/Storage/Multiverse-View/public/assets/resources/milk_box/milk_box_TBox.usda@
+    ]
     upAxis = "Z"
 )
 
@@ -46,7 +49,7 @@ def Mujoco "mujoco" (
 }
 
 def Xform "milk_box" (
-    prepend apiSchemas = ["PhysicsMassAPI", "MujocoBodyInertialAPI", "MujocoBodyAPI"]
+    prepend apiSchemas = ["PhysicsMassAPI", "MujocoBodyInertialAPI", "MujocoBodyAPI", "SemanticTagAPI"]
 )
 {
     float3 mujoco:body:inertial:diaginertia = (0.0011993749, 0.004142, 0.0046573747)
@@ -59,10 +62,11 @@ def Xform "milk_box" (
     float3 physics:diagonalInertia = (0.0011993749, 0.004142, 0.0046573747)
     float physics:mass = 1.14
     quatf physics:principalAxes = (-0.70710677, 1.1119388e-9, 0.70710677, 1.1119388e-9)
+    prepend rel semanticTag:semanticReports = [</SOMA/_class_MilkBottle>, </SOMA/_class_MilkPack>]
 
     def Mesh "milk_box_visual" (
         prepend apiSchemas = ["MujocoGeomAPI", "MaterialBindingAPI"]
-        prepend references = @./milk_box/meshes/usd/milk_box_visual.usda@</milk_box_visual>
+        prepend references = @/media/giangnguyen/Storage/Multiverse-View/public/assets/resources/milk_box/milk_box/meshes/usd/milk_box_visual.usda@</milk_box_visual>
     )
     {
         rel material:binding = </milk_box/milk_box_visual/Materials/milk_box_visual>
@@ -80,7 +84,7 @@ def Xform "milk_box" (
         def Scope "Materials"
         {
             def Material "milk_box_visual" (
-                prepend references = @./milk_box/materials/usd/milk_box_visual.usda@</milk_box_visual>
+                prepend references = @/media/giangnguyen/Storage/Multiverse-View/public/assets/resources/milk_box/milk_box/materials/usd/milk_box_visual.usda@</milk_box_visual>
             )
             {
             }

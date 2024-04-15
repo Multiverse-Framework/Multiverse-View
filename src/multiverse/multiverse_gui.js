@@ -4,7 +4,11 @@ import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 
 let gui = new dat.GUI({ 'width': 500 });
 
+var menus = {};
+
 var params = {};
+
+var ontologyList = new Set();
 
 function logPrimSemanticLabels(stage, primPath, relationships) {
     console.log(`Set classes of prim ${primPath} to:`);
@@ -24,7 +28,7 @@ function annotatePrimWithSemanticLabels(prim) {
     }
 
     const p = document.createElement('p');
-    p.style.color = 'yellow';
+    p.style.color = 'lime';
     p.textContent = '[';
 
     for (let relationship of prim.GetProperty('semanticTag:semanticLabels').GetTargets()) {
@@ -49,26 +53,46 @@ function annotatePrimWithSemanticLabels(prim) {
     return cPointLabel;
 }
 
-function resetAnnotator(scene, prim, params, ontoFolders) {
+function resetAnnotator(scene, prim, ontoFolders) {
     const primPath = prim.GetPath().pathString;
     scene.remove(params[primPath]['annotator']);
-    if (params[primPath]['semanticLabelButton'] !== undefined) {
-        ontoFolders.remove(params[primPath]['semanticLabelButton']);
+    if (menus[primPath]['semanticLabelsButton'] !== undefined) {
+        ontoFolders.remove(menus[primPath]['semanticLabelsButton']);
     }
     params[primPath]['annotator'] = annotatePrimWithSemanticLabels(prim);
+
     if (params[primPath]['annotator'] !== null) {
         scene.add(params[primPath]['annotator']);
-        params[primPath]['semanticLabelResults'] = params[primPath]['annotator'].element.textContent;
-        params[primPath]['semanticLabelButton'] = ontoFolders.add(params[primPath], 'semanticLabelResults').name('Semantic labels').listen();
+        params[primPath]['semanticLabels'] = params[primPath]['annotator'].element.textContent;
+        menus[primPath]['semanticLabelsButton'] = ontoFolders.add(params[primPath], 'semanticLabels').name('Semantic labels').listen();
+        var color = 'lime';
     } else {
-        params[primPath]['semanticLabelButton'] = undefined;
+        menus[primPath]['semanticLabelsButton'] = undefined;
+        var color = 'yellow';
     }
+
+    const elements = document.querySelectorAll('.dg .folder');
+    elements.forEach(element => {
+        for (let childDivNodes of element.childNodes) {
+            for (let childUlNode of childDivNodes.childNodes) {
+                for (let childLiNode of childUlNode.childNodes) {
+                    if(childLiNode.textContent == prim.GetPath().pathString) {
+                        element.style.backgroundColor = color;
+                        childLiNode.style.color = color;
+                        return;
+                    }
+                }
+            }
+        }
+    });
 }
 
 export function createGuiFromStage(scene, stage) {
     const hightlightColor = new THREE.Color(0xffff00);
 
+    menus = {};
     params = {};
+
     if (gui) {
         gui.destroy();
         gui = null; // Remove reference to the old GUI
@@ -79,6 +103,7 @@ export function createGuiFromStage(scene, stage) {
 
     for (let prim of stage.Traverse()) {
         const primPath = prim.GetPath().pathString;
+        menus[primPath] = {};
         params[primPath] = {};
 
         if (['Cube', 'Mesh'].includes(prim.GetTypeName())) {
@@ -105,12 +130,12 @@ export function createGuiFromStage(scene, stage) {
 
             const primFolder = objectsFolder.addFolder(primPath);
 
-            params[primPath]["show"] = primObject3D.visible;
-            primFolder.add(params[primPath], "show").name("show").onChange(function (value) {
+            menus[primPath]["show"] = primObject3D.visible;
+            primFolder.add(menus[primPath], "show").name("show").onChange(function (value) {
                 primObject3D.visible = value;
             });
 
-            params[primPath]["children"] = [];
+            menus[primPath]["children"] = [];
             for (let childPrim of prim.GetAllChildren()) {
                 const childPrimPath = childPrim.GetPath().pathString;
                 if (['Cube', 'Mesh'].includes(childPrim.GetTypeName())) {
@@ -119,13 +144,13 @@ export function createGuiFromStage(scene, stage) {
                         childPrim.object3D.children[0].material === undefined) {
                         continue;
                     }
-                    params[primPath]["children"].push(childPrimPath);
+                    menus[primPath]["children"].push(childPrimPath);
                 }
             }
 
-            params[primPath]["highlight"] = false;
-            primFolder.add(params[primPath], "highlight").name("highlight").onChange(function (value) {
-                for (let childPrimPath of params[primPath]["children"]) {
+            menus[primPath]["highlight"] = false;
+            primFolder.add(menus[primPath], "highlight").name("highlight").onChange(function (value) {
+                for (let childPrimPath of menus[primPath]["children"]) {
                     const childPrim = stage.GetPrimAtPath(childPrimPath);
                     for (let childPrimObject3D of childPrim.object3D.children) {
                         const childPrimObject3DName = childPrimObject3D.name;
@@ -134,7 +159,7 @@ export function createGuiFromStage(scene, stage) {
                 }
             });
 
-            params[primPath]['semanticReports'] = {};
+            menus[primPath]['semanticReports'] = {};
 
             const ontoFolders = primFolder.addFolder('Semantic tagging');
 
@@ -148,43 +173,43 @@ export function createGuiFromStage(scene, stage) {
                     continue;
                 }
                 const ontology = ontoPrim.GetParent().GetName();
-                if (!(ontology in params[primPath]['semanticReports'])) {
-                    params[primPath]['semanticReports'][ontology] = {};
-                    params[primPath]['semanticReports'][ontology][""] = null;
+                ontologyList.add(ontology);
+                if (!(ontology in menus[primPath]['semanticReports'])) {
+                    menus[primPath]['semanticReports'][ontology] = {};
+                    menus[primPath]['semanticReports'][ontology][""] = null;
                 }
-                params[primPath]['semanticReports'][ontology][ontoPrim.GetProperty('rdf:conceptName').Get()] = ontoPrim.GetProperty('rdf:conceptName').Get();
+                menus[primPath]['semanticReports'][ontology][ontoPrim.GetProperty('rdf:conceptName').Get()] = ontoPrim.GetProperty('rdf:conceptName').Get();
             }
 
-            params[primPath]['semanticLabels'] = {};
+            menus[primPath]['semanticLabels'] = {};
 
-            for (let ontology in params[primPath]['semanticReports']) {
-                ontoFolders.add(params[primPath]['semanticReports'], ontology, params[primPath]['semanticReports'][ontology]).name(ontology).onChange(function (value) {
+            for (let ontology in menus[primPath]['semanticReports']) {
+                ontoFolders.add(menus[primPath]['semanticReports'], ontology, menus[primPath]['semanticReports'][ontology]).name(ontology).onChange(function (value) {
                     if (value === undefined || value === 'null') {
                         return;
                     }
-                    params[primPath]['semanticLabels'][ontology] = value;
+                    menus[primPath]['semanticLabels'][ontology] = value;
                 });
-                
             }
 
             params[primPath]['annotator'] = null;
 
-            resetAnnotator(scene, prim, params, ontoFolders);
+            resetAnnotator(scene, prim, ontoFolders);
 
             // Create an object to hold the button actions
             var buttonActions = {
                 addButton: function () {
                     const prim = stage.GetPrimAtPath(primPath);
                     const relationships = prim.CreateRelationship('semanticTag:semanticLabels');
-                    for (let ontology in params[primPath]['semanticLabels']) {
-                        const value = params[primPath]['semanticLabels'][ontology];
+                    for (let ontology in menus[primPath]['semanticLabels']) {
+                        const value = menus[primPath]['semanticLabels'][ontology];
                         if (value === undefined || value === 'null') {
                             continue;
                         }
                         relationships.AddTarget('/' + ontology + '/_class_' + value.split('#').pop());
                     }
                     logPrimSemanticLabels(stage, primPath, relationships);
-                    resetAnnotator(scene, prim, params, ontoFolders);
+                    resetAnnotator(scene, prim, ontoFolders);
                 },
                 removeButton: function () {
                     const prim = stage.GetPrimAtPath(primPath);
@@ -193,8 +218,8 @@ export function createGuiFromStage(scene, stage) {
                     }
 
                     const relationships = prim.GetProperty('semanticTag:semanticLabels');
-                    for (let ontology in params[primPath]['semanticLabels']) {
-                        const value = params[primPath]['semanticLabels'][ontology];
+                    for (let ontology in menus[primPath]['semanticLabels']) {
+                        const value = menus[primPath]['semanticLabels'][ontology];
                         if (value === undefined || value === 'null') {
                             continue;
                         }
@@ -203,7 +228,7 @@ export function createGuiFromStage(scene, stage) {
                         }
                     }
                     logPrimSemanticLabels(stage, primPath, relationships);
-                    resetAnnotator(scene, prim, params, ontoFolders);
+                    resetAnnotator(scene, prim, ontoFolders);
                 }
             };
 
@@ -215,4 +240,26 @@ export function createGuiFromStage(scene, stage) {
 
     objectsFolder.open();
     gui.open();
+
+    const elements = document.querySelectorAll('.c');
+    elements.forEach(element => {
+        const ontology = element.previousSibling.textContent;
+        if (ontologyList.has(ontology)) {
+            for (let childNode of element.childNodes) {
+                if (childNode.nodeName === 'SELECT') {
+                    for (let option of childNode.options) {
+                        if (option.value === 'null') {
+                            continue;
+                        }
+                        const ontologyPath = '/' + ontology + '/_class_' + option.value;
+                        const ontologyPrim = stage.GetPrimAtPath(ontologyPath);
+                        if (!ontologyPrim.HasProperty('rdf:definition')) {
+                            continue;
+                        }
+                        option.setAttribute('title', ontologyPrim.GetProperty('rdf:definition').Get());
+                    }
+                }
+            }
+        }
+    });
 }

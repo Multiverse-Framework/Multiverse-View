@@ -22,7 +22,6 @@ def Xform "Apartment" (
         prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        prepend rel semanticTag:semanticReports = </SOMA/_class_KitchenCabinet>
         point3f physics:centerOfMass = (-2.7939677e-9, -1.1641532e-10, 6.1042322e-9)
         float3 physics:diagonalInertia = (0.00034907364, 0.004744705, 0.0050937785)
         float physics:mass = -0.016255878

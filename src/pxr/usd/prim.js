@@ -1,6 +1,7 @@
 import { Attribute } from './attribute.js';
 import { Relationship } from './relationship.js';
 import { Path } from './../sdf/path.js';
+import { tri } from 'three/examples/jsm/nodes/math/TriNoise3D.js';
 
 function splitPath(path) {
     const parts = path.split('/');
@@ -24,8 +25,17 @@ function extractPrimContentFromStartPattern(primContent, primStartPattern) {
 
     let openParentheses = 0;
 
+    let inQuote = false;
+
     // Start searching from the point where the prim block starts
     for (let i = startIndex; i < primContent.length; i++) {
+        if (primContent[i] === '"') {
+            inQuote = !inQuote;
+        }
+        if (inQuote) {
+            continue;
+        }
+
         if (primContent[i] === '(') {
             openParentheses++;
         } else if (primContent[i] === ')') {
@@ -54,9 +64,17 @@ function extractPrimContentFromBrace(primContent, startBrace, endBrace) {
     let openBraces = 0;
     let startIndex = primContent.indexOf(startBrace);
     let endIndex = startIndex;
+    let inQuote = false;
 
     // Start searching from the point where the prim block starts
     for (let i = startIndex; i < primContent.length; i++) {
+        if (primContent[i] === '"') {
+            inQuote = !inQuote;
+        }
+        if (inQuote) {
+            continue;
+        }
+
         if (primContent[i] === startBrace) {
             openBraces++;
         } else if (primContent[i] === endBrace) {
@@ -134,6 +152,10 @@ function extractPrimData(prim, primContent) {
         while (childDefIndex !== -1) {
             const childPrimContent = extractPrimContentFromStartPattern(childPrimsContent, /(def|class)\s+/);
 
+            if (childPrimContent === null) {
+                break;
+            }
+
             childPrimContents.push(childPrimContent);
 
             childPrimsContent = childPrimsContent.substring(childPrimContent.length).trim();
@@ -156,7 +178,7 @@ function extractPrimData(prim, primContent) {
 }
 
 function getPrimProperties(prim, primBlock) {
-    const lines = primBlock.split('\n');
+    const lines = primBlock.replace(/ = \[\n/g, " = [").replace(/,\n/g, ", ").split('\n');
     const result = {};
 
     lines.forEach(line => {
