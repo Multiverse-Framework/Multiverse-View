@@ -76,6 +76,14 @@ function updateRelationship(relationship, oldRelationship, newRelationship) {
 
     prim._data.contentIndex.primBlockEndIndex += newPrimContent.length - oldPrimContent.length;
     prim._data.contentIndex.endIndex += newPrimContent.length - oldPrimContent.length;
+    for (let followingPrim of prim.GetStage().GetDefaultPrim().GetAllChildren()) {
+        if (followingPrim._data.contentIndex.startIndex > prim._data.contentIndex.startIndex) {
+            followingPrim._data.contentIndex.startIndex += newPrimContent.length - oldPrimContent.length;
+            followingPrim._data.contentIndex.endIndex += newPrimContent.length - oldPrimContent.length;
+            followingPrim._data.contentIndex.primBlockStartIndex += newPrimContent.length - oldPrimContent.length;
+            followingPrim._data.contentIndex.primBlockEndIndex += newPrimContent.length - oldPrimContent.length;
+        }
+    }
 }
 
 export class Relationship extends Property {

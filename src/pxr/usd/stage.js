@@ -75,7 +75,17 @@ function printPrimContent(stageContent, prim) {
 
 export class Stage {
     constructor(content) {
-        this._content = content;
+        this._content = content
+            .replace(/ = \[\n/g, " = [")
+            .replace(/,\n/g, ", ")
+            .replace(/\[([\s\S]*?)\]/g, function (match) {
+                // Replace all whitespace characters with a single space, and then trim spaces next to commas and brackets
+                return match.replace(/\s+/g, ' ')
+                    .replace(/ ,/g, ',')
+                    .replace(/\[ /g, '[')
+                    .replace(/ \]/g, ']')
+                    .replace(/,\]/g, ']');
+            });
         this._primsCached = {};
         this.GetPrimAtPath('/');
         const defaultPrimName = getDefaultPrimName(this._content);

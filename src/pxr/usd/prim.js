@@ -178,7 +178,7 @@ function extractPrimData(prim, primContent) {
 }
 
 function getPrimProperties(prim, primBlock) {
-    const lines = primBlock.replace(/ = \[\n/g, " = [").replace(/,\n/g, ", ").split('\n');
+    const lines = primBlock.split('\n');
     const result = {};
 
     lines.forEach(line => {
@@ -334,6 +334,14 @@ function addPrimContent(prim, primContent) {
 
     prim._data.contentIndex.primBlockEndIndex += primContent.length;
     prim._data.contentIndex.endIndex += primContent.length;
+    for (let followingPrim of prim.GetStage().GetDefaultPrim().GetAllChildren()) {
+        if (followingPrim._data.contentIndex.startIndex > prim._data.contentIndex.startIndex) {
+            followingPrim._data.contentIndex.startIndex += primContent.length;
+            followingPrim._data.contentIndex.endIndex += primContent.length;
+            followingPrim._data.contentIndex.primBlockStartIndex += primContent.length;
+            followingPrim._data.contentIndex.primBlockEndIndex += primContent.length;
+        }
+    }
 }
 
 function getPathLevel(path) {
