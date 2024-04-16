@@ -9,7 +9,7 @@
          xmlns:USD="https://ease-crc.org/ont/USD.owl#">
 
 <owl:Ontology rdf:about="file:///media/giangnguyen/Storage/Multiverse-View/public/assets/resources/ApartmentECAI/ApartmentECAI.owl">
-  <owl:imports rdf:resource="http://www.ease-crc.org/ont/SOMA-HOME.owl"/>
+  <owl:imports rdf:resource="http://www.ease-crc.org/ont/SOMA_DFL.owl"/>
 </owl:Ontology>
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#Apartment">
@@ -536,7 +536,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_06_Base">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#KitchenCabinet"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -597,7 +596,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_06_Base_Drawer_03">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -1210,7 +1208,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_06_Base_Drawer_02">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -1823,7 +1820,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_06_Base_Drawer_01">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -3140,7 +3136,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_03_Fridge">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#KitchenCabinet"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -3365,7 +3360,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Fridge_Base">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Refrigerator"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -10155,7 +10149,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_10_Base">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#KitchenCabinet"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -10216,7 +10209,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_10_Drawer_03">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -10829,7 +10821,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_10_Drawer_02">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -11442,7 +11433,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_10_Drawer_01">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -11973,7 +11963,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_01_Drawer_02">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -13527,7 +13516,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_02_Base">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#KitchenCabinet"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -13607,7 +13595,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_02_Drawer_4">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -13668,7 +13655,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_02_Drawer_5">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -13729,7 +13715,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_02_Drawer_02">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -13850,7 +13835,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_02_Drawer_01">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -13911,7 +13895,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_02_Drawer_3">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -13972,7 +13955,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_02_Drawer_6">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -14794,7 +14776,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_09_Base">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#KitchenCabinet"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -14855,7 +14836,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_09_Drawer_03">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -15468,7 +15448,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_09_Drawer_02">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -16081,7 +16060,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_09_Drawer_01">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -17212,7 +17190,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_04_Base">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#KitchenCabinet"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -18409,7 +18386,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_11_Base">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#KitchenCabinet"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -18470,7 +18446,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_11_Base_Drawer_03">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -19083,7 +19058,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_11_Base_Drawer_02">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -19696,7 +19670,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_11_Base_Drawer_01">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -24960,7 +24933,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_01_Base">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#KitchenCabinet"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -26138,7 +26110,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_05_Base">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#KitchenCabinet"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -26199,7 +26170,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_05_Base_Drawer_03">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -26812,7 +26782,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_05_Base_Drawer_02">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -27425,7 +27394,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_05_Base_Drawer_01">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -27956,7 +27924,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_08_Sink_Base">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#KitchenCabinet"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -32269,7 +32236,6 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Kitchen_01_Drawer_01">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Drawer"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -34988,7 +34954,7 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_Cup">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Cup"/>
+  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA_DFL.owl#cup.n.wn.artifact..container"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -45832,7 +45798,7 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_CerealBox">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CerealBox"/>
+  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA_DFL.owl#cereal_box.n.wn.artifact"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -45934,7 +45900,7 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_MilkBox">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#MilkBottle"/>
+  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA_DFL.owl#milk_carton.n.wn.artifact"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -46048,7 +46014,7 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_SmallBowl">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
-  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Bowl"/>
+  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA_DFL.owl#bowl.n.wn.artifact..dish"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>
@@ -55375,6 +55341,7 @@
 
 <owl:NamedIndividual rdf:about="https://ease-crc.org/ont/USD.owl#SM_DiningTable">
   <rdf:type rdf:resource="https://ease-crc.org/ont/USD.owl#Prim"/>
+  <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA_DFL.owl#table.n.wn.artifact..furniture"/>
   <rdf:type>
     <owl:Restriction>
       <owl:onProperty rdf:resource="https://ease-crc.org/ont/USD.owl#hasAPI"/>

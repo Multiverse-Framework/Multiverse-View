@@ -251,7 +251,7 @@ export function createGuiFromStage(scene, stage) {
                         if (option.value === 'null') {
                             continue;
                         }
-                        const ontologyPath = '/' + ontology + '/_class_' + option.value;
+                        const ontologyPath = '/' + ontology + '/_class_' + option.value.replace(/\./g, '');
                         const ontologyPrim = stage.GetPrimAtPath(ontologyPath);
                         if (!ontologyPrim.HasProperty('rdf:definition')) {
                             continue;
