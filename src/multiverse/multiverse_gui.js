@@ -206,7 +206,7 @@ export function createGuiFromStage(scene, stage) {
                         if (value === undefined || value === 'null') {
                             continue;
                         }
-                        relationships.AddTarget('/' + ontology + '/_class_' + value.split('#').pop());
+                        relationships.AddTarget('/' + ontology + '/_class_' + value.replace(/\./g, '').split('#').pop());
                     }
                     logPrimSemanticLabels(stage, primPath, relationships);
                     resetAnnotator(scene, prim, ontoFolders);
@@ -223,7 +223,7 @@ export function createGuiFromStage(scene, stage) {
                         if (value === undefined || value === 'null') {
                             continue;
                         }
-                        if (relationships.RemoveTarget('/' + ontology + '/_class_' + value.split('#').pop())) {
+                        if (relationships.RemoveTarget('/' + ontology + '/_class_' + value.replace(/\./g, '').split('#').pop())) {
                             console.log(`Removed class ${value} from prim ${primPath}`)
                         }
                     }
