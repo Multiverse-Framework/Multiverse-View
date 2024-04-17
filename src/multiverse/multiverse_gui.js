@@ -50,6 +50,13 @@ function annotatePrimWithSemanticLabels(prim) {
     primTransform.decompose(position, quaternion, scale);
     cPointLabel.position.set(position.x, position.y, position.z);
 
+    var parentPrim = prim.GetParent();
+    while (parentPrim.GetPath().pathString !== '/') {
+        const parenPrimTransform = parentPrim.HasProperty('xformOp:transform') ? parentPrim.GetProperty('xformOp:transform').Get() : new THREE.Matrix4();
+        cPointLabel.position.applyMatrix4(parenPrimTransform);
+        parentPrim = parentPrim.GetParent();
+    }
+
     return cPointLabel;
 }
 
