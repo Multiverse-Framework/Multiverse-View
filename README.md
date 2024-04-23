@@ -10,9 +10,8 @@ A web-based tool for visualizing [USD](https://openusd.org/) scene graphs using 
 wget https://nodejs.org/dist/v20.12.0/node-v20.12.0-linux-x64.tar.xz
 tar -xvf node-v20.12.0-linux-x64.tar.xz
 export PATH=$PATH:${PWD}\node-v20.12.0-linux-x64/bin
-npm install --save three
-npm install --save dat.gui
-npm install --save-dev vite
+npm install
+npm run dev
 ```
 
 ## Run
