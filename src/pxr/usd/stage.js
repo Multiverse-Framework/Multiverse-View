@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 
 import { Prim } from './prim.js';
+import { Path } from '../sdf/path.js';
 
 function Open(path) {
     return new Promise((resolve, reject) => {
@@ -109,7 +110,7 @@ export class Stage {
     }
 
     GetPrimAtPath(path) {
-        if (path.constructor.name === 'Path') {
+        if (path.constructor.name === Path.name) {
             path = path.pathString;
         }
 

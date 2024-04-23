@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-const TEXTUREPATH = '/assets/textures';
+const TEXTUREPATH = import.meta.env.BASE_URL + '/assets/textures';
 
 function createCube(transform) {
     const geometry = new THREE.BoxGeometry(2, 2, 2);
