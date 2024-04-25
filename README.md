@@ -18,5 +18,5 @@ npm run dev
 
 ```bash
 export PATH=$PATH:${PWD}\node-v20.12.0-linux-x64/bin
-npx vite
+npm run dev
 ```
