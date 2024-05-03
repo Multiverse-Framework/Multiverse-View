@@ -98,7 +98,8 @@ function usdViewFromContent(content) {
 // const usdFilePath = '/assets/cold_cutting_2/cold_cutting_2_flatten.usda';
 // const usdFilePath = '/assets/ApartmentECAI/ApartmentECAI_flatten.usda';
 
-// usdView(usdFilePath);
+const usdFilePath = 'assets/resources/panda/panda_flatten.usda'
+usdViewFromPath(import.meta.env.BASE_URL + usdFilePath);
 
 document.getElementById('fileInput').addEventListener('change', function(event) {
     const file = event.target.files[0];
