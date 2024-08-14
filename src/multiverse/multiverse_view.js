@@ -234,8 +234,7 @@ export function getObject3DFromXform(prim, parentTransform = new THREE.Matrix4()
     object3D.applyMatrix4(parentTransform);
 
     if (['Xform', 'Cube', 'Mesh'].includes(prim.GetTypeName())) {
-        let primTransform = parentTransform;
-
+        let primTransform = new THREE.Matrix4();
         if (prim.HasProperty('xformOpOrder')) {
             const xformOpOrder = prim.GetProperty('xformOpOrder').Get();
             for (let xformOp of xformOpOrder) {

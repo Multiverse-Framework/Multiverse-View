@@ -143,10 +143,10 @@ export function getValueFromTypeName(value, cppTypeName) {
             return null;
         }
         else if (cppTypeName === 'GfMatrix3d') {
-            return new Matrix3().fromArray(value)
+            return new Matrix3().fromArray(value);
         }
         else if (cppTypeName === 'GfMatrix4d') {
-            return new Matrix4().fromArray(value)
+            return new Matrix4().fromArray(value);
         }
         else if (['GfVec2d', 'GfVec2f', 'GfVec2h', 'GfVec2i'].includes(cppTypeName)) {
             return new Vector2(value[0], value[1]);
